@@ -1,0 +1,4 @@
+{"session_id": "d20eac17-4e20-fd1a-5983-36e375d66ed4", "ts": 1787749200, "text": "write a script that renames exported Figma assets to kebab-case and sorts them into icons/ and images/"}
+{"session_id": "39118497-3a43-b2ba-df0f-06cbcb9bc326", "ts": 1790686800, "text": "update invoice_hours.py so it groups by client and project and outputs a CSV for Lexoffice"}
+{"session_id": "6601ddd0-3170-f437-a8f7-ef5a060edf5b", "ts": 1791810000, "text": "make a script that checks all client sites for broken links and sends me a summary, I want to run it every Monday"}
+{"session_id": "11c58ef0-dd46-3c09-4752-87aa5408f9ac", "ts": 1793019600, "text": "check_links.py should also check SSL expiry and page speed for each client site"}

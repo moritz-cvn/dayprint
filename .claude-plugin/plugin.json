@@ -1,0 +1,9 @@
+{
+  "name": "dayprint",
+  "version": "0.1.0",
+  "description": "Analyse what your AI tools know about your work, locally and with consent, and get a Cavion workspace plan: a branded report plus a setup file Cavion can apply.",
+  "author": {"name": "Cavion", "url": "https://cavion.io"},
+  "homepage": "https://cavion.io",
+  "license": "MIT",
+  "keywords": ["onboarding", "workflows", "automation", "cavion"]
+}

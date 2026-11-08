@@ -1,0 +1,256 @@
+{
+  "schema": "dayprint.inventory/0.1",
+  "generator": "dayprint/0.1.0",
+  "generated_at": "2026-11-08T14:09:25+00:00",
+  "home": "~",
+  "depth": "deep",
+  "sources": [
+    {
+      "id": "claude-code-transcripts",
+      "label": "Claude Code chats",
+      "kind": "agent-history",
+      "status": "found",
+      "paths": [
+        "~/.claude/projects"
+      ],
+      "files": 9,
+      "bytes": 30164,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Your prompts and which tools ran. Tool output and file contents are skipped.",
+      "projects": 4,
+      "depth": "standard",
+      "preselected": true
+    },
+    {
+      "id": "claude-code-memory",
+      "label": "Claude Code memory and instructions",
+      "kind": "agent-memory",
+      "status": "found",
+      "paths": [
+        "~/.claude/projects/*/memory",
+        "~/.claude/CLAUDE.md"
+      ],
+      "files": 4,
+      "bytes": 611,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Short notes Claude keeps about your work.",
+      "depth": "quick",
+      "preselected": true
+    },
+    {
+      "id": "claude-code-history",
+      "label": "Claude Code prompt history",
+      "kind": "agent-history",
+      "status": "found",
+      "paths": [
+        "~/.claude/history.jsonl"
+      ],
+      "files": 1,
+      "bytes": 3580,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Prompts you typed, with dates.",
+      "depth": "standard",
+      "preselected": true
+    },
+    {
+      "id": "codex-sessions",
+      "label": "Codex sessions",
+      "kind": "agent-history",
+      "status": "found",
+      "paths": [
+        "~/.codex/sessions",
+        "~/.codex/archived_sessions"
+      ],
+      "files": 4,
+      "bytes": 8439,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Your prompts and which commands ran. Command output is skipped.",
+      "depth": "standard",
+      "preselected": true
+    },
+    {
+      "id": "codex-history",
+      "label": "Codex prompt history",
+      "kind": "agent-history",
+      "status": "found",
+      "paths": [
+        "~/.codex/history.jsonl"
+      ],
+      "files": 1,
+      "bytes": 724,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Prompts you typed, with dates.",
+      "depth": "standard",
+      "preselected": true
+    },
+    {
+      "id": "codex-memory",
+      "label": "Codex instructions and memories",
+      "kind": "agent-memory",
+      "status": "found",
+      "paths": [
+        "~/.codex/AGENTS.md",
+        "~/.codex/memories"
+      ],
+      "files": 1,
+      "bytes": 100,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Standing instructions you gave Codex.",
+      "depth": "quick",
+      "preselected": true
+    },
+    {
+      "id": "chatgpt-export",
+      "label": "ChatGPT export",
+      "kind": "chat-export",
+      "status": "found",
+      "paths": [
+        "~/Downloads/chatgpt-export-2026-11-01.zip"
+      ],
+      "files": 1,
+      "bytes": 20944,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Conversation titles and your messages. Read inside the zip, nothing is unpacked.",
+      "depth": "standard",
+      "preselected": true
+    },
+    {
+      "id": "claude-export",
+      "label": "Claude.ai export",
+      "kind": "chat-export",
+      "status": "found",
+      "paths": [
+        "~/Downloads/data-2026-11-01-claude.zip"
+      ],
+      "files": 1,
+      "bytes": 4505,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Conversation titles, your messages, project names and memory.",
+      "depth": "quick",
+      "preselected": true
+    },
+    {
+      "id": "shell-history",
+      "label": "Terminal history",
+      "kind": "activity",
+      "status": "found",
+      "paths": [
+        "~/.zsh_history"
+      ],
+      "files": 1,
+      "bytes": 18451,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Program names only (git, python, npm). Arguments are never read, they can hold secrets.",
+      "depth": "deep",
+      "preselected": true
+    },
+    {
+      "id": "calendar-files",
+      "label": "Calendar exports (.ics)",
+      "kind": "calendar",
+      "status": "found",
+      "paths": [
+        "~/Downloads/lena-calendar-export.ics"
+      ],
+      "files": 1,
+      "bytes": 12753,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "Event titles, times and how often they repeat. Attendees become counts.",
+      "depth": "standard",
+      "preselected": true
+    },
+    {
+      "id": "documents",
+      "label": "Documents and notes",
+      "kind": "files",
+      "status": "found",
+      "paths": [
+        "~/Documents",
+        "~/Downloads"
+      ],
+      "files": 23,
+      "bytes": 4496,
+      "files_changed_from": "2026-08-06",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "File names and the first lines of text and Markdown files. Office files: names only.",
+      "by_extension": {
+        ".md": 21,
+        ".csv": 1,
+        ".pdf": 1
+      },
+      "busiest_folders": {
+        "Documents/Studio": 21,
+        "Documents/Private": 1,
+        "Downloads": 1
+      },
+      "depth": "deep",
+      "preselected": true
+    },
+    {
+      "id": "installed-apps",
+      "label": "Installed apps",
+      "kind": "apps",
+      "status": "found",
+      "paths": [
+        "examples/persona-lena~"
+      ],
+      "files": 11,
+      "bytes": 704,
+      "files_changed_from": "2026-11-07",
+      "files_changed_to": "2026-11-07",
+      "privacy_note": "App names only.",
+      "apps": [
+        "ChatGPT",
+        "Claude",
+        "Codex",
+        "Figma",
+        "Google Chrome",
+        "Notion",
+        "Slack",
+        "Spotify",
+        "Toggl Track",
+        "Visual Studio Code",
+        "zoom.us"
+      ],
+      "depth": "deep",
+      "preselected": true
+    },
+    {
+      "id": "git-activity",
+      "label": "Your commit times",
+      "kind": "activity",
+      "status": "not_found",
+      "paths": [],
+      "files": 0,
+      "bytes": 0,
+      "privacy_note": "Times of your own commits in local repositories. No code, no messages.",
+      "repositories": 0,
+      "depth": "standard",
+      "preselected": false
+    },
+    {
+      "id": "screen-time",
+      "label": "Screen Time (app focus)",
+      "kind": "activity",
+      "status": "not_found",
+      "paths": [
+        "~/Library/Application Support/Knowledge/knowledgeC.db"
+      ],
+      "files": 0,
+      "bytes": 0,
+      "privacy_note": "How long each app was in front, by app name. Needs Full Disk Access for the terminal app; skipped without it.",
+      "depth": "deep",
+      "preselected": false
+    }
+  ]
+}

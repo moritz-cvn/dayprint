@@ -1,0 +1,13 @@
+{
+  "name": "cavion",
+  "owner": {"name": "Cavion", "url": "https://cavion.io"},
+  "plugins": [
+    {
+      "name": "dayprint",
+      "source": "./",
+      "description": "Plan your Cavion workspace from what your AI tools know about your work.",
+      "version": "0.1.0",
+      "category": "productivity"
+    }
+  ]
+}

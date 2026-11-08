@@ -1,0 +1,231 @@
+<!--
+  Report elements. Design source: Paper file "Cavion · Onboarding report", page "Report", board
+  "OR02 · Report · desktop". Each <template id="el-…"> matches a Paper layer named el/….
+  render_report.py fills them: {{name}} is escaped text, {{{name}}} is HTML made by another element.
+  Change the look here (or in Paper, then copy the values here), never in the Python code.
+  Rules this design follows (tasteskill): no figure strip, no eyebrow labels, no card grids of
+  look-alike items, real product logos, one contrasting band, lines instead of boxes.
+-->
+<style id="report-css">
+@font-face{font-family:Inter;src:url(data:font/woff2;base64,{{{font}}}) format('woff2');font-weight:100 900;font-display:swap}
+:root{--ink:#090909;--muted:#626262;--line:#E5E5E5;--soft:#FAFAFA;--still:#F5F5F5;--blue:#0066CC;--blue-bg:#EBF4FF;--blue-line:#CFE3FB}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;color:var(--ink);font:400 15px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
+.page{max-width:1200px;margin:0 auto;padding:36px 96px 72px}
+.ic{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.mark{height:17px;width:auto;flex:none}
+.logo{display:block;flex:none;object-fit:contain}
+.muted{color:var(--muted)}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.blue{color:var(--blue)}
+/* el/header */
+.header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;letter-spacing:-.01em}
+.header .meta{font-size:13px;color:var(--muted);text-align:right}
+/* el/hero */
+.hero{display:flex;flex-direction:column;gap:24px;padding:72px 0 40px}
+.headline{font-size:48px;line-height:53px;font-weight:800;letter-spacing:-.04em;max-width:940px}
+.headline em{font-style:normal;color:var(--blue)}
+.basis{font-size:16px;line-height:25px;color:var(--muted);max-width:700px}
+/* el/week */
+.week{display:flex;flex-direction:column;gap:20px;padding-bottom:96px}
+.week-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
+.week-top b{font-size:15px;font-weight:600}
+.legend{display:flex;gap:20px;font-size:13px;color:var(--muted)}
+.legend span{display:flex;align-items:center;gap:8px}
+.legend i{width:10px;height:10px;border-radius:3px;background:var(--blue)}
+.legend i.still{background:#C9C9C9}
+.days{display:flex;gap:10px;align-items:flex-start}
+.day{display:flex;flex-direction:column;gap:8px;flex:1;min-width:0;padding-top:12px;border-top:2px solid var(--ink)}
+.day.month{border-top-color:var(--blue)}
+.day>b{font-size:13px;font-weight:600}
+.day.month>b{color:var(--blue)}
+.slot{display:flex;flex-direction:column;justify-content:space-between;gap:8px;background:var(--blue-bg);border-radius:8px;padding:10px 12px}
+.slot b{font-size:13px;line-height:17px;font-weight:600}
+.slot .m{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--blue)}
+.slot.still{background:var(--still)}
+.slot.still b,.slot.still .m{color:var(--muted)}
+/* el/section-head */
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;padding:24px 0 32px;border-top:1px solid var(--line)}
+.h2{font-size:34px;line-height:40px;font-weight:800;letter-spacing:-.03em}
+.section-head .h2{max-width:620px}
+.section-head p{font-size:14px;line-height:21px;color:var(--muted);max-width:340px}
+/* el/workflow */
+.workflow{display:flex;gap:56px;padding:32px 0 40px;border-top:1px solid var(--line)}
+.wf-side{display:flex;flex-direction:column;gap:14px;width:280px;flex:none}
+.wf-side h3{font-size:24px;line-height:29px;font-weight:800;letter-spacing:-.025em}
+.wf-side .save{font-size:15px;line-height:22px;font-weight:600;color:var(--blue)}
+.wf-side p{font-size:14px;line-height:21px;color:var(--muted)}
+.wf-main{display:flex;flex-direction:column;gap:28px;flex:1;min-width:0}
+/* el/flow */
+.flow{display:flex;align-items:flex-start;background:var(--soft);border-radius:14px;padding:22px 24px}
+.node{display:flex;flex-direction:column;align-items:center;gap:8px;width:96px;flex:none;text-align:center;font-size:12px;line-height:16px}
+.tile{width:40px;height:40px;border-radius:10px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;gap:3px}
+.node.agent .tile{background:var(--ink);border-color:var(--ink);color:#fff}
+.node.agent span{font-weight:600}
+.node.you .tile{border-radius:20px;background:var(--blue-bg);border-color:var(--blue-line);color:var(--blue)}
+.node.you span{color:var(--blue);font-weight:600}
+.link{flex:1;height:40px;display:flex;align-items:center;min-width:12px}
+.link i{display:block;height:1px;width:100%;background:#CFCFCF}
+.ways{display:flex;gap:40px}
+.ways div{flex:1;display:flex;flex-direction:column;gap:10px}
+.ways b{font-size:14px;font-weight:700}
+.ways p{font-size:14px;line-height:22px}
+.instructions{display:flex;flex-direction:column;gap:10px;padding:16px 18px;border:1px solid var(--line);border-radius:12px}
+.instructions span{font-size:12px;font-weight:600;color:var(--muted)}
+.instructions pre{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px;line-height:20px;white-space:pre-wrap;word-break:break-word}
+/* el/workspace (the one dark band) */
+.workspace{display:flex;flex-direction:column;gap:36px;background:var(--ink);color:#fff;border-radius:20px;padding:48px 48px 40px;margin:16px 0 0}
+.ws-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.ws-top .h2{max-width:520px}
+.ws-top p{font-size:14px;line-height:21px;color:rgba(255,255,255,.65);max-width:360px}
+.assistant{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:14px;background:rgba(255,255,255,.08)}
+.assistant .av{width:36px;height:36px;border-radius:18px;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;flex:none}
+.assistant .t{display:flex;flex-direction:column;gap:2px;flex:1}
+.assistant .t b{font-size:15px}
+.assistant .t span{font-size:13px;color:rgba(255,255,255,.65)}
+.apps{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.app{width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center}
+.app.s{width:28px;height:28px;border-radius:7px}
+.app-name{font-size:12px;color:rgba(255,255,255,.65);padding:0 4px}
+.spaces{display:flex}
+.space{display:flex;flex-direction:column;gap:16px;flex:1;padding:0 28px;border-left:1px solid rgba(255,255,255,.12)}
+.space:first-child{padding-left:0;border-left:0}.space:last-child{padding-right:0}
+.space .top{display:flex;align-items:center;gap:8px}
+.space .dot{width:10px;height:10px;border-radius:3px;flex:none}
+.space h3{font-size:18px;font-weight:700;letter-spacing:-.01em}
+.space .acc{font-size:12px;color:rgba(255,255,255,.55)}
+.space p{font-size:13px;line-height:20px;color:rgba(255,255,255,.65)}
+.agents{display:flex;flex-direction:column;gap:10px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}
+.agents div{display:flex;justify-content:space-between;gap:12px}
+.agents b{font-size:14px;font-weight:600}
+.agents span{font-size:12px;color:rgba(255,255,255,.55);text-align:right}
+.timetable{border-top:1px solid rgba(255,255,255,.12)}
+.tt-row{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14px}
+.tt-row:last-child{border-bottom:0}
+.tt-row .w{width:240px;flex:none}.tt-row .x{flex:1}.tt-row .a{width:200px;flex:none;color:rgba(255,255,255,.55)}
+/* white sections with a side heading: el/next, el/setup, el/hours, el/read */
+.side-sec{display:flex;gap:56px;padding:32px 0 56px;border-top:1px solid var(--line)}
+.side-sec.first{padding-top:72px;border-top:0}
+.side-sec .side{display:flex;flex-direction:column;gap:14px;width:280px;flex:none}
+.side-sec .side p{font-size:14px;line-height:21px;color:var(--muted)}
+.side-sec .body{flex:1;min-width:0}
+.rule-list{border-top:1px solid var(--ink)}
+.next-row{display:flex;gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.next-row b{font-size:16px;font-weight:700;width:300px;flex:none}
+.next-row span{font-size:15px;line-height:23px;color:var(--muted)}
+.two{display:flex;gap:40px}
+.two div{flex:1;display:flex;flex-direction:column;gap:10px}
+.two b{font-size:15px;font-weight:700}
+.two p{font-size:14px;line-height:22px}
+.two .mono{font-size:12.5px;color:var(--blue)}
+.ledger-row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.ledger-row.head{padding:10px 0;font-size:12px;font-weight:600;color:var(--muted)}
+.ledger-row .j{flex:1}.ledger-row .n{width:70px;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.ledger-row .p{width:80px;text-align:right;color:var(--muted)}.ledger-row .h{width:90px;text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.ledger-row.head .n,.ledger-row.head .p,.ledger-row.head .h{color:var(--muted);font-weight:600}
+.ledger-total{display:flex;gap:16px;padding:14px 0;font-size:14px}
+.ledger-total b{flex:1}.ledger-total span{font-size:16px;font-weight:800;color:var(--blue)}
+.read-cols{display:flex;gap:32px}
+.read-cols>div{flex:1;border-top:1px solid var(--ink)}
+.read-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.read-row span:last-child{color:var(--muted);text-align:right}
+/* el/how (OR03): day strip, tempo facts, what they told us */
+.how{display:flex;flex-direction:column;gap:28px}
+.strip-legend{display:flex;gap:20px;font-size:13px;color:var(--muted)}
+.strip-legend span{display:flex;align-items:center;gap:8px}
+.strip-legend i{width:10px;height:10px;border-radius:3px;background:var(--line)}
+.strip-legend i.msg{background:var(--blue)}
+.strip{display:flex;gap:4px;margin-top:12px}
+.hr{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.hr .bar{position:relative;width:100%;height:120px;background:var(--soft);border-radius:4px;overflow:hidden}
+.hr .bar i{position:absolute;bottom:0;left:0;width:100%;background:var(--line);border-radius:4px}
+.hr .bar b{position:absolute;bottom:0;left:30%;width:40%;background:var(--blue);border-radius:3px}
+.hr span{font-size:11px;color:var(--muted);height:14px}
+.fact{display:flex;gap:24px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.fact b{font-size:22px;font-weight:800;letter-spacing:-.02em;width:120px;flex:none}
+.fact span{font-size:15px;line-height:23px}
+.told{display:flex;flex-direction:column;gap:12px;padding:18px 20px;background:var(--soft);border-radius:12px}
+.told>b{font-size:14px}
+.told div{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:22px}
+.told div .ic{color:var(--blue);margin-top:3px;width:16px;height:16px}
+.told div.keep{color:var(--muted)}.told div.keep .ic{color:var(--muted)}
+/* el/fit */
+.fit{display:flex;gap:8px;align-items:flex-start;padding-top:12px;border-top:1px solid var(--line);font-size:13px;line-height:19px}
+.fit .ic{width:16px;height:16px;margin-top:2px}
+.fit b{font-weight:700}
+.dropped-row{display:flex;gap:24px;padding:14px 0;border-bottom:1px solid var(--line)}
+.dropped-row b{font-size:15px;font-weight:700;width:260px;flex:none}
+.dropped-row span{font-size:14px;line-height:21px;color:var(--muted)}
+/* el/footer */
+.footer{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--ink)}
+.footer .cta{display:flex;align-items:center;gap:8px;font-size:14px}
+.footer a{color:var(--blue);font-weight:600;text-decoration:none}
+.footer small{font-size:12px;color:var(--muted)}
+/* phone */
+@media screen and (max-width:820px){
+ .page{padding:24px 20px 48px}.hero{padding:48px 0 32px}.headline{font-size:32px;line-height:37px}.basis{font-size:15px;line-height:23px}
+ .days{flex-direction:column}.day{width:100%}.slot{height:auto!important;flex-direction:row;align-items:center}.slot .m{gap:10px}
+ .section-head,.ws-top{flex-direction:column;align-items:flex-start;gap:12px}.h2{font-size:28px;line-height:33px}
+ .workflow,.side-sec{flex-direction:column;gap:20px}.wf-side,.side-sec .side{width:auto}
+ .flow{flex-wrap:wrap;gap:14px 6px;padding:18px 14px;justify-content:space-between}.flow .link{display:none}.node{width:30%}
+ .ways,.two,.read-cols{flex-direction:column;gap:20px}
+ .workspace{padding:28px 20px;border-radius:16px}.spaces{flex-direction:column;gap:28px}.space{padding:0;border-left:0}
+ .tt-row{flex-wrap:wrap;gap:4px 16px}.tt-row .w{width:100%}.tt-row .a{width:auto}
+ .next-row,.dropped-row{flex-direction:column;gap:6px}.next-row b,.dropped-row b{width:auto}.hr span{font-size:9px}.fact b{width:80px;font-size:18px}
+ .ledger-row .n,.ledger-row .p{display:none}.header .meta{display:none}
+}
+/* print: A4 */
+@media print{
+ @page{size:A4;margin:12mm}
+ body{font-size:10.5px}.page{max-width:none;padding:0}
+ .hero{padding:28px 0 20px}.headline{font-size:28px;line-height:32px}.basis{font-size:12px;line-height:18px}
+ .week{padding-bottom:32px}.h2{font-size:22px;line-height:27px}.wf-side h3{font-size:17px;line-height:21px}
+ .workflow{gap:28px;padding:18px 0 22px}.wf-side{width:190px}.side-sec .side{width:190px}.side-sec{gap:28px;padding:20px 0 28px}
+ .workflow,.flow,.instructions,.workspace,.space,.next-row,.ledger-row,.day{break-inside:avoid}
+ .section-head,.side .h2{break-after:avoid}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+
+<template id="el-page"><!doctype html><html lang="{{lang}}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{title}}</title>{{{css}}}</head><body><main class="page">{{{body}}}</main></body></html></template>
+
+<template id="el-header"><header class="header"><div class="brand">{{{mark}}}<span>Cavion</span></div><div class="meta">{{meta}}</div></header></template>
+
+<template id="el-hero"><div class="hero"><h1 class="headline">{{{headline}}}</h1><p class="basis">{{basis}}</p></div></template>
+
+<template id="el-week"><div class="week"><div class="week-top"><b>{{title}}</b><div class="legend"><span><i></i>{{agent_label}}</span><span><i class="still"></i>{{still_label}}</span></div></div><div class="days">{{{days}}}</div></div></template>
+<template id="el-day"><div class="day {{cls}}"><b>{{name}}</b>{{{slots}}}</div></template>
+<template id="el-slot"><div class="slot {{cls}}" style="height:{{h}}px"><b>{{title}}</b><span class="m"><span>{{minutes}}</span>{{{logo}}}</span></div></template>
+
+<template id="el-section-head"><div class="section-head"><h2 class="h2">{{title}}</h2><p>{{note}}</p></div></template>
+
+<template id="el-how"><div class="how"><div><div class="strip-legend"><span><i></i>{{used_label}}</span><span><i class="msg"></i>{{msg_label}}</span></div><div class="strip">{{{hours}}}</div></div><div class="rule-list">{{{facts}}}</div>{{{told}}}</div></template>
+<template id="el-hr"><div class="hr"><div class="bar"><i style="height:{{a}}%"></i><b style="height:{{m}}%"></b></div><span>{{label}}</span></div></template>
+<template id="el-fact"><div class="fact"><b>{{n}}</b><span>{{text}}</span></div></template>
+<template id="el-told"><div class="told"><b>{{title}}</b>{{{rows}}}</div></template>
+<template id="el-told-row"><div class="{{cls}}">{{{icon}}}<span>{{text}}</span></div></template>
+<template id="el-fit"><div class="fit">{{{icon}}}<span><b>{{label}}</b> {{note}}</span></div></template>
+<template id="el-dropped-row"><div class="dropped-row"><b>{{title}}</b><span>{{why}}</span></div></template>
+
+<template id="el-workflow"><article class="workflow"><div class="wf-side"><h3>{{title}}</h3><span class="save">{{saving}}</span><p>{{evidence}}</p>{{{fit}}}</div><div class="wf-main">{{{flow}}}<div class="ways"><div><b>{{cavion_label}}</b><p>{{cavion}}</p></div><div><b>{{own_label}}</b><p>{{own}}</p></div></div>{{{instructions}}}</div></article></template>
+<template id="el-flow"><div class="flow">{{{nodes}}}</div></template>
+<template id="el-node"><div class="node {{cls}}"><div class="tile">{{{icon}}}</div><span>{{label}}</span></div></template>
+<template id="el-link"><div class="link"><i></i></div></template>
+<template id="el-instructions"><div class="instructions"><span>{{label}}</span><pre>{{text}}</pre></div></template>
+
+<template id="el-workspace"><section class="workspace"><div class="ws-top"><h2 class="h2">{{title}}</h2><p>{{note}}</p></div>{{{assistant}}}<div class="spaces">{{{spaces}}}</div><div class="timetable">{{{rows}}}</div></section></template>
+<template id="el-assistant"><div class="assistant"><div class="av">{{{icon}}}</div><div class="t"><b>{{name}}</b><span>{{why}}</span></div><div class="apps">{{{apps}}}</div></div></template>
+<template id="el-space"><div class="space"><div class="top"><span class="dot" style="background:{{colour}}"></span><h3>{{name}}</h3><span class="acc">{{access}}</span></div><p>{{purpose}}</p><div class="agents">{{{agents}}}</div><div class="apps">{{{apps}}}</div></div></template>
+<template id="el-space-agent"><div><b>{{name}}</b><span>{{role}}</span></div></template>
+<template id="el-tt-row"><div class="tt-row"><span class="w">{{when}}</span><span class="x">{{what}}</span><span class="a">{{agent}}</span></div></template>
+
+<template id="el-side-sec"><section class="side-sec {{cls}}"><div class="side"><h2 class="h2">{{title}}</h2><p>{{note}}</p></div><div class="body">{{{body}}}</div></section></template>
+<template id="el-next-row"><div class="next-row"><b>{{title}}</b><span>{{how}}</span></div></template>
+<template id="el-two"><div class="two"><div><b>{{a_title}}</b><p>{{a_text}}</p><span class="mono">{{a_file}}</span></div><div><b>{{b_title}}</b><p>{{b_text}}</p><span class="mono">{{b_file}}</span></div></div></template>
+<template id="el-ledger"><div class="rule-list"><div class="ledger-row head"><span class="j">{{job}}</span><span class="n">{{per_month}}</span><span class="n">{{minutes}}</span><span class="p">{{part}}</span><span class="h">{{week}}</span></div>{{{rows}}}<div class="ledger-total"><b>{{total_label}}</b><span>{{total}}</span></div></div></template>
+<template id="el-ledger-row"><div class="ledger-row"><span class="j">{{job}}</span><span class="n">{{per_month}}</span><span class="n">{{minutes}}</span><span class="p">{{part}}</span><span class="h">{{week}}</span></div></template>
+<template id="el-read"><div class="read-cols"><div>{{{left}}}</div><div>{{{right}}}</div></div></template>
+<template id="el-read-row"><div class="read-row"><span>{{label}}</span><span>{{value}}</span></div></template>
+
+<template id="el-footer"><footer class="footer"><div class="cta">{{{mark}}}<span>{{cta}} <a href="https://cavion.io">cavion.io</a></span></div><small>{{made}}</small></footer></template>

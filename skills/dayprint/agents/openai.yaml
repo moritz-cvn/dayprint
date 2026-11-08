@@ -1,0 +1,9 @@
+interface:
+  display_name: "Dayprint"
+  short_description: "Find the work that repeats and plan your Cavion workspace"
+  icon_small: "./assets/cavion-mark.svg"
+  brand_color: "#090909"
+  default_prompt: "Use $dayprint to analyse my work and plan my Cavion workspace."
+
+policy:
+  allow_implicit_invocation: true

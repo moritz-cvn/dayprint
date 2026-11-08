@@ -1,0 +1,769 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://cavion.io/schemas/dayprint.findings/0.1",
+ "title": "Dayprint findings",
+ "description": "What the analysis found, with evidence. The report is rendered from this file and the workspace setup. Paraphrase; never copy personal data or secrets.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema",
+  "generated_at",
+  "generator",
+  "language",
+  "person",
+  "headline",
+  "findings",
+  "workflows",
+  "quick_wins",
+  "tools",
+  "watch_outs",
+  "not_used",
+  "working_model"
+ ],
+ "properties": {
+  "$schema": {
+   "type": "string"
+  },
+  "schema": {
+   "const": "dayprint.findings/0.1"
+  },
+  "generated_at": {
+   "type": "string"
+  },
+  "generator": {
+   "type": "string"
+  },
+  "language": {
+   "type": "string",
+   "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+  },
+  "person": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "role",
+    "organisation",
+    "team_size",
+    "summary"
+   ],
+   "properties": {
+    "role": {
+     "type": "string",
+     "maxLength": 80,
+     "description": "e.g. Founder and creative director. No names."
+    },
+    "organisation": {
+     "type": "string",
+     "maxLength": 120,
+     "description": "Kind of organisation, e.g. Three-person brand and web studio. Its name only if the person agrees."
+    },
+    "team_size": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "summary": {
+     "type": "string",
+     "maxLength": 600
+    },
+    "short": {
+     "type": "string",
+     "maxLength": 80,
+     "description": "How the header names them, e.g. 'a three-person design studio'. No names."
+    }
+   }
+  },
+  "headline": {
+   "type": "string",
+   "minLength": 1,
+   "maxLength": 200
+  },
+  "findings": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "type",
+     "title",
+     "detail",
+     "evidence",
+     "confidence"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^f-[0-9]{2,3}$"
+     },
+     "type": {
+      "enum": [
+       "workflow",
+       "time_sink",
+       "handoff",
+       "pain_point",
+       "document",
+       "role",
+       "tool",
+       "rhythm"
+      ]
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 100
+     },
+     "detail": {
+      "type": "string",
+      "maxLength": 500
+     },
+     "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+       "$ref": "#/$defs/evidence"
+      }
+     },
+     "confidence": {
+      "enum": [
+       "high",
+       "medium",
+       "low"
+      ]
+     }
+    }
+   }
+  },
+  "workflows": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "id",
+     "title",
+     "trigger",
+     "per_month",
+     "minutes_each",
+     "roles",
+     "tools_today",
+     "steps_today",
+     "with_cavion",
+     "own_tools",
+     "saving",
+     "findings",
+     "effort",
+     "agent_card",
+     "fit"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "pattern": "^w-[0-9]{2,3}$"
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "trigger": {
+      "type": "string",
+      "maxLength": 160,
+      "description": "What starts it: a time, an arrival, a decision."
+     },
+     "per_month": {
+      "type": "number",
+      "minimum": 0
+     },
+     "minutes_each": {
+      "type": "number",
+      "minimum": 0
+     },
+     "roles": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 60
+      }
+     },
+     "tools_today": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 60
+      }
+     },
+     "steps_today": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+       "type": "string",
+       "maxLength": 200
+      }
+     },
+     "with_cavion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "steps",
+       "setup_keys"
+      ],
+      "properties": {
+       "steps": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 10,
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        }
+       },
+       "setup_keys": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "pattern": "^[a-z][a-z0-9-]{1,62}$"
+        },
+        "description": "Keys of objects in cavion-workspace.json that serve this workflow."
+       }
+      }
+     },
+     "own_tools": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "steps",
+       "tools"
+      ],
+      "properties": {
+       "steps": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 10,
+        "items": {
+         "type": "string",
+         "maxLength": 240
+        }
+       },
+       "tools": {
+        "type": "array",
+        "items": {
+         "type": "string",
+         "maxLength": 60
+        }
+       },
+       "prompt": {
+        "type": "string",
+        "maxLength": 1500,
+        "description": "A ready prompt the person can save in any AI tool."
+       }
+      }
+     },
+     "saving": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "share_low",
+       "share_high",
+       "hours_per_week_low",
+       "hours_per_week_high"
+      ],
+      "properties": {
+       "share_low": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "share_high": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "hours_per_week_low": {
+        "type": "number",
+        "minimum": 0
+       },
+       "hours_per_week_high": {
+        "type": "number",
+        "minimum": 0
+       },
+       "note": {
+        "type": "string",
+        "maxLength": 200
+       }
+      }
+     },
+     "findings": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "pattern": "^f-[0-9]{2,3}$"
+      }
+     },
+     "effort": {
+      "enum": [
+       "minutes",
+       "an hour",
+       "half a day",
+       "a day or more"
+      ]
+     },
+     "quick_win": {
+      "type": "boolean"
+     },
+     "agent_card": {
+      "$ref": "#/$defs/agent_card"
+     },
+     "fit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "speed",
+       "on_critical_path",
+       "who_waits",
+       "if_wrong",
+       "verdict",
+       "note"
+      ],
+      "properties": {
+       "speed": {
+        "enum": [
+         "faster",
+         "same",
+         "slower"
+        ]
+       },
+       "on_critical_path": {
+        "type": "boolean"
+       },
+       "who_waits": {
+        "type": "string",
+        "maxLength": 160
+       },
+       "if_wrong": {
+        "type": "string",
+        "maxLength": 200
+       },
+       "verdict": {
+        "enum": [
+         "keep",
+         "reshaped"
+        ]
+       },
+       "note": {
+        "type": "string",
+        "maxLength": 200
+       },
+       "critic": {
+        "type": "string",
+        "maxLength": 300
+       }
+      }
+     }
+    }
+   }
+  },
+  "quick_wins": {
+   "type": "array",
+   "maxItems": 8,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "title",
+     "how",
+     "workflow"
+    ],
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "how": {
+      "type": "string",
+      "maxLength": 200
+     },
+     "workflow": {
+      "type": "string",
+      "pattern": "^w-[0-9]{2,3}$"
+     }
+    }
+   }
+  },
+  "tools": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "name",
+     "category",
+     "seen_in"
+    ],
+    "properties": {
+     "name": {
+      "type": "string",
+      "maxLength": 60
+     },
+     "category": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "seen_in": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "maxLength": 40
+      }
+     },
+     "composio": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "pattern": "^[a-z0-9_-]{1,100}$"
+     }
+    }
+   }
+  },
+  "watch_outs": {
+   "type": "array",
+   "maxItems": 8,
+   "items": {
+    "type": "string",
+    "maxLength": 240
+   }
+  },
+  "not_used": {
+   "type": "array",
+   "maxItems": 10,
+   "items": {
+    "type": "string",
+    "maxLength": 200
+   },
+   "description": "Things seen but deliberately left out (private topics, one-offs)."
+  },
+  "week": {
+   "type": "array",
+   "maxItems": 30,
+   "description": "The repeated week shown first in the report: recurring work (agent: true) and what stays with the person (meetings).",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "day",
+     "title",
+     "minutes",
+     "agent"
+    ],
+    "properties": {
+     "day": {
+      "enum": [
+       "mon",
+       "tue",
+       "wed",
+       "thu",
+       "fri",
+       "sat",
+       "sun",
+       "month",
+       "any"
+      ]
+     },
+     "title": {
+      "type": "string",
+      "maxLength": 40
+     },
+     "minutes": {
+      "type": "integer",
+      "minimum": 5,
+      "maximum": 480
+     },
+     "agent": {
+      "type": "boolean"
+     },
+     "logo": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "pattern": "^[a-z0-9-]{1,40}$",
+      "description": "Key in assets/logos/index.json of the tool used today."
+     }
+    }
+   }
+  },
+  "working_model": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "tempo",
+    "summary",
+    "facts",
+    "hypotheses",
+    "must_not_slow",
+    "glad_to_hand_off",
+    "off_limits"
+   ],
+   "description": "How the person works, checked with them in step 3. Every proposal must fit it.",
+   "properties": {
+    "tempo": {
+     "enum": [
+      "fast",
+      "steady",
+      "slow"
+     ]
+    },
+    "summary": {
+     "type": "string",
+     "maxLength": 300
+    },
+    "facts": {
+     "type": "array",
+     "maxItems": 8,
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "text",
+       "source"
+      ],
+      "properties": {
+       "text": {
+        "type": "string",
+        "maxLength": 200
+       },
+       "source": {
+        "type": "string",
+        "maxLength": 40
+       }
+      }
+     }
+    },
+    "hypotheses": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 6,
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "id",
+       "text",
+       "status"
+      ],
+      "properties": {
+       "id": {
+        "type": "string",
+        "pattern": "^h-[0-9]{2}$"
+       },
+       "text": {
+        "type": "string",
+        "maxLength": 200
+       },
+       "status": {
+        "enum": [
+         "inferred",
+         "confirmed",
+         "corrected",
+         "rejected",
+         "unasked"
+        ]
+       },
+       "answer": {
+        "type": "string",
+        "maxLength": 300
+       }
+      }
+     }
+    },
+    "must_not_slow": {
+     "type": "array",
+     "maxItems": 8,
+     "items": {
+      "type": "string",
+      "maxLength": 160
+     }
+    },
+    "glad_to_hand_off": {
+     "type": "array",
+     "maxItems": 8,
+     "items": {
+      "type": "string",
+      "maxLength": 160
+     }
+    },
+    "off_limits": {
+     "type": "array",
+     "maxItems": 8,
+     "items": {
+      "type": "string",
+      "maxLength": 160
+     }
+    }
+   }
+  },
+  "dropped": {
+   "type": "array",
+   "maxItems": 10,
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+     "title",
+     "why"
+    ],
+    "properties": {
+     "title": {
+      "type": "string",
+      "maxLength": 80
+     },
+     "why": {
+      "type": "string",
+      "maxLength": 200
+     }
+    }
+   },
+   "description": "Proposals removed in the fit check, with the reason."
+  }
+ },
+ "$defs": {
+  "evidence": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "source",
+    "observation"
+   ],
+   "properties": {
+    "source": {
+     "type": "string",
+     "maxLength": 40,
+     "description": "Source id from the read log, or a connector name."
+    },
+    "observation": {
+     "type": "string",
+     "maxLength": 240,
+     "description": "Paraphrased, counted, dated. No names, addresses or secrets."
+    },
+    "count": {
+     "type": "integer",
+     "minimum": 0
+    },
+    "period": {
+     "type": "string",
+     "maxLength": 40
+    }
+   }
+  },
+  "agent_card": {
+   "type": "object",
+   "additionalProperties": false,
+   "description": "A tool-neutral agent for this workflow, usable in any agent tool (Cavion, ChatGPT or Claude projects, custom GPTs, n8n, Zapier agents, a script).",
+   "required": [
+    "name",
+    "role",
+    "trigger",
+    "instructions",
+    "tools",
+    "output",
+    "approval"
+   ],
+   "properties": {
+    "name": {
+     "type": "string",
+     "maxLength": 60
+    },
+    "role": {
+     "type": "string",
+     "maxLength": 160,
+     "description": "One line: what this agent is for."
+    },
+    "trigger": {
+     "type": "object",
+     "additionalProperties": false,
+     "required": [
+      "type",
+      "when"
+     ],
+     "properties": {
+      "type": {
+       "enum": [
+        "schedule",
+        "new_item",
+        "on_request"
+       ]
+      },
+      "when": {
+       "type": "string",
+       "maxLength": 120
+      },
+      "logo": {
+       "type": [
+        "string",
+        "null"
+       ],
+       "pattern": "^[a-z0-9-]{1,40}$"
+      }
+     }
+    },
+    "instructions": {
+     "type": "string",
+     "minLength": 1,
+     "maxLength": 3000,
+     "description": "The agent's instructions (system prompt), ready to paste."
+    },
+    "inputs": {
+     "type": "array",
+     "maxItems": 10,
+     "items": {
+      "type": "string",
+      "maxLength": 120
+     }
+    },
+    "tools": {
+     "type": "array",
+     "maxItems": 12,
+     "items": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+       "name",
+       "access"
+      ],
+      "properties": {
+       "name": {
+        "type": "string",
+        "maxLength": 60
+       },
+       "access": {
+        "enum": [
+         "read",
+         "draft",
+         "write"
+        ]
+       }
+      }
+     }
+    },
+    "knowledge": {
+     "type": "array",
+     "maxItems": 10,
+     "items": {
+      "type": "string",
+      "maxLength": 80
+     }
+    },
+    "output": {
+     "type": "string",
+     "maxLength": 200
+    },
+    "approval": {
+     "type": "string",
+     "maxLength": 200,
+     "description": "What a person checks or approves before anything leaves."
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,21 @@
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-08-19T09:00:00+00:00", "project": "kaffeebar-website", "text": "Build the hero section from the Figma export in ./design, responsive, keep our spacing scale."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-08-19T09:00:00+00:00", "project": "kaffeebar-website", "text": "Now check it on mobile widths."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-02T09:00:00+00:00", "project": "kaffeebar-website", "text": "Build the hero section from the Figma export in ./design, responsive, keep our spacing scale."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-02T09:00:00+00:00", "project": "kaffeebar-website", "text": "Now check it on mobile widths."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-30T09:00:00+00:00", "project": "kaffeebar-website", "text": "Run the launch QA checklist on this site: lighthouse scores, missing alt texts, broken links, meta titles and descriptions, favicon, 404 page."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-30T09:00:00+00:00", "project": "kaffeebar-website", "text": "Fix the missing alt texts you found and write them in German."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-30T09:00:00+00:00", "project": "kaffeebar-website", "text": "Make a short QA summary I can send to the client."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-16T09:00:00+00:00", "project": "fahrradwerk-website", "text": "Build the hero section from the Figma export in ./design, responsive, keep our spacing scale."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-16T09:00:00+00:00", "project": "fahrradwerk-website", "text": "Now check it on mobile widths."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-21T09:00:00+00:00", "project": "fahrradwerk-website", "text": "Run the launch QA checklist on this site: lighthouse scores, missing alt texts, broken links, meta titles and descriptions, favicon, 404 page."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-21T09:00:00+00:00", "project": "fahrradwerk-website", "text": "Fix the missing alt texts you found and write them in German."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-21T09:00:00+00:00", "project": "fahrradwerk-website", "text": "Make a short QA summary I can send to the client."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-28T09:00:00+00:00", "project": "yoga-loft-website", "text": "Run the launch QA checklist on this site: lighthouse scores, missing alt texts, broken links, meta titles and descriptions, favicon, 404 page."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-28T09:00:00+00:00", "project": "yoga-loft-website", "text": "Fix the missing alt texts you found and write them in German."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-28T09:00:00+00:00", "project": "yoga-loft-website", "text": "Make a short QA summary I can send to the client."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-01T08:00:00+00:00", "project": "studio-ops", "text": "The Toggl export is in ~/Documents/Studio/Finance. Group hours by client and project and make one invoice line per project, ready to paste into Lexoffice."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-09-01T08:00:00+00:00", "project": "studio-ops", "text": "Also flag any entries without a project."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-01T08:00:00+00:00", "project": "studio-ops", "text": "Same as last month: turn the Toggl export into invoice lines per client. Then draft the invoice emails."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-10-01T08:00:00+00:00", "project": "studio-ops", "text": "Put the open action items from the client calls into Notion."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-11-02T08:00:00+00:00", "project": "studio-ops", "text": "Monthly invoicing again — Toggl export to Lexoffice lines, and list which clients still owe us from last month."}
+{"kind": "prompt", "source": "claude-code-history", "at": "2026-11-02T08:00:00+00:00", "project": "studio-ops", "text": "Draft the reminder for the overdue ones."}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dayprint",
+  "version": "0.1.0",
+  "description": "Analyse what your AI tools know about your work, locally and with consent, and get a Cavion workspace plan: a branded report with workflows, quick wins and time saved, plus a setup file Cavion can apply.",
+  "author": {"name": "Cavion", "url": "https://cavion.io"},
+  "homepage": "https://cavion.io",
+  "license": "MIT",
+  "keywords": ["onboarding", "workflows", "automation", "agents", "cavion"],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/dayprint/SKILL.md",
+      "interface": {
+        "displayName": "Dayprint",
+        "shortDescription": "Find the work that repeats and plan your Cavion workspace",
+        "longDescription": "Reads your ChatGPT, Claude and Codex history, memory, documents, calendar and connected apps on your computer, with consent per source, removes personal data, and produces a report and a workspace setup file.",
+        "developerName": "Cavion",
+        "category": "Productivity",
+        "capabilities": ["Read"],
+        "websiteURL": "https://cavion.io",
+        "defaultPrompt": ["Use Dayprint to analyse my work and plan my Cavion workspace."],
+        "brandColor": "#090909",
+        "composerIcon": "./skills/dayprint/assets/cavion-mark.svg",
+        "logo": "./skills/dayprint/assets/cavion-mark.svg"
+      }
+    }
+  }
+}

@@ -1,0 +1,1464 @@
+{
+  "schema": "dayprint.findings/0.1",
+  "generated_at": "2026-11-07T23:50:00+00:00",
+  "generator": "dayprint/0.1.0",
+  "language": "en",
+  "person": {
+    "role": "Founder and creative director",
+    "organisation": "Studio Nordlicht, a three-person brand and web studio",
+    "team_size": 3,
+    "summary": "Runs client website projects from design to launch with a designer and a freelance developer. Uses ChatGPT and Claude for writing, Claude Code and Codex for site builds and small scripts. Weekly rhythm: planning on Monday, client calls midweek, status mails and content on Friday.",
+    "short": "a three-person design studio"
+  },
+  "headline": "Client updates, proposals and invoicing come back every week. Agents can draft them and give you 3 to 4 hours back.",
+  "findings": [
+    {
+      "id": "f-01",
+      "type": "workflow",
+      "title": "Weekly client status mails",
+      "detail": "Every Friday afternoon two or three client updates are written from rough notes in ChatGPT, then shortened in a second turn.",
+      "evidence": [
+        {
+          "source": "chatgpt-export",
+          "observation": "28 status mails over 14 Fridays, written from rough notes and then shortened in a second request every time.",
+          "count": 28,
+          "period": "3 months"
+        },
+        {
+          "source": "calendar-files",
+          "observation": "Weekly one-hour block on Friday for client status mails"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-02",
+      "type": "workflow",
+      "title": "Proposals from discovery-call notes",
+      "detail": "Call notes become a proposal with the same five parts every time; day rate and a translation for a co-founder are added in follow-ups.",
+      "evidence": [
+        {
+          "source": "chatgpt-export",
+          "observation": "You wrote 11 proposals in three months, each with the same five parts and the same two follow-ups: the day rate, then an English scope.",
+          "count": 7
+        },
+        {
+          "source": "claude-export",
+          "observation": "4 more proposal drafts and a project called Proposals with the structure as instructions",
+          "count": 4
+        },
+        {
+          "source": "documents",
+          "observation": "A proposal template with goals, scope, timeline, price and next steps"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-03",
+      "type": "workflow",
+      "title": "Monthly invoicing from time tracking",
+      "detail": "On the first working day the time-tracking export is grouped per client project into invoice lines for the invoicing tool, by a script and with Claude Code.",
+      "evidence": [
+        {
+          "source": "claude-code-transcripts",
+          "observation": "Three Claude Code sessions on the 1st or 2nd of the month turned the time export into invoice lines, and the invoice script only runs then.",
+          "count": 3
+        },
+        {
+          "source": "shell-history",
+          "observation": "The invoice script runs only in the first three days of a month",
+          "count": 9
+        },
+        {
+          "source": "calendar-files",
+          "observation": "Two-hour block for invoicing and reminders on the first Monday of each month"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-04",
+      "type": "pain_point",
+      "title": "Chasing unpaid invoices",
+      "detail": "Reminders for overdue invoices are written by hand, and the person's memory notes say chasing invoices is disliked.",
+      "evidence": [
+        {
+          "source": "claude-export",
+          "observation": "3 reminder mails for invoices 14 days overdue, plus a stated dislike of chasing invoices in memory",
+          "count": 3
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-05",
+      "type": "handoff",
+      "title": "Call notes to tasks for the team",
+      "detail": "After client calls, notes are turned into tasks with owners and due dates for the designer, the developer and the founder in Notion.",
+      "evidence": [
+        {
+          "source": "chatgpt-export",
+          "observation": "Ten times you turned call notes into Notion tasks by hand, after about two and a half client calls a week.",
+          "count": 10
+        },
+        {
+          "source": "calendar-files",
+          "observation": "About 2.5 external calls a week (discovery and review calls)"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-06",
+      "type": "workflow",
+      "title": "LinkedIn posts about launches",
+      "detail": "Monday posts about a recent launch, always with a request for alternative hooks; a Friday content block exists.",
+      "evidence": [
+        {
+          "source": "chatgpt-export",
+          "observation": "Nine LinkedIn drafts, all on Mondays, each followed by a request for two more hooks.",
+          "count": 9
+        },
+        {
+          "source": "claude-export",
+          "observation": "4 portfolio case studies written from project notes",
+          "count": 4
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-07",
+      "type": "pain_point",
+      "title": "Brand voice re-explained in every chat",
+      "detail": "Website copy is rewritten in the studio's voice, and the voice rules are pasted into the prompt each time although a guide exists.",
+      "evidence": [
+        {
+          "source": "claude-export",
+          "observation": "9 copy rewrites that restate the voice rules, plus a separate brand-voice project",
+          "count": 9
+        },
+        {
+          "source": "documents",
+          "observation": "A brand voice guide in the studio folder"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-08",
+      "type": "workflow",
+      "title": "Website launch QA",
+      "detail": "Before each launch the same checklist runs in Claude Code: speed scores, alt texts in German, links, meta data, then a short summary for the client.",
+      "evidence": [
+        {
+          "source": "claude-code-transcripts",
+          "observation": "Three launches, the same checklist and the same three requests each time.",
+          "count": 3
+        },
+        {
+          "source": "claude-code-memory",
+          "observation": "A saved launch checklist of eight points"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-09",
+      "type": "workflow",
+      "title": "Weekly site health check",
+      "detail": "A script checks all client sites for broken links every Monday; it was recently extended to SSL expiry and page speed.",
+      "evidence": [
+        {
+          "source": "shell-history",
+          "observation": "The link-check script ran sixteen Mondays in a row.",
+          "count": 16
+        },
+        {
+          "source": "codex-sessions",
+          "observation": "2 sessions building and extending the checker, with the wish to run it every Monday",
+          "count": 2
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-10",
+      "type": "workflow",
+      "title": "Replies to website inquiries",
+      "detail": "Contact-form inquiries get a reply offering two call slots and a booking link.",
+      "evidence": [
+        {
+          "source": "chatgpt-export",
+          "observation": "Ten replies to website inquiries, each offering two call slots and the booking link.",
+          "count": 10
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "f-11",
+      "type": "rhythm",
+      "title": "Monday planning",
+      "detail": "A weekly planning hour on Monday morning; client work and scripts start right after it.",
+      "evidence": [
+        {
+          "source": "calendar-files",
+          "observation": "A one-hour planning block every Monday at 9:00."
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "f-12",
+      "type": "time_sink",
+      "title": "Six hours of meetings a week",
+      "detail": "Stand-ups, a weekly client check-in, discovery and review calls add up to about six hours a week; preparation and follow-up add to it.",
+      "evidence": [
+        {
+          "source": "calendar-files",
+          "observation": "About 6.4 meeting hours a week, 2.5 of the calls with external guests"
+        }
+      ],
+      "confidence": "medium"
+    },
+    {
+      "id": "f-13",
+      "type": "role",
+      "title": "Small team, clear roles",
+      "detail": "The founder writes, sells and invoices; a designer works in Figma; a freelance developer builds in Webflow and code.",
+      "evidence": [
+        {
+          "source": "claude-export",
+          "observation": "Memory describes a three-person studio and who does what"
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-14",
+      "type": "document",
+      "title": "Processes already written down",
+      "detail": "Templates and checklists exist for proposals, status mails, launches, client onboarding and invoicing, a ready base for Knowledge.",
+      "evidence": [
+        {
+          "source": "documents",
+          "observation": "2 templates, 3 process documents and a brand guide in the studio folder",
+          "count": 6
+        }
+      ],
+      "confidence": "high"
+    },
+    {
+      "id": "f-20",
+      "type": "time_sink",
+      "title": "Many short decisions",
+      "detail": "About 90 short decisions a day for agents.",
+      "evidence": [
+        {
+          "source": "claude-code-transcripts",
+          "observation": "About 90 short decisions a day, most answered within a minute.",
+          "count": 90
+        }
+      ],
+      "confidence": "high"
+    }
+  ],
+  "workflows": [
+    {
+      "id": "w-01",
+      "title": "Friday client updates",
+      "trigger": "Friday afternoon",
+      "per_month": 4.33,
+      "minutes_each": 60,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "ChatGPT",
+        "Notion",
+        "Gmail"
+      ],
+      "steps_today": [
+        "Collect the week's notes per client",
+        "Paste them into ChatGPT with the tone rules",
+        "Ask for a shorter version",
+        "Copy into a mail and send"
+      ],
+      "with_cavion": {
+        "steps": [
+          "Every Friday at 14:00 the Clients manager reads the week's Notion tasks, call notes and Slack threads per active project",
+          "It posts one draft per client in the Clients Space chat, in German and in the studio's voice",
+          "You edit a line if needed and send it yourself, nothing is sent without you"
+        ],
+        "setup_keys": [
+          "weekly-status-drafts",
+          "clients-manager",
+          "notion-studio",
+          "slack-studio",
+          "kb-status-template",
+          "kb-brand-voice"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Save the status template and the voice rules as a ChatGPT project or Claude project",
+          "Keep one running note per client during the week",
+          "On Friday paste each note into the project and review the draft"
+        ],
+        "tools": [
+          "ChatGPT or Claude projects",
+          "Notion",
+          "Calendar reminder"
+        ],
+        "prompt": "Write this week's status update for the client below, in German, friendly and short (max 120 words). Structure: done, next, what we need from you. Sign as the studio. Notes: <paste notes>"
+      },
+      "saving": {
+        "share_low": 0.5,
+        "share_high": 0.7,
+        "hours_per_week_low": 0.5,
+        "hours_per_week_high": 0.7,
+        "note": "Minutes from the weekly Friday calendar block."
+      },
+      "findings": [
+        "f-01"
+      ],
+      "effort": "an hour",
+      "quick_win": true,
+      "agent_card": {
+        "name": "Status writer",
+        "role": "Drafts the weekly client status update from the week's notes and tasks.",
+        "trigger": {
+          "type": "schedule",
+          "when": "Fridays at 14:00"
+        },
+        "instructions": "Every Friday, for each active client project, read this week's tasks, call notes and team chat threads. Write one status update per client in German, friendly and at most 120 words, in three parts: done, next, what we need from you. Follow the brand voice and the status template. Add the staging link when there is one. Deliver the drafts for review; never send them.",
+        "inputs": [
+          "Tasks of the week",
+          "Call notes",
+          "Team chat threads"
+        ],
+        "tools": [
+          {
+            "name": "Notion",
+            "access": "read"
+          },
+          {
+            "name": "Slack",
+            "access": "read"
+          },
+          {
+            "name": "Gmail",
+            "access": "draft"
+          }
+        ],
+        "knowledge": [
+          "Status template",
+          "Brand voice"
+        ],
+        "output": "One draft per client",
+        "approval": "A person reads and sends each mail."
+      },
+      "fit": {
+        "speed": "faster",
+        "on_critical_path": false,
+        "who_waits": "Nobody; drafts are ready at 14:00.",
+        "if_wrong": "A draft with a wrong date; you read every one before sending.",
+        "verdict": "keep",
+        "note": "Drafts are ready before your Friday slot; you only read and send."
+      }
+    },
+    {
+      "id": "w-02",
+      "title": "Proposals from call notes",
+      "trigger": "After a discovery call",
+      "per_month": 3.5,
+      "minutes_each": 120,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "ChatGPT",
+        "Claude",
+        "Proposal template"
+      ],
+      "steps_today": [
+        "Paste call notes into ChatGPT or Claude",
+        "Ask for the usual five-part structure",
+        "Add the day rate and split design and build",
+        "Translate the scope when needed",
+        "Move it into the template"
+      ],
+      "with_cavion": {
+        "steps": [
+          "Paste the call notes in the New business Space and mention the Proposal writer",
+          "It follows the proposal skill: goals, scope, timeline, price from the price list, next steps, plus an English scope when asked",
+          "You get a Word document to review; the maintenance retainer is always offered"
+        ],
+        "setup_keys": [
+          "proposal-writer",
+          "skill-proposal",
+          "kb-proposal-structure",
+          "kb-services-prices"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Create a Claude project or custom GPT named Proposals with the template and price list as files",
+          "After each call paste the notes with one prompt",
+          "Export to the document template"
+        ],
+        "tools": [
+          "Claude projects or custom GPT",
+          "Proposal template"
+        ],
+        "prompt": "Turn these discovery call notes into a proposal with: goals, scope, timeline, price (day rate from the price list, split design and build), next steps, and a maintenance retainer option. German. Notes: <paste notes>"
+      },
+      "saving": {
+        "share_low": 0.5,
+        "share_high": 0.7,
+        "hours_per_week_low": 0.81,
+        "hours_per_week_high": 1.13,
+        "note": "11 proposals in about three months; two hours each is a typical value."
+      },
+      "findings": [
+        "f-02",
+        "f-14"
+      ],
+      "effort": "an hour",
+      "quick_win": true,
+      "agent_card": {
+        "name": "Proposal writer",
+        "role": "Turns discovery-call notes into a proposal in the studio's structure.",
+        "trigger": {
+          "type": "on_request",
+          "when": "After a discovery call",
+          "logo": "google-meet"
+        },
+        "instructions": "Turn the call notes into a proposal with five parts: goals, scope, timeline, price, next steps. Price from the price list: day rate, split into design and build, and always offer a maintenance retainer. German unless asked; add an English scope section when asked. If budget, deadline or page count is missing, ask one question first. Deliver a document for review.",
+        "inputs": [
+          "Call notes"
+        ],
+        "tools": [
+          {
+            "name": "Documents",
+            "access": "write"
+          }
+        ],
+        "knowledge": [
+          "Proposal structure",
+          "Services and prices"
+        ],
+        "output": "A Word proposal",
+        "approval": "A person reviews and sends the proposal."
+      },
+      "fit": {
+        "speed": "faster",
+        "on_critical_path": true,
+        "who_waits": "The client waits for the proposal, now a day less.",
+        "if_wrong": "A wrong price; the price list is the only source and you review.",
+        "verdict": "keep",
+        "note": "The draft is there minutes after the call instead of the next evening."
+      }
+    },
+    {
+      "id": "w-03",
+      "title": "Monthly invoicing and reminders",
+      "trigger": "First working day of the month",
+      "per_month": 1,
+      "minutes_each": 150,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "Toggl Track",
+        "Script",
+        "Claude Code",
+        "Lexoffice",
+        "Mail"
+      ],
+      "steps_today": [
+        "Export last month's hours from time tracking",
+        "Run the invoice script or ask Claude Code to group them",
+        "Paste the lines into the invoicing tool",
+        "Find overdue invoices and write reminders"
+      ],
+      "with_cavion": {
+        "steps": [
+          "On the first working day the Finance manager reads last month's hours from Toggl Track",
+          "It posts invoice lines per client project at the day rate, flags hours without a project, and lists invoices unpaid after 14 days",
+          "It drafts reminder mails in the billing inbox; you check and send them"
+        ],
+        "setup_keys": [
+          "invoicing-run",
+          "finance-manager",
+          "toggl-studio",
+          "gmail-billing",
+          "kb-invoicing",
+          "kb-services-prices"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Keep the invoice script and put a monthly reminder in the calendar for the first working day",
+          "Turn on automatic payment reminders in the invoicing tool",
+          "Use a saved prompt for the rare personal reminder"
+        ],
+        "tools": [
+          "Invoice script",
+          "Lexoffice reminders",
+          "Calendar"
+        ]
+      },
+      "saving": {
+        "share_low": 0.6,
+        "share_high": 0.8,
+        "hours_per_week_low": 0.35,
+        "hours_per_week_high": 0.46,
+        "note": "Two-hour calendar block plus about 30 minutes of reminders a month."
+      },
+      "findings": [
+        "f-03",
+        "f-04"
+      ],
+      "effort": "half a day",
+      "agent_card": {
+        "name": "Invoice preparer",
+        "role": "Prepares monthly invoice lines and overdue reminders.",
+        "trigger": {
+          "type": "schedule",
+          "when": "First working day of the month, 9:00"
+        },
+        "instructions": "Read last month's tracked hours and group them per client project. Make one invoice line per project at the day rate from the price list and flag entries without a project. Then list invoices unpaid for more than 14 days and draft a polite German reminder for each. Deliver the lines as a table and the reminders as drafts. Never book invoices, send mails or move money.",
+        "inputs": [
+          "Time-tracking export",
+          "Open invoices"
+        ],
+        "tools": [
+          {
+            "name": "Time tracking (Toggl Track)",
+            "access": "read"
+          },
+          {
+            "name": "Billing mailbox",
+            "access": "draft"
+          }
+        ],
+        "knowledge": [
+          "Invoicing process",
+          "Services and prices"
+        ],
+        "output": "Invoice lines and reminder drafts",
+        "approval": "A person books the invoices and sends the reminders."
+      },
+      "fit": {
+        "speed": "same",
+        "on_critical_path": false,
+        "who_waits": "Nobody; invoices go out on the same day as before.",
+        "if_wrong": "A missed project; entries without a project are flagged.",
+        "verdict": "keep",
+        "note": "Same day as today, without the two hours of copying."
+      }
+    },
+    {
+      "id": "w-04",
+      "title": "Call notes to team tasks",
+      "trigger": "After each client call",
+      "per_month": 10,
+      "minutes_each": 15,
+      "roles": [
+        "Founder",
+        "Designer",
+        "Developer"
+      ],
+      "tools_today": [
+        "ChatGPT",
+        "Notion"
+      ],
+      "steps_today": [
+        "Write notes during the call",
+        "Ask ChatGPT for action items with owners and dates",
+        "Create the tasks in Notion by hand"
+      ],
+      "with_cavion": {
+        "steps": [
+          "Drop the call notes into the client's project chat in the Clients Space",
+          "The Clients manager creates the Notion tasks with owner and due date and posts the list",
+          "A check also picks up new notes added in Notion every 30 minutes"
+        ],
+        "setup_keys": [
+          "notes-to-tasks",
+          "clients-manager",
+          "notion-studio"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Use a Notion template for call notes with an action-items table",
+          "Ask Notion AI or ChatGPT to fill owners and dates",
+          "Turn on Notion's database reminders for due dates"
+        ],
+        "tools": [
+          "Notion",
+          "Notion AI or ChatGPT"
+        ]
+      },
+      "saving": {
+        "share_low": 0.6,
+        "share_high": 0.8,
+        "hours_per_week_low": 0.35,
+        "hours_per_week_high": 0.46,
+        "note": "Counts all client calls (about 2.5 a week), not only the 10 explicit requests."
+      },
+      "findings": [
+        "f-05",
+        "f-12"
+      ],
+      "effort": "an hour",
+      "quick_win": true,
+      "agent_card": {
+        "name": "Call-notes tasker",
+        "role": "Turns client call notes into tasks with owners and due dates.",
+        "trigger": {
+          "type": "new_item",
+          "when": "New call notes are added"
+        },
+        "instructions": "For each new call note, list the action items. Give each an owner (founder, designer or developer) and a due date; use the next call date when none is said. Create the tasks on the task board and post the list back to the project.",
+        "inputs": [
+          "Call notes"
+        ],
+        "tools": [
+          {
+            "name": "Notion",
+            "access": "write"
+          }
+        ],
+        "knowledge": [
+          "Team roles"
+        ],
+        "output": "Tasks with owners",
+        "approval": "None needed; tasks stay internal."
+      },
+      "fit": {
+        "speed": "faster",
+        "on_critical_path": true,
+        "who_waits": "The designer and developer get tasks right after the call.",
+        "if_wrong": "A wrong owner; the list is posted for everyone to see.",
+        "verdict": "keep",
+        "note": "Tasks appear while the call is still fresh."
+      }
+    },
+    {
+      "id": "w-05",
+      "title": "LinkedIn post about a launch",
+      "trigger": "Weekly, after a launch",
+      "per_month": 4.33,
+      "minutes_each": 45,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "ChatGPT",
+        "LinkedIn"
+      ],
+      "steps_today": [
+        "Pick a recent launch",
+        "Ask ChatGPT for a post",
+        "Ask for alternative hooks",
+        "Post by hand"
+      ],
+      "with_cavion": {
+        "steps": [
+          "Every Friday at 15:30 the New business manager reads the last two weeks of launches and case studies",
+          "It posts two drafts with three hooks each in the Space chat, in the studio's voice",
+          "You pick one and post it yourself"
+        ],
+        "setup_keys": [
+          "linkedin-drafts",
+          "growth-manager",
+          "kb-brand-voice",
+          "kb-linkedin-ideas"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Keep an idea list per launch",
+          "Save one prompt with the voice rules",
+          "Block the Friday content slot you already have"
+        ],
+        "tools": [
+          "Idea list",
+          "ChatGPT or Claude"
+        ],
+        "prompt": "Draft a LinkedIn post (max 120 words) about this launch: the client's problem, what we built, one result. Then give three alternative opening hooks. No hashtag lists. Facts: <paste>"
+      },
+      "saving": {
+        "share_low": 0.4,
+        "share_high": 0.6,
+        "hours_per_week_low": 0.3,
+        "hours_per_week_high": 0.45,
+        "note": "Minutes from the Friday content block."
+      },
+      "findings": [
+        "f-06",
+        "f-07"
+      ],
+      "effort": "minutes",
+      "quick_win": true,
+      "agent_card": {
+        "name": "Post drafter",
+        "role": "Drafts LinkedIn posts about recent launches.",
+        "trigger": {
+          "type": "schedule",
+          "when": "Fridays at 15:30"
+        },
+        "instructions": "Look at launches and case studies from the past two weeks. Draft two LinkedIn posts of at most 120 words: the client's problem, what was built, one result. Give three alternative opening hooks for each. Use the brand voice; no hashtag lists. Deliver the drafts; never post.",
+        "inputs": [
+          "Recent launches",
+          "Case studies"
+        ],
+        "tools": [
+          {
+            "name": "Notion",
+            "access": "read"
+          }
+        ],
+        "knowledge": [
+          "Brand voice",
+          "Post ideas"
+        ],
+        "output": "Two drafts, three hooks each",
+        "approval": "A person picks one and posts it."
+      },
+      "fit": {
+        "speed": "same",
+        "on_critical_path": false,
+        "who_waits": "Nobody.",
+        "if_wrong": "A weak hook; you pick and post yourself.",
+        "verdict": "keep",
+        "note": "Same Friday slot, with drafts ready."
+      }
+    },
+    {
+      "id": "w-06",
+      "title": "Website launch QA",
+      "trigger": "Before each site launch",
+      "per_month": 1,
+      "minutes_each": 90,
+      "roles": [
+        "Founder",
+        "Developer"
+      ],
+      "tools_today": [
+        "Claude Code",
+        "Lighthouse",
+        "Checklist"
+      ],
+      "steps_today": [
+        "Run the launch checklist in Claude Code",
+        "Fix alt texts and meta data",
+        "Write a QA summary for the client"
+      ],
+      "with_cavion": {
+        "steps": [
+          "Ask the Launch QA agent in the client's project chat to run the launch check",
+          "It works through the launch skill in the agent's browser on your Mac: speed, alt texts, links, meta, 404, redirects",
+          "It posts the fixes needed and a short client summary as a draft"
+        ],
+        "setup_keys": [
+          "launch-qa",
+          "skill-launch-qa",
+          "kb-launch-checklist"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Keep the checklist as a template",
+          "Run PageSpeed Insights and a free link checker",
+          "Use a saved prompt for the client summary"
+        ],
+        "tools": [
+          "PageSpeed Insights",
+          "Link checker",
+          "Checklist template"
+        ]
+      },
+      "saving": {
+        "share_low": 0.4,
+        "share_high": 0.6,
+        "hours_per_week_low": 0.14,
+        "hours_per_week_high": 0.21,
+        "note": "About one launch a month; 90 minutes is a typical value."
+      },
+      "findings": [
+        "f-08",
+        "f-14"
+      ],
+      "effort": "an hour",
+      "agent_card": {
+        "name": "Launch checker",
+        "role": "Runs the launch checklist on a client site before it goes live.",
+        "trigger": {
+          "type": "on_request",
+          "when": "Before each launch"
+        },
+        "instructions": "Open the site and check: speed scores above 90 on mobile and desktop, alt texts present and in German, no broken links, meta titles and descriptions, favicon, 404 page, redirects from old URLs, cookie banner, Search Console access. List the fixes, most important first, with the page for each. Then draft a five-line summary for the client.",
+        "inputs": [
+          "Site address"
+        ],
+        "tools": [
+          {
+            "name": "Web browser",
+            "access": "read"
+          },
+          {
+            "name": "Speed test",
+            "access": "read"
+          }
+        ],
+        "knowledge": [
+          "Launch checklist"
+        ],
+        "output": "Fix list and client summary",
+        "approval": "A person fixes issues and sends the summary."
+      },
+      "fit": {
+        "speed": "faster",
+        "on_critical_path": false,
+        "who_waits": "Nobody; checks run before launch.",
+        "if_wrong": "A missed check; the checklist is the same every time.",
+        "verdict": "keep",
+        "note": "The checklist runs in minutes instead of a session."
+      }
+    },
+    {
+      "id": "w-07",
+      "title": "Weekly site health check",
+      "trigger": "Monday morning",
+      "per_month": 4.33,
+      "minutes_each": 15,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "Script",
+        "Terminal"
+      ],
+      "steps_today": [
+        "Run the link checker in the terminal",
+        "Read the output",
+        "Fix or forward problems"
+      ],
+      "with_cavion": {
+        "steps": [
+          "Every Monday at 7:00 Launch QA checks all client sites for broken links, SSL expiry and speed",
+          "It stays quiet when all is fine and posts in the Clients Space only when something needs attention"
+        ],
+        "setup_keys": [
+          "site-health",
+          "launch-qa"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Schedule the existing script with cron or a Shortcuts automation every Monday",
+          "Add a free uptime monitor with SSL alerts"
+        ],
+        "tools": [
+          "cron or Shortcuts",
+          "Uptime monitor"
+        ]
+      },
+      "saving": {
+        "share_low": 0.7,
+        "share_high": 0.9,
+        "hours_per_week_low": 0.18,
+        "hours_per_week_high": 0.23
+      },
+      "findings": [
+        "f-09"
+      ],
+      "effort": "minutes",
+      "agent_card": {
+        "name": "Site monitor",
+        "role": "Checks all live client sites every week.",
+        "trigger": {
+          "type": "schedule",
+          "when": "Mondays at 7:00"
+        },
+        "instructions": "Check every live client site for broken links, SSL certificates expiring within 30 days, and mobile speed below 80. Report only problems, one line each with the site and what to fix. If all is fine, stay silent.",
+        "inputs": [
+          "List of live sites"
+        ],
+        "tools": [
+          {
+            "name": "Web browser",
+            "access": "read"
+          }
+        ],
+        "output": "Problems only",
+        "approval": "None needed; read only."
+      },
+      "fit": {
+        "speed": "faster",
+        "on_critical_path": false,
+        "who_waits": "Nobody.",
+        "if_wrong": "A false alarm; it posts only problems.",
+        "verdict": "keep",
+        "note": "Problems surface on Monday morning without running the script."
+      }
+    },
+    {
+      "id": "w-08",
+      "title": "Reply to website inquiries",
+      "trigger": "A new contact-form mail",
+      "per_month": 4.2,
+      "minutes_each": 15,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "ChatGPT",
+        "Mail",
+        "Calendly"
+      ],
+      "steps_today": [
+        "Read the inquiry",
+        "Ask ChatGPT for a reply with two slots",
+        "Add the booking link and send"
+      ],
+      "with_cavion": {
+        "steps": [
+          "A check looks at the contact inbox every 15 minutes",
+          "For a new project request the New business manager drafts a reply with the booking link and posts a one-line summary in the Space chat",
+          "You send the draft after a glance"
+        ],
+        "setup_keys": [
+          "new-inquiries",
+          "growth-manager",
+          "gmail-hello",
+          "kb-inquiry-replies"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Save a reply template with the booking link",
+          "Add a mail filter that labels contact-form mails",
+          "Put the booking link in the form's confirmation message"
+        ],
+        "tools": [
+          "Mail templates",
+          "Mail filters",
+          "Calendly"
+        ]
+      },
+      "saving": {
+        "share_low": 0.3,
+        "share_high": 0.5,
+        "hours_per_week_low": 0.07,
+        "hours_per_week_high": 0.12
+      },
+      "findings": [
+        "f-10"
+      ],
+      "effort": "an hour",
+      "agent_card": {
+        "name": "Inquiry responder",
+        "role": "Drafts replies to new project inquiries.",
+        "trigger": {
+          "type": "new_item",
+          "when": "A new mail arrives in the contact inbox"
+        },
+        "instructions": "If the mail is a new project inquiry, draft a reply: thank them, repeat what they asked for in one line, two lines on how the studio works, and the booking link for a 30-minute call. German unless they wrote in English. Post a one-line summary with what they want and any budget. Skip newsletters and notifications.",
+        "inputs": [
+          "Contact inbox"
+        ],
+        "tools": [
+          {
+            "name": "Contact mailbox",
+            "access": "draft"
+          }
+        ],
+        "knowledge": [
+          "Inquiry replies"
+        ],
+        "output": "A reply draft",
+        "approval": "A person sends the reply."
+      },
+      "fit": {
+        "speed": "faster",
+        "on_critical_path": true,
+        "who_waits": "The person who wrote in waits less.",
+        "if_wrong": "A reply to a newsletter; drafts are never sent without you.",
+        "verdict": "keep",
+        "note": "A draft is ready within 15 minutes of the mail."
+      }
+    },
+    {
+      "id": "w-09",
+      "title": "Monday plan for the week",
+      "trigger": "Monday 9:00",
+      "per_month": 4.33,
+      "minutes_each": 60,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "Calendar",
+        "Notion"
+      ],
+      "steps_today": [
+        "Look through the calendar and open tasks",
+        "Decide the week's priorities"
+      ],
+      "with_cavion": {
+        "steps": [
+          "At 8:30 on Monday your assistant reads the week's calendar and your mail",
+          "It sends you a short brief: calls to prepare, deadlines, three suggested priorities"
+        ],
+        "setup_keys": [
+          "monday-brief",
+          "assistant",
+          "googlecalendar-me",
+          "gmail-me"
+        ]
+      },
+      "own_tools": {
+        "steps": [
+          "Keep a weekly planning note template",
+          "Ask your AI tool each Monday with your calendar pasted in"
+        ],
+        "tools": [
+          "Planning template",
+          "Calendar"
+        ]
+      },
+      "saving": {
+        "share_low": 0.2,
+        "share_high": 0.3,
+        "hours_per_week_low": 0.2,
+        "hours_per_week_high": 0.3,
+        "note": "Only the preparation part of the planning hour."
+      },
+      "findings": [
+        "f-11"
+      ],
+      "effort": "minutes",
+      "quick_win": true,
+      "agent_card": {
+        "name": "Week planner",
+        "role": "Prepares a short brief for Monday planning.",
+        "trigger": {
+          "type": "schedule",
+          "when": "Mondays at 8:30"
+        },
+        "instructions": "Read this week's calendar and last week's unanswered mail. Write a brief under 200 words: calls that need preparation with one line of context each, deadlines, threads waiting on a reply, and three suggested priorities.",
+        "inputs": [
+          "Calendar",
+          "Mail"
+        ],
+        "tools": [
+          {
+            "name": "Calendar",
+            "access": "read"
+          },
+          {
+            "name": "Mail",
+            "access": "read"
+          }
+        ],
+        "output": "A short brief",
+        "approval": "None needed; read only."
+      },
+      "fit": {
+        "speed": "same",
+        "on_critical_path": false,
+        "who_waits": "Nobody.",
+        "if_wrong": "A missed call in the brief; the calendar stays the source.",
+        "verdict": "keep",
+        "note": "Ready when the planning hour starts."
+      }
+    },
+    {
+      "id": "w-10",
+      "title": "Decisions for agents",
+      "trigger": "Whenever an agent needs a go",
+      "per_month": 1900,
+      "minutes_each": 1,
+      "roles": [
+        "Founder"
+      ],
+      "tools_today": [
+        "ChatGPT",
+        "Notion",
+        "Gmail"
+      ],
+      "steps_today": [
+        "Collect the week's notes per client",
+        "Paste them into ChatGPT with the tone rules",
+        "Ask for a shorter version",
+        "Copy into a mail and send"
+      ],
+      "with_cavion": {
+        "steps": [
+          "Collect all decisions into one list",
+          "Answer the list at 8:30 and 18:00"
+        ],
+        "setup_keys": []
+      },
+      "own_tools": {
+        "steps": [
+          "Save the status template and the voice rules as a ChatGPT project or Claude project",
+          "Keep one running note per client during the week",
+          "On Friday paste each note into the project and review the draft"
+        ],
+        "tools": [
+          "ChatGPT or Claude projects",
+          "Notion",
+          "Calendar reminder"
+        ],
+        "prompt": "Write this week's status update for the client below, in German, friendly and short (max 120 words). Structure: done, next, what we need from you. Sign as the studio. Notes: <paste notes>"
+      },
+      "saving": {
+        "share_low": 0.3,
+        "share_high": 0.5,
+        "hours_per_week_low": 2.19,
+        "hours_per_week_high": 3.66
+      },
+      "findings": [
+        "f-20"
+      ],
+      "effort": "an hour",
+      "quick_win": true,
+      "agent_card": {
+        "name": "Status writer",
+        "role": "Drafts the weekly client status update from the week's notes and tasks.",
+        "trigger": {
+          "type": "schedule",
+          "when": "Fridays at 14:00"
+        },
+        "instructions": "Every Friday, for each active client project, read this week's tasks, call notes and team chat threads. Write one status update per client in German, friendly and at most 120 words, in three parts: done, next, what we need from you. Follow the brand voice and the status template. Add the staging link when there is one. Deliver the drafts for review; never send them.",
+        "inputs": [
+          "Tasks of the week",
+          "Call notes",
+          "Team chat threads"
+        ],
+        "tools": [
+          {
+            "name": "Notion",
+            "access": "read"
+          },
+          {
+            "name": "Slack",
+            "access": "read"
+          },
+          {
+            "name": "Gmail",
+            "access": "draft"
+          }
+        ],
+        "knowledge": [
+          "Status template",
+          "Brand voice"
+        ],
+        "output": "One draft per client",
+        "approval": "A person reads and sends each mail."
+      },
+      "fit": {
+        "speed": "slower",
+        "on_critical_path": true,
+        "who_waits": "Agents until the next slot.",
+        "if_wrong": "Work stalls.",
+        "verdict": "keep",
+        "note": "Decisions are collected twice a day."
+      }
+    }
+  ],
+  "quick_wins": [
+    {
+      "title": "Write the brand voice down once",
+      "how": "Nine chats restated the same voice rules. Save the guide in Company knowledge and no prompt needs them again.",
+      "workflow": "w-05"
+    },
+    {
+      "title": "Turn on the Friday drafts",
+      "how": "The drafts are waiting at 14:00. You read, change a line, send.",
+      "workflow": "w-01"
+    },
+    {
+      "title": "Give the next proposal to an agent",
+      "how": "Paste the notes from your next discovery call and compare the draft with your own.",
+      "workflow": "w-02"
+    }
+  ],
+  "tools": [
+    {
+      "name": "Gmail",
+      "category": "Mail",
+      "seen_in": [
+        "claude-code-transcripts"
+      ],
+      "composio": "gmail"
+    },
+    {
+      "name": "Google Calendar",
+      "category": "Calendar",
+      "seen_in": [
+        "calendar-files"
+      ],
+      "composio": "googlecalendar"
+    },
+    {
+      "name": "Notion",
+      "category": "Tasks and notes",
+      "seen_in": [
+        "chatgpt-export",
+        "claude-code-transcripts",
+        "installed-apps"
+      ],
+      "composio": "notion"
+    },
+    {
+      "name": "Slack",
+      "category": "Team chat",
+      "seen_in": [
+        "installed-apps",
+        "calendar-files"
+      ],
+      "composio": "slack"
+    },
+    {
+      "name": "Figma",
+      "category": "Design",
+      "seen_in": [
+        "claude-code-transcripts",
+        "installed-apps"
+      ],
+      "composio": "figma"
+    },
+    {
+      "name": "Webflow",
+      "category": "Websites",
+      "seen_in": [
+        "chatgpt-export",
+        "claude-export"
+      ],
+      "composio": "webflow"
+    },
+    {
+      "name": "Toggl Track",
+      "category": "Time tracking",
+      "seen_in": [
+        "documents",
+        "installed-apps"
+      ],
+      "composio": "toggl"
+    },
+    {
+      "name": "Lexoffice",
+      "category": "Invoicing",
+      "seen_in": [
+        "claude-export",
+        "shell-history"
+      ],
+      "composio": null
+    },
+    {
+      "name": "Calendly",
+      "category": "Booking",
+      "seen_in": [
+        "chatgpt-export"
+      ],
+      "composio": "calendly"
+    },
+    {
+      "name": "LinkedIn",
+      "category": "Social",
+      "seen_in": [
+        "chatgpt-export"
+      ],
+      "composio": null
+    },
+    {
+      "name": "Zoom",
+      "category": "Calls",
+      "seen_in": [
+        "installed-apps",
+        "calendar-files"
+      ],
+      "composio": "zoom"
+    },
+    {
+      "name": "ChatGPT",
+      "category": "AI",
+      "seen_in": [
+        "chatgpt-export"
+      ],
+      "composio": null
+    },
+    {
+      "name": "Claude and Claude Code",
+      "category": "AI",
+      "seen_in": [
+        "claude-export",
+        "claude-code-transcripts"
+      ],
+      "composio": null
+    },
+    {
+      "name": "Codex",
+      "category": "AI",
+      "seen_in": [
+        "codex-sessions"
+      ],
+      "composio": null
+    }
+  ],
+  "watch_outs": [
+    "Client mails and invoice reminders stay drafts; Send is set to Ask each time everywhere.",
+    "Invoices involve money: the Finance Space is Members only and the agent prepares lines, it never books or sends invoices.",
+    "Lexoffice is not in the app list yet; invoice lines arrive as a table to paste, as today.",
+    "The contact inbox check assumes a shared studio inbox; with only a personal inbox, the assistant handles inquiries instead."
+  ],
+  "not_used": [
+    "Personal travel planning",
+    "A tax question and a recipe",
+    "A one-off hiring post"
+  ],
+  "week": [
+    {
+      "day": "mon",
+      "title": "Planning the week",
+      "minutes": 60,
+      "agent": true,
+      "logo": "google-calendar"
+    },
+    {
+      "day": "mon",
+      "title": "LinkedIn post",
+      "minutes": 45,
+      "agent": true,
+      "logo": "linkedin"
+    },
+    {
+      "day": "mon",
+      "title": "Site link check",
+      "minutes": 15,
+      "agent": true,
+      "logo": null
+    },
+    {
+      "day": "mon",
+      "title": "Stand-up",
+      "minutes": 15,
+      "agent": false,
+      "logo": "slack"
+    },
+    {
+      "day": "tue",
+      "title": "Discovery call",
+      "minutes": 45,
+      "agent": false,
+      "logo": "google-meet"
+    },
+    {
+      "day": "tue",
+      "title": "Proposal from the call notes",
+      "minutes": 120,
+      "agent": true,
+      "logo": "openai"
+    },
+    {
+      "day": "wed",
+      "title": "Stand-up",
+      "minutes": 15,
+      "agent": false,
+      "logo": "slack"
+    },
+    {
+      "day": "wed",
+      "title": "Launch checks",
+      "minutes": 90,
+      "agent": true,
+      "logo": "claude-code"
+    },
+    {
+      "day": "wed",
+      "title": "Client review call",
+      "minutes": 45,
+      "agent": false,
+      "logo": "zoom"
+    },
+    {
+      "day": "thu",
+      "title": "Client check-in",
+      "minutes": 30,
+      "agent": false,
+      "logo": "zoom"
+    },
+    {
+      "day": "thu",
+      "title": "Call notes to tasks",
+      "minutes": 15,
+      "agent": true,
+      "logo": "notion"
+    },
+    {
+      "day": "fri",
+      "title": "Stand-up",
+      "minutes": 15,
+      "agent": false,
+      "logo": "slack"
+    },
+    {
+      "day": "fri",
+      "title": "Client status mails",
+      "minutes": 60,
+      "agent": true,
+      "logo": "gmail"
+    },
+    {
+      "day": "fri",
+      "title": "Case studies",
+      "minutes": 45,
+      "agent": true,
+      "logo": "claude"
+    },
+    {
+      "day": "month",
+      "title": "Invoices and payment reminders",
+      "minutes": 150,
+      "agent": true,
+      "logo": null
+    }
+  ],
+  "working_model": {
+    "tempo": "fast",
+    "summary": "Synthetic test: a fast person who answers agents within a minute while they wait.",
+    "facts": [
+      {
+        "text": "90% of answers came while an agent was waiting.",
+        "source": "claude-code-transcripts"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "h-01",
+        "text": "Decisions unblock waiting agents.",
+        "status": "inferred"
+      }
+    ],
+    "must_not_slow": [
+      "Answers to agents that are waiting"
+    ],
+    "glad_to_hand_off": [],
+    "off_limits": []
+  },
+  "dropped": [
+    {
+      "title": "Automatic sending of status mails",
+      "why": "Client mails stay with you; drafts save the time without the risk."
+    }
+  ]
+}

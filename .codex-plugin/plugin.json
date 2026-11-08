@@ -1,0 +1,15 @@
+{
+  "name": "dayprint",
+  "version": "0.1.0",
+  "description": "Plan your Cavion workspace from what your AI tools know about your work.",
+  "skills": "./skills/",
+  "onboardingSkill": "./skills/dayprint/SKILL.md",
+  "interface": {
+    "displayName": "Dayprint",
+    "shortDescription": "Find the work that repeats and plan your Cavion workspace",
+    "developerName": "Cavion",
+    "category": "Productivity",
+    "brandColor": "#090909",
+    "defaultPrompt": ["Use Dayprint to analyse my work and plan my Cavion workspace."]
+  }
+}

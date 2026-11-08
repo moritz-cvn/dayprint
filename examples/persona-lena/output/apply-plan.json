@@ -1,0 +1,1859 @@
+{
+  "schema": "cavion.workspace-apply-plan/0.1",
+  "generator": "dayprint/0.1.0",
+  "generated_at": "2026-11-08T14:47:28+00:00",
+  "setup_id": "onb-2026-11-07-studio-nordlicht",
+  "revision": 1,
+  "apply_policy": {
+    "approval": "per_batch",
+    "existing": "ask",
+    "prune": false,
+    "automations_start": "paused"
+  },
+  "person_steps": [
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/devices/mac-app",
+      "section": "devices",
+      "key": "mac-app",
+      "title": "Install Cavion for Mac and approve it",
+      "group": "personal",
+      "who": "person",
+      "via_today": "Manage › Computers › download, then approve in the browser",
+      "via_mcp": "not allowed (computer approval)",
+      "where": "Manage › Computers",
+      "depends_on": [],
+      "before_batch": 1
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/members/designer",
+      "section": "members",
+      "key": "designer",
+      "title": "Invite: Designer (member)",
+      "group": "personal",
+      "who": "person",
+      "via_today": "Manage › People › Invite (type name and e-mail)",
+      "via_mcp": "invite_member (planned; e-mail typed by a person)",
+      "where": "Manage › People",
+      "depends_on": [],
+      "payload": {
+        "key": "designer",
+        "role": "member",
+        "title": "Designer",
+        "responsibilities": "Brand and UI design in Figma, icons",
+        "invite": "later"
+      },
+      "before_batch": 1
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/members/developer",
+      "section": "members",
+      "key": "developer",
+      "title": "Invite: Freelance developer (member)",
+      "group": "personal",
+      "who": "person",
+      "via_today": "Manage › People › Invite (type name and e-mail)",
+      "via_mcp": "invite_member (planned; e-mail typed by a person)",
+      "where": "Manage › People",
+      "depends_on": [],
+      "payload": {
+        "key": "developer",
+        "role": "member",
+        "title": "Freelance developer",
+        "responsibilities": "Webflow builds, forms, integrations",
+        "invite": "later"
+      },
+      "before_batch": 1
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/gmail-me",
+      "section": "connections",
+      "key": "gmail-me",
+      "title": "Connect Gmail (founder)",
+      "group": "personal",
+      "who": "person",
+      "via_today": "My apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "My apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "gmail",
+        "why": "The assistant needs the founder's mail for the Monday brief and drafts."
+      },
+      "payload": {
+        "key": "gmail-me",
+        "type": "composio",
+        "app": "gmail",
+        "label": "Gmail (founder)",
+        "scope": "personal",
+        "owner": "founder",
+        "permissions": {
+          "read": "allowed",
+          "create_change": "ask",
+          "send_delete_share": "ask"
+        }
+      },
+      "before_batch": 1
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/googlecalendar-me",
+      "section": "connections",
+      "key": "googlecalendar-me",
+      "title": "Connect Google Calendar",
+      "group": "personal",
+      "who": "person",
+      "via_today": "My apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "My apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "googlecalendar",
+        "why": "Calls, planning and deadlines live in the calendar."
+      },
+      "payload": {
+        "key": "googlecalendar-me",
+        "type": "composio",
+        "app": "googlecalendar",
+        "label": "Google Calendar",
+        "scope": "personal",
+        "owner": "founder",
+        "permissions": {
+          "read": "allowed",
+          "create_change": "ask",
+          "send_delete_share": "ask"
+        }
+      },
+      "before_batch": 1
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/notion-studio",
+      "section": "connections",
+      "key": "notion-studio",
+      "title": "Connect Notion (studio)",
+      "group": "clients",
+      "who": "person",
+      "via_today": "Space Clients › Apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "Space Clients › Apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "notion",
+        "why": "Tasks and call notes are kept in Notion; creating tasks there is low risk."
+      },
+      "payload": {
+        "key": "notion-studio",
+        "type": "composio",
+        "app": "notion",
+        "label": "Notion (studio)",
+        "scope": "space",
+        "space": "clients",
+        "also_in_spaces": [
+          "growth"
+        ],
+        "permissions": {
+          "read": "allowed",
+          "create_change": "allowed",
+          "send_delete_share": "ask"
+        }
+      },
+      "before_batch": 5
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/slack-studio",
+      "section": "connections",
+      "key": "slack-studio",
+      "title": "Connect Slack (studio)",
+      "group": "clients",
+      "who": "person",
+      "via_today": "Space Clients › Apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "Space Clients › Apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "slack",
+        "why": "Project talk happens in Slack; reading it fills the status drafts."
+      },
+      "payload": {
+        "key": "slack-studio",
+        "type": "composio",
+        "app": "slack",
+        "label": "Slack (studio)",
+        "scope": "space",
+        "space": "clients",
+        "permissions": {
+          "read": "allowed",
+          "create_change": "ask",
+          "send_delete_share": "ask"
+        }
+      },
+      "before_batch": 5
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/figma-studio",
+      "section": "connections",
+      "key": "figma-studio",
+      "title": "Connect Figma",
+      "group": "clients",
+      "who": "person",
+      "via_today": "Space Clients › Apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "Space Clients › Apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "figma",
+        "why": "Builds start from Figma files; read only."
+      },
+      "payload": {
+        "key": "figma-studio",
+        "type": "composio",
+        "app": "figma",
+        "label": "Figma",
+        "scope": "space",
+        "space": "clients",
+        "permissions": {
+          "read": "allowed",
+          "create_change": "off",
+          "send_delete_share": "off"
+        }
+      },
+      "before_batch": 5
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/toggl-studio",
+      "section": "connections",
+      "key": "toggl-studio",
+      "title": "Connect Toggl Track",
+      "group": "finance",
+      "who": "person",
+      "via_today": "Space Finance › Apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "Space Finance › Apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "toggl",
+        "why": "Hours for invoicing come from Toggl Track."
+      },
+      "payload": {
+        "key": "toggl-studio",
+        "type": "composio",
+        "app": "toggl",
+        "label": "Toggl Track",
+        "scope": "space",
+        "space": "finance",
+        "permissions": {
+          "read": "allowed",
+          "create_change": "off",
+          "send_delete_share": "off"
+        }
+      },
+      "before_batch": 8
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/gmail-billing",
+      "section": "connections",
+      "key": "gmail-billing",
+      "title": "Connect Gmail (billing inbox)",
+      "group": "finance",
+      "who": "person",
+      "via_today": "Space Finance › Apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "Space Finance › Apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "gmail",
+        "why": "Reminders are drafted where invoices are sent from."
+      },
+      "payload": {
+        "key": "gmail-billing",
+        "type": "composio",
+        "app": "gmail",
+        "label": "Gmail (billing inbox)",
+        "scope": "space",
+        "space": "finance",
+        "permissions": {
+          "read": "allowed",
+          "create_change": "ask",
+          "send_delete_share": "ask"
+        }
+      },
+      "before_batch": 8
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/connections/gmail-hello",
+      "section": "connections",
+      "key": "gmail-hello",
+      "title": "Connect Gmail (contact inbox)",
+      "group": "growth",
+      "who": "person",
+      "via_today": "Space New business › Apps › Add app (sign in yourself)",
+      "via_mcp": "start_app_connection returns the sign-in link; the person finishes it",
+      "where": "Space New business › Apps › Add app",
+      "depends_on": [],
+      "proposal_step": {
+        "kind": "connect_app",
+        "app": "gmail",
+        "why": "Website inquiries arrive in the contact inbox."
+      },
+      "payload": {
+        "key": "gmail-hello",
+        "type": "composio",
+        "app": "gmail",
+        "label": "Gmail (contact inbox)",
+        "scope": "space",
+        "space": "growth",
+        "permissions": {
+          "read": "allowed",
+          "create_change": "ask",
+          "send_delete_share": "ask"
+        }
+      },
+      "before_batch": 10
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/manual_steps/choose-funding",
+      "section": "manual_steps",
+      "key": "choose-funding",
+      "title": "Choose how the workspace is paid for",
+      "group": "personal",
+      "who": "person",
+      "via_today": "Manage › AI",
+      "via_mcp": "not automated",
+      "where": "Manage › AI",
+      "depends_on": [],
+      "payload": {
+        "key": "choose-funding",
+        "title": "Choose how the workspace is paid for",
+        "who": "owner",
+        "where": "Manage › AI"
+      },
+      "before_batch": 1
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/manual_steps/confirm-contact-inbox",
+      "section": "manual_steps",
+      "key": "confirm-contact-inbox",
+      "title": "Confirm the studio has a shared contact inbox",
+      "group": "personal",
+      "who": "person",
+      "via_today": "New business › Apps",
+      "via_mcp": "not automated",
+      "where": "New business › Apps",
+      "depends_on": [
+        "gmail-hello",
+        "new-inquiries"
+      ],
+      "payload": {
+        "key": "confirm-contact-inbox",
+        "title": "Confirm the studio has a shared contact inbox",
+        "who": "owner",
+        "where": "New business › Apps",
+        "unblocks": [
+          "gmail-hello",
+          "new-inquiries"
+        ]
+      },
+      "before_batch": 10
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/manual_steps/invoicing-tool",
+      "section": "manual_steps",
+      "key": "invoicing-tool",
+      "title": "Look for your invoicing tool in Add app",
+      "group": "personal",
+      "who": "person",
+      "via_today": "Finance › Apps › Add app",
+      "via_mcp": "not automated",
+      "where": "Finance › Apps › Add app",
+      "depends_on": [],
+      "payload": {
+        "key": "invoicing-tool",
+        "title": "Look for your invoicing tool in Add app",
+        "who": "owner",
+        "where": "Finance › Apps › Add app"
+      },
+      "before_batch": 1
+    },
+    {
+      "ledger_key": "onb-2026-11-07-studio-nordlicht/manual_steps/site-list",
+      "section": "manual_steps",
+      "key": "site-list",
+      "title": "Add the list of live client sites",
+      "group": "personal",
+      "who": "person",
+      "via_today": "Clients › Context",
+      "via_mcp": "not automated",
+      "where": "Clients › Context",
+      "depends_on": [
+        "site-health"
+      ],
+      "payload": {
+        "key": "site-list",
+        "title": "Add the list of live client sites",
+        "who": "owner",
+        "where": "Clients › Context",
+        "unblocks": [
+          "site-health"
+        ]
+      },
+      "before_batch": 6
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/agents/assistant",
+          "section": "agents",
+          "key": "assistant",
+          "title": "Set up the assistant: instructions, tools, apps",
+          "group": "personal",
+          "who": "card",
+          "via_today": "CAVION_EDIT_AGENT and CAVION_SET_AGENT_TOOLS (Allow once)",
+          "via_mcp": "configure_agent",
+          "where": "Home › Assistant setup",
+          "depends_on": [
+            "gmail-me",
+            "googlecalendar-me"
+          ],
+          "payload": {
+            "key": "assistant",
+            "kind": "personal_assistant",
+            "owner": "founder",
+            "name": "Assistant",
+            "instructions": "You work for the founder of a three-person brand and web studio. Keep answers short. Write German to clients and English internally.\n\nEvery Monday prepare the week: calls that need preparation, deadlines, open threads waiting on a reply, and three suggested priorities. During the week help with mail and the calendar: draft replies, find slots, summarise threads. Never send a mail or accept an invitation without asking first.\n\nFollow the Brand voice in Company knowledge for anything a client reads.",
+            "tools_preset": "assistant",
+            "apps": [
+              "gmail-me",
+              "googlecalendar-me"
+            ],
+            "learning": {
+              "remember_notes": "on",
+              "learn_skills": true
+            },
+            "autonomous_sending": false
+          },
+          "batch": 1
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/gmail-me",
+          "section": "app_permissions",
+          "key": "gmail-me",
+          "title": "Gmail (founder): Read allowed, Create and change ask, Send ask",
+          "group": "personal",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "gmail-me"
+          ],
+          "payload": {
+            "key": "gmail-me",
+            "type": "composio",
+            "app": "gmail",
+            "label": "Gmail (founder)",
+            "scope": "personal",
+            "owner": "founder",
+            "permissions": {
+              "read": "allowed",
+              "create_change": "ask",
+              "send_delete_share": "ask"
+            }
+          },
+          "batch": 1
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/googlecalendar-me",
+          "section": "app_permissions",
+          "key": "googlecalendar-me",
+          "title": "Google Calendar: Read allowed, Create and change ask, Send ask",
+          "group": "personal",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "googlecalendar-me"
+          ],
+          "payload": {
+            "key": "googlecalendar-me",
+            "type": "composio",
+            "app": "googlecalendar",
+            "label": "Google Calendar",
+            "scope": "personal",
+            "owner": "founder",
+            "permissions": {
+              "read": "allowed",
+              "create_change": "ask",
+              "send_delete_share": "ask"
+            }
+          },
+          "batch": 1
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/memory/mem-assistant-profile",
+          "section": "memory",
+          "key": "mem-assistant-profile",
+          "title": "Memory for assistant: 3 user profile",
+          "group": "personal",
+          "who": "direct",
+          "via_today": "ask the agent to remember each line (memory tool)",
+          "via_mcp": "memory_add (planned)",
+          "where": "agent › Learned",
+          "depends_on": [
+            "assistant"
+          ],
+          "payload": {
+            "key": "mem-assistant-profile",
+            "agent": "assistant",
+            "learning_space": "personal",
+            "document": "user_profile",
+            "entries": [
+              "Founder and creative director of a three-person brand and web studio.",
+              "Writes German to clients and English internally; prefers short answers.",
+              "Plans the week on Monday at 9:00; client status mails go out on Friday afternoon."
+            ]
+          },
+          "batch": 1
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/scheduled_tasks/monday-brief",
+          "section": "scheduled_tasks",
+          "key": "monday-brief",
+          "title": "Task Monday brief · Mondays at 8:30 (starts paused)",
+          "group": "personal",
+          "who": "card",
+          "via_today": "setup proposal step schedule_task, made in the task's own chat; a person turns it on",
+          "via_mcp": "create_scheduled",
+          "where": "Work › Scheduled",
+          "depends_on": [
+            "assistant",
+            "googlecalendar-me",
+            "gmail-me"
+          ],
+          "proposal_step": {
+            "kind": "schedule_task",
+            "title": "Monday brief",
+            "instruction": "Read this week's calendar and the last week's unanswered mail. Write a short brief: calls that need preparation (with one line of context each), deadlines, threads waiting on a reply, and three suggested priorities for the week. Keep it under 200 words.",
+            "when": "Mondays at 8:30",
+            "why": "Prepares the Monday planning hour."
+          },
+          "payload": {
+            "key": "monday-brief",
+            "title": "Monday brief",
+            "agent": "assistant",
+            "conversation": {
+              "audience": "private",
+              "title": "Monday brief"
+            },
+            "kind": "scheduled_task",
+            "instruction": "Read this week's calendar and the last week's unanswered mail. Write a short brief: calls that need preparation (with one line of context each), deadlines, threads waiting on a reply, and three suggested priorities for the week. Keep it under 200 words.",
+            "timing": {
+              "kind": "weekly",
+              "timezone": "Europe/Berlin",
+              "weekdays": [
+                1
+              ],
+              "times": [
+                "08:30"
+              ],
+              "human": "Mondays at 8:30"
+            },
+            "preparation": "read_only",
+            "apps": [
+              {
+                "connection": "googlecalendar-me",
+                "read": "allowed",
+                "create_change": "off",
+                "send_delete_share": "off"
+              },
+              {
+                "connection": "gmail-me",
+                "read": "allowed",
+                "create_change": "off",
+                "send_delete_share": "off"
+              }
+            ],
+            "notification": "meaningful"
+          },
+          "batch": 1
+        }
+      ]
+    },
+    {
+      "batch": 2,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-brand-voice",
+          "section": "knowledge",
+          "key": "kb-brand-voice",
+          "title": "Knowledge: Studio/Brand voice (Company knowledge)",
+          "group": "company",
+          "who": "card",
+          "via_today": "an admin asks the assistant to save it",
+          "via_mcp": "write_context",
+          "where": "Company knowledge",
+          "depends_on": [],
+          "payload": {
+            "key": "kb-brand-voice",
+            "vault": "company",
+            "folder": "Studio",
+            "title": "Brand voice",
+            "origin": "from_user_file",
+            "content_md": "# Brand voice\n\n- Warm, clear, concrete. Short sentences.\n- No buzzwords: innovative, leading, solutions, synergy.\n- German for clients unless they write in English; English internally.\n- Say what we did and what it changed, with one number when there is one.\n- Sign client mails as the studio."
+          },
+          "batch": 2
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-services-prices",
+          "section": "knowledge",
+          "key": "kb-services-prices",
+          "title": "Knowledge: Studio/Services and prices (Company knowledge)",
+          "group": "company",
+          "who": "card",
+          "via_today": "an admin asks the assistant to save it",
+          "via_mcp": "write_context",
+          "where": "Company knowledge",
+          "depends_on": [],
+          "payload": {
+            "key": "kb-services-prices",
+            "vault": "company",
+            "folder": "Studio",
+            "title": "Services and prices",
+            "origin": "from_chat_history",
+            "content_md": "# Services and prices\n\n- Day rate: 850 EUR net.\n- Typical website project: 6–10k EUR, split into design and build.\n- Always offer a maintenance retainer after launch.\n\nCheck with the founder before quoting anything outside these ranges."
+          },
+          "batch": 2
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-client-onboarding",
+          "section": "knowledge",
+          "key": "kb-client-onboarding",
+          "title": "Knowledge: Processes/Client onboarding (Company knowledge)",
+          "group": "company",
+          "who": "card",
+          "via_today": "an admin asks the assistant to save it",
+          "via_mcp": "write_context",
+          "where": "Company knowledge",
+          "depends_on": [],
+          "payload": {
+            "key": "kb-client-onboarding",
+            "vault": "company",
+            "folder": "Processes",
+            "title": "Client onboarding",
+            "origin": "from_user_file",
+            "content_md": "# Client onboarding\n\n1. Kick-off call\n2. Shared Notion page\n3. Slack Connect channel\n4. Collect logo, photos and texts\n5. Time-tracking project"
+          },
+          "batch": 2
+        }
+      ]
+    },
+    {
+      "batch": 3,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/spaces/clients",
+          "section": "spaces",
+          "key": "clients",
+          "title": "Create Space Clients (Open)",
+          "group": "clients",
+          "who": "card",
+          "via_today": "setup proposal step create_space (assistant), then Space › Settings for agent access",
+          "via_mcp": "create_space",
+          "where": "Spaces › +",
+          "depends_on": [],
+          "proposal_step": {
+            "kind": "create_space",
+            "name": "Clients",
+            "purpose": "Client website projects from kick-off to launch: weekly status, tasks from calls, design and build hand-offs, launch QA and site health.",
+            "why": "Most repeated work is per client project and shared by all three people."
+          },
+          "payload": {
+            "key": "clients",
+            "name": "Clients",
+            "purpose": "Client website projects from kick-off to launch: weekly status, tasks from calls, design and build hand-offs, launch QA and site health.",
+            "colour": "blue",
+            "agent_access": "open",
+            "members": [
+              "founder",
+              "designer",
+              "developer"
+            ],
+            "projects": [
+              {
+                "key": "proj-cafe",
+                "name": "Café website"
+              },
+              {
+                "key": "proj-bike-shop",
+                "name": "Bike shop website"
+              },
+              {
+                "key": "proj-physio",
+                "name": "Physio practice website"
+              },
+              {
+                "key": "proj-yoga",
+                "name": "Yoga studio website"
+              }
+            ]
+          },
+          "batch": 3
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/projects/proj-cafe",
+          "section": "projects",
+          "key": "proj-cafe",
+          "title": "Project Café website in Clients",
+          "group": "clients",
+          "who": "direct",
+          "via_today": "CREATE_PROJECT (direct, with Undo)",
+          "via_mcp": "create_project",
+          "where": "Space Clients › Overview › Projects",
+          "depends_on": [
+            "clients"
+          ],
+          "payload": {
+            "key": "proj-cafe",
+            "name": "Café website"
+          },
+          "batch": 3
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/projects/proj-bike-shop",
+          "section": "projects",
+          "key": "proj-bike-shop",
+          "title": "Project Bike shop website in Clients",
+          "group": "clients",
+          "who": "direct",
+          "via_today": "CREATE_PROJECT (direct, with Undo)",
+          "via_mcp": "create_project",
+          "where": "Space Clients › Overview › Projects",
+          "depends_on": [
+            "clients"
+          ],
+          "payload": {
+            "key": "proj-bike-shop",
+            "name": "Bike shop website"
+          },
+          "batch": 3
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/projects/proj-physio",
+          "section": "projects",
+          "key": "proj-physio",
+          "title": "Project Physio practice website in Clients",
+          "group": "clients",
+          "who": "direct",
+          "via_today": "CREATE_PROJECT (direct, with Undo)",
+          "via_mcp": "create_project",
+          "where": "Space Clients › Overview › Projects",
+          "depends_on": [
+            "clients"
+          ],
+          "payload": {
+            "key": "proj-physio",
+            "name": "Physio practice website"
+          },
+          "batch": 3
+        }
+      ]
+    },
+    {
+      "batch": 4,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/projects/proj-yoga",
+          "section": "projects",
+          "key": "proj-yoga",
+          "title": "Project Yoga studio website in Clients",
+          "group": "clients",
+          "who": "direct",
+          "via_today": "CREATE_PROJECT (direct, with Undo)",
+          "via_mcp": "create_project",
+          "where": "Space Clients › Overview › Projects",
+          "depends_on": [
+            "clients"
+          ],
+          "payload": {
+            "key": "proj-yoga",
+            "name": "Yoga studio website"
+          },
+          "batch": 4
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/space_members/clients--designer",
+          "section": "space_members",
+          "key": "clients--designer",
+          "title": "Add designer to Clients",
+          "group": "clients",
+          "who": "card",
+          "via_today": "ADD_SPACE_MEMBER (Allow once)",
+          "via_mcp": "set_space_member",
+          "where": "Space Clients › People",
+          "depends_on": [
+            "clients",
+            "designer"
+          ],
+          "batch": 4
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/space_members/clients--developer",
+          "section": "space_members",
+          "key": "clients--developer",
+          "title": "Add developer to Clients",
+          "group": "clients",
+          "who": "card",
+          "via_today": "ADD_SPACE_MEMBER (Allow once)",
+          "via_mcp": "set_space_member",
+          "where": "Space Clients › People",
+          "depends_on": [
+            "clients",
+            "developer"
+          ],
+          "batch": 4
+        }
+      ]
+    },
+    {
+      "batch": 5,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/agents/clients-manager",
+          "section": "agents",
+          "key": "clients-manager",
+          "title": "Set up the Clients manager: instructions, tools, apps",
+          "group": "clients",
+          "who": "card",
+          "via_today": "CAVION_EDIT_AGENT and CAVION_SET_AGENT_TOOLS (Allow once)",
+          "via_mcp": "configure_agent",
+          "where": "Space › Agents › manager › Settings",
+          "depends_on": [
+            "clients",
+            "notion-studio",
+            "slack-studio",
+            "figma-studio"
+          ],
+          "payload": {
+            "key": "clients-manager",
+            "kind": "space_manager",
+            "space": "clients",
+            "name": "Clients",
+            "instructions": "You run the studio's client projects. Each client has a Project in this Space.\n\nAfter a call, when notes are posted or added to Notion, create tasks in Notion with an owner (founder, designer or developer) and a due date, then post the list in the chat.\n\nOn Fridays draft one status update per active project from the week's Notion tasks, call notes and Slack threads. Use the Weekly status update template and the Brand voice; German, at most 120 words; done, next, what we need from the client. Post drafts in the chat; never send them.\n\nAsk Launch QA for launch checks and site problems.",
+            "tools_preset": "assistant",
+            "apps": [
+              "notion-studio",
+              "slack-studio",
+              "figma-studio"
+            ],
+            "learning": {
+              "remember_notes": "on",
+              "learn_skills": true
+            },
+            "autonomous_sending": false
+          },
+          "batch": 5
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/agents/launch-qa",
+          "section": "agents",
+          "key": "launch-qa",
+          "title": "Create specialist Launch QA",
+          "group": "clients",
+          "who": "card",
+          "via_today": "setup proposal step create_specialist",
+          "via_mcp": "create_specialist",
+          "where": "Space › Agents",
+          "depends_on": [
+            "clients"
+          ],
+          "proposal_step": {
+            "kind": "create_specialist",
+            "space": "clients",
+            "name": "Launch QA",
+            "instructions": "You check client websites before launch and every Monday. Follow the launch QA skill and the Website launch checklist: speed scores above 90, German alt texts, broken links, meta titles and descriptions, favicon, 404 page, redirects from old URLs, cookie banner, Search Console.\n\nFor launch checks post what needs fixing, most important first, and a short client summary as a draft. For the Monday health check of all live sites (links, SSL expiry, speed) stay quiet when everything is fine and post only problems.\n\nUse the browser to look at sites; never submit forms or change a site.",
+            "why": "Launch checks and the Monday site check follow the same checklist every time."
+          },
+          "payload": {
+            "key": "launch-qa",
+            "kind": "specialist",
+            "space": "clients",
+            "name": "Launch QA",
+            "instructions": "You check client websites before launch and every Monday. Follow the launch QA skill and the Website launch checklist: speed scores above 90, German alt texts, broken links, meta titles and descriptions, favicon, 404 page, redirects from old URLs, cookie banner, Search Console.\n\nFor launch checks post what needs fixing, most important first, and a short client summary as a draft. For the Monday health check of all live sites (links, SSL expiry, speed) stay quiet when everything is fine and post only problems.\n\nUse the browser to look at sites; never submit forms or change a site.",
+            "tools_preset": "automation_worker",
+            "tools": [
+              "browse",
+              "web_search",
+              "run_code",
+              "open_files",
+              "skills",
+              "knowledge_read",
+              "checklist"
+            ],
+            "apps": [],
+            "learning": {
+              "remember_notes": "on",
+              "learn_skills": false
+            },
+            "autonomous_sending": false
+          },
+          "batch": 5
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/notion-studio",
+          "section": "app_permissions",
+          "key": "notion-studio",
+          "title": "Notion (studio): Read allowed, Create and change allowed, Send ask",
+          "group": "clients",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "notion-studio"
+          ],
+          "payload": {
+            "key": "notion-studio",
+            "type": "composio",
+            "app": "notion",
+            "label": "Notion (studio)",
+            "scope": "space",
+            "space": "clients",
+            "also_in_spaces": [
+              "growth"
+            ],
+            "permissions": {
+              "read": "allowed",
+              "create_change": "allowed",
+              "send_delete_share": "ask"
+            }
+          },
+          "batch": 5
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/slack-studio",
+          "section": "app_permissions",
+          "key": "slack-studio",
+          "title": "Slack (studio): Read allowed, Create and change ask, Send ask",
+          "group": "clients",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "slack-studio"
+          ],
+          "payload": {
+            "key": "slack-studio",
+            "type": "composio",
+            "app": "slack",
+            "label": "Slack (studio)",
+            "scope": "space",
+            "space": "clients",
+            "permissions": {
+              "read": "allowed",
+              "create_change": "ask",
+              "send_delete_share": "ask"
+            }
+          },
+          "batch": 5
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/figma-studio",
+          "section": "app_permissions",
+          "key": "figma-studio",
+          "title": "Figma: Read allowed, Create and change off, Send off",
+          "group": "clients",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "figma-studio"
+          ],
+          "payload": {
+            "key": "figma-studio",
+            "type": "composio",
+            "app": "figma",
+            "label": "Figma",
+            "scope": "space",
+            "space": "clients",
+            "permissions": {
+              "read": "allowed",
+              "create_change": "off",
+              "send_delete_share": "off"
+            }
+          },
+          "batch": 5
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-status-template",
+          "section": "knowledge",
+          "key": "kb-status-template",
+          "title": "Knowledge: Templates/Weekly status update (Space knowledge)",
+          "group": "clients",
+          "who": "card",
+          "via_today": "ask the agent to save it",
+          "via_mcp": "write_context",
+          "where": "Space knowledge",
+          "depends_on": [
+            "clients"
+          ],
+          "payload": {
+            "key": "kb-status-template",
+            "vault": "space",
+            "space": "clients",
+            "folder": "Templates",
+            "title": "Weekly status update",
+            "origin": "from_user_file",
+            "content_md": "# Weekly status update\n\nHallo {Name},\n\nkurzes Update zu {Projekt}:\n- Erledigt:\n- Als Nächstes:\n- Wir brauchen von euch:\n\nViele Grüße\nStudio Nordlicht\n\nAt most 120 words. Add the staging link when there is one."
+          },
+          "batch": 5
+        }
+      ]
+    },
+    {
+      "batch": 6,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-launch-checklist",
+          "section": "knowledge",
+          "key": "kb-launch-checklist",
+          "title": "Knowledge: Processes/Website launch checklist (Space knowledge)",
+          "group": "clients",
+          "who": "card",
+          "via_today": "ask the agent to save it",
+          "via_mcp": "write_context",
+          "where": "Space knowledge",
+          "depends_on": [
+            "clients"
+          ],
+          "payload": {
+            "key": "kb-launch-checklist",
+            "vault": "space",
+            "space": "clients",
+            "folder": "Processes",
+            "title": "Website launch checklist",
+            "origin": "from_user_file",
+            "content_md": "# Website launch checklist\n\n- Speed scores above 90\n- Alt texts in German\n- 404 page\n- Favicon\n- Meta titles and descriptions\n- Redirects from old URLs\n- Cookie banner\n- Search Console set up"
+          },
+          "batch": 6
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/skills/skill-launch-qa",
+          "section": "skills",
+          "key": "skill-launch-qa",
+          "title": "Skill launch-qa (saved as Knowledge until skill import exists)",
+          "group": "clients",
+          "who": "card",
+          "via_today": "save SKILL.md as a Knowledge doc and point the agent's instructions to it",
+          "via_mcp": "import_skill (planned)",
+          "where": "Knowledge",
+          "depends_on": [
+            "launch-qa"
+          ],
+          "payload": {
+            "key": "skill-launch-qa",
+            "name": "launch-qa",
+            "description": "Check a client website before launch against the studio's checklist and write the fix list and a client summary. Use before every launch and for site problems.",
+            "scope": "space",
+            "space": "clients",
+            "for_agents": [
+              "launch-qa"
+            ],
+            "files": [
+              {
+                "path": "SKILL.md",
+                "content": "---\nname: launch-qa\ndescription: Check a client website before launch against the studio's checklist and write the fix list and a client summary. Use before every launch and for site problems.\n---\n\n# Launch QA\n\n1. Open the staging or live address in the browser.\n2. Run a speed test for mobile and desktop; note scores below 90.\n3. Check every page for missing or English alt texts, broken links, missing meta titles and descriptions.\n4. Check favicon, 404 page, cookie banner and redirects from the old site.\n5. Check Search Console access.\n6. Post the fixes, most important first, with the page for each.\n7. Draft a five-line summary for the client in German.\n"
+              }
+            ],
+            "fallback": "knowledge"
+          },
+          "batch": 6
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/memory/mem-clients-notes",
+          "section": "memory",
+          "key": "mem-clients-notes",
+          "title": "Memory for clients-manager: 3 agent notes",
+          "group": "clients",
+          "who": "direct",
+          "via_today": "ask the agent to remember each line (memory tool)",
+          "via_mcp": "memory_add (planned)",
+          "where": "agent › Learned",
+          "depends_on": [
+            "clients-manager"
+          ],
+          "payload": {
+            "key": "mem-clients-notes",
+            "agent": "clients-manager",
+            "learning_space": "shared_space",
+            "space": "clients",
+            "document": "agent_notes",
+            "entries": [
+              "The team: founder (sales, client contact), designer (Figma, icons), freelance developer (Webflow builds, forms).",
+              "Sites are designed in Figma and built in Webflow.",
+              "Each client has one Project in this Space; status drafts are per Project."
+            ]
+          },
+          "batch": 6
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/scheduled_tasks/weekly-status-drafts",
+          "section": "scheduled_tasks",
+          "key": "weekly-status-drafts",
+          "title": "Task Friday client status drafts · Fridays at 14:00 (starts paused)",
+          "group": "clients",
+          "who": "card",
+          "via_today": "setup proposal step schedule_task, made in the task's own chat; a person turns it on",
+          "via_mcp": "create_scheduled",
+          "where": "Work › Scheduled",
+          "depends_on": [
+            "clients-manager",
+            "notion-studio",
+            "slack-studio"
+          ],
+          "proposal_step": {
+            "kind": "schedule_task",
+            "title": "Friday client status drafts",
+            "instruction": "For each active client Project, read this week's Notion tasks and call notes and the project's Slack threads. Draft one status update per client with the Weekly status update template and the Brand voice: German, at most 120 words, done / next / what we need. Post all drafts here, one message per client. Do not send anything. If a project had no activity, say so in one line.",
+            "when": "Fridays at 14:00",
+            "why": "Replaces the Friday hour of writing status mails."
+          },
+          "payload": {
+            "key": "weekly-status-drafts",
+            "title": "Friday client status drafts",
+            "agent": "clients-manager",
+            "conversation": {
+              "audience": "space_shared",
+              "space": "clients",
+              "title": "Friday status drafts"
+            },
+            "kind": "scheduled_task",
+            "instruction": "For each active client Project, read this week's Notion tasks and call notes and the project's Slack threads. Draft one status update per client with the Weekly status update template and the Brand voice: German, at most 120 words, done / next / what we need. Post all drafts here, one message per client. Do not send anything. If a project had no activity, say so in one line.",
+            "timing": {
+              "kind": "weekly",
+              "timezone": "Europe/Berlin",
+              "weekdays": [
+                5
+              ],
+              "times": [
+                "14:00"
+              ],
+              "human": "Fridays at 14:00"
+            },
+            "preparation": "read_only",
+            "apps": [
+              {
+                "connection": "notion-studio",
+                "read": "allowed",
+                "create_change": "off",
+                "send_delete_share": "off"
+              },
+              {
+                "connection": "slack-studio",
+                "read": "allowed",
+                "create_change": "off",
+                "send_delete_share": "off"
+              }
+            ],
+            "knowledge": [
+              "kb-status-template",
+              "kb-brand-voice"
+            ],
+            "notification": "meaningful"
+          },
+          "batch": 6
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/scheduled_tasks/site-health",
+          "section": "scheduled_tasks",
+          "key": "site-health",
+          "title": "Task Monday site health check · Mondays at 7:00 (starts paused)",
+          "group": "clients",
+          "who": "card",
+          "via_today": "setup proposal step schedule_task, made in the task's own chat; a person turns it on",
+          "via_mcp": "create_scheduled",
+          "where": "Work › Scheduled",
+          "depends_on": [
+            "launch-qa"
+          ],
+          "proposal_step": {
+            "kind": "schedule_task",
+            "title": "Monday site health check",
+            "instruction": "Check every live client site listed in the Clients Space for broken links, SSL certificates expiring within 30 days, and mobile speed scores below 80. Post only problems, one line each with the site and what to fix. If everything is fine, end without a message.",
+            "when": "Mondays at 7:00",
+            "why": "Replaces the Monday script run."
+          },
+          "payload": {
+            "key": "site-health",
+            "title": "Monday site health check",
+            "agent": "launch-qa",
+            "conversation": {
+              "audience": "space_shared",
+              "space": "clients",
+              "title": "Site health"
+            },
+            "kind": "scheduled_task",
+            "instruction": "Check every live client site listed in the Clients Space for broken links, SSL certificates expiring within 30 days, and mobile speed scores below 80. Post only problems, one line each with the site and what to fix. If everything is fine, end without a message.",
+            "timing": {
+              "kind": "weekly",
+              "timezone": "Europe/Berlin",
+              "weekdays": [
+                1
+              ],
+              "times": [
+                "07:00"
+              ],
+              "human": "Mondays at 7:00"
+            },
+            "preparation": "read_only",
+            "apps": [],
+            "knowledge": [
+              "kb-launch-checklist"
+            ],
+            "notification": "urgent"
+          },
+          "batch": 6
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/checks/notes-to-tasks",
+          "section": "checks",
+          "key": "notes-to-tasks",
+          "title": "Check New call notes to tasks · every 30 min (starts off)",
+          "group": "clients",
+          "who": "card",
+          "via_today": "ask the agent in that chat to propose the check (CAVION_PROPOSE_CHECK); Cavion tests it once",
+          "via_mcp": "propose_check (planned)",
+          "where": "the chat",
+          "depends_on": [
+            "clients-manager",
+            "notion-studio"
+          ],
+          "payload": {
+            "key": "notes-to-tasks",
+            "title": "New call notes to tasks",
+            "agent": "clients-manager",
+            "conversation": {
+              "audience": "space_shared",
+              "space": "clients",
+              "title": "Call notes"
+            },
+            "app": "notion-studio",
+            "reads": "new pages in the call notes database",
+            "instruction": "For each new call note, create Notion tasks with owner and due date and post the list in the client's Project.",
+            "every_minutes": 30
+          },
+          "batch": 6
+        }
+      ]
+    },
+    {
+      "batch": 7,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/spaces/finance",
+          "section": "spaces",
+          "key": "finance",
+          "title": "Create Space Finance (Members only)",
+          "group": "finance",
+          "who": "card",
+          "via_today": "setup proposal step create_space (assistant), then Space › Settings for agent access",
+          "via_mcp": "create_space",
+          "where": "Spaces › +",
+          "depends_on": [],
+          "proposal_step": {
+            "kind": "create_space",
+            "name": "Finance",
+            "purpose": "Monthly invoice lines from time tracking, overdue invoices and reminders. Money matters stay with the founder.",
+            "why": "Invoicing repeats monthly and needs to stay private."
+          },
+          "payload": {
+            "key": "finance",
+            "name": "Finance",
+            "purpose": "Monthly invoice lines from time tracking, overdue invoices and reminders. Money matters stay with the founder.",
+            "colour": "green",
+            "agent_access": "members_only",
+            "members": [
+              "founder"
+            ]
+          },
+          "batch": 7
+        }
+      ]
+    },
+    {
+      "batch": 8,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/agents/finance-manager",
+          "section": "agents",
+          "key": "finance-manager",
+          "title": "Set up the Finance manager: instructions, tools, apps",
+          "group": "finance",
+          "who": "card",
+          "via_today": "CAVION_EDIT_AGENT and CAVION_SET_AGENT_TOOLS (Allow once)",
+          "via_mcp": "configure_agent",
+          "where": "Space › Agents › manager › Settings",
+          "depends_on": [
+            "finance",
+            "toggl-studio",
+            "gmail-billing"
+          ],
+          "payload": {
+            "key": "finance-manager",
+            "kind": "space_manager",
+            "space": "finance",
+            "name": "Finance",
+            "instructions": "You prepare the studio's invoicing. On the first working day of the month read last month's hours from Toggl Track and make one invoice line per client project at the day rate in Services and prices. Flag entries without a project. Then list invoices unpaid for more than 14 days and draft a polite German reminder for each in the billing inbox. Post the lines as a table the founder can paste into the invoicing tool. You never send mails, book invoices or move money.",
+            "tools_preset": "document_worker",
+            "apps": [
+              "toggl-studio",
+              "gmail-billing"
+            ],
+            "learning": {
+              "remember_notes": "on",
+              "learn_skills": true
+            },
+            "autonomous_sending": false
+          },
+          "batch": 8
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/toggl-studio",
+          "section": "app_permissions",
+          "key": "toggl-studio",
+          "title": "Toggl Track: Read allowed, Create and change off, Send off",
+          "group": "finance",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "toggl-studio"
+          ],
+          "payload": {
+            "key": "toggl-studio",
+            "type": "composio",
+            "app": "toggl",
+            "label": "Toggl Track",
+            "scope": "space",
+            "space": "finance",
+            "permissions": {
+              "read": "allowed",
+              "create_change": "off",
+              "send_delete_share": "off"
+            }
+          },
+          "batch": 8
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/gmail-billing",
+          "section": "app_permissions",
+          "key": "gmail-billing",
+          "title": "Gmail (billing inbox): Read allowed, Create and change ask, Send ask",
+          "group": "finance",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "gmail-billing"
+          ],
+          "payload": {
+            "key": "gmail-billing",
+            "type": "composio",
+            "app": "gmail",
+            "label": "Gmail (billing inbox)",
+            "scope": "space",
+            "space": "finance",
+            "permissions": {
+              "read": "allowed",
+              "create_change": "ask",
+              "send_delete_share": "ask"
+            }
+          },
+          "batch": 8
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-invoicing",
+          "section": "knowledge",
+          "key": "kb-invoicing",
+          "title": "Knowledge: Processes/Invoicing (Space knowledge)",
+          "group": "finance",
+          "who": "card",
+          "via_today": "ask the agent to save it",
+          "via_mcp": "write_context",
+          "where": "Space knowledge",
+          "depends_on": [
+            "finance"
+          ],
+          "payload": {
+            "key": "kb-invoicing",
+            "vault": "space",
+            "space": "finance",
+            "folder": "Processes",
+            "title": "Invoicing",
+            "origin": "from_user_file",
+            "content_md": "# Invoicing\n\n- First working day of the month.\n- Hours from the time-tracking export, one line per client project.\n- Day rate from Services and prices.\n- Reminders after 14 days, polite, in German.\n- The founder books and sends invoices."
+          },
+          "batch": 8
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/scheduled_tasks/invoicing-run",
+          "section": "scheduled_tasks",
+          "key": "invoicing-run",
+          "title": "Task Invoice lines and reminders · Weekdays at 9:00, acts only on the first working day (starts paused)",
+          "group": "finance",
+          "who": "card",
+          "via_today": "setup proposal step schedule_task, made in the task's own chat; a person turns it on",
+          "via_mcp": "create_scheduled",
+          "where": "Work › Scheduled",
+          "depends_on": [
+            "finance-manager",
+            "toggl-studio",
+            "gmail-billing"
+          ],
+          "proposal_step": {
+            "kind": "schedule_task",
+            "title": "Invoice lines and reminders",
+            "instruction": "Act only on the first working day of the month; on any other day end without a message. Then: read last month's hours from Toggl Track, group them per client project, and make invoice lines at the day rate from Services and prices. Flag entries without a project. List invoices unpaid for more than 14 days and draft a polite German reminder for each in the billing inbox. Post the invoice lines as a table and the list of reminder drafts here.",
+            "when": "Weekdays at 9:00, acts only on the first working day",
+            "why": "The monthly invoicing block and the reminders, prepared before you start."
+          },
+          "payload": {
+            "key": "invoicing-run",
+            "title": "Invoice lines and reminders",
+            "agent": "finance-manager",
+            "conversation": {
+              "audience": "space_shared",
+              "space": "finance",
+              "title": "Monthly invoicing"
+            },
+            "kind": "responsibility",
+            "instruction": "Act only on the first working day of the month; on any other day end without a message. Then: read last month's hours from Toggl Track, group them per client project, and make invoice lines at the day rate from Services and prices. Flag entries without a project. List invoices unpaid for more than 14 days and draft a polite German reminder for each in the billing inbox. Post the invoice lines as a table and the list of reminder drafts here.",
+            "timing": {
+              "kind": "weekly",
+              "timezone": "Europe/Berlin",
+              "weekdays": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "times": [
+                "09:00"
+              ],
+              "human": "Weekdays at 9:00, acts only on the first working day"
+            },
+            "preparation": "cavion_deliverables",
+            "apps": [
+              {
+                "connection": "toggl-studio",
+                "read": "allowed",
+                "create_change": "off",
+                "send_delete_share": "off"
+              },
+              {
+                "connection": "gmail-billing",
+                "read": "allowed",
+                "create_change": "ask",
+                "send_delete_share": "off"
+              }
+            ],
+            "knowledge": [
+              "kb-invoicing",
+              "kb-services-prices"
+            ],
+            "notification": "meaningful"
+          },
+          "batch": 8
+        }
+      ]
+    },
+    {
+      "batch": 9,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/spaces/growth",
+          "section": "spaces",
+          "key": "growth",
+          "title": "Create Space New business (Open)",
+          "group": "growth",
+          "who": "card",
+          "via_today": "setup proposal step create_space (assistant), then Space › Settings for agent access",
+          "via_mcp": "create_space",
+          "where": "Spaces › +",
+          "depends_on": [],
+          "proposal_step": {
+            "kind": "create_space",
+            "name": "New business",
+            "purpose": "Website inquiries, discovery calls, proposals, case studies and LinkedIn posts.",
+            "why": "Proposals, inquiries and posts share the same voice, prices and pipeline."
+          },
+          "payload": {
+            "key": "growth",
+            "name": "New business",
+            "purpose": "Website inquiries, discovery calls, proposals, case studies and LinkedIn posts.",
+            "colour": "orange",
+            "agent_access": "open",
+            "members": [
+              "founder",
+              "designer"
+            ]
+          },
+          "batch": 9
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/space_members/growth--designer",
+          "section": "space_members",
+          "key": "growth--designer",
+          "title": "Add designer to New business",
+          "group": "growth",
+          "who": "card",
+          "via_today": "ADD_SPACE_MEMBER (Allow once)",
+          "via_mcp": "set_space_member",
+          "where": "Space New business › People",
+          "depends_on": [
+            "growth",
+            "designer"
+          ],
+          "batch": 9
+        }
+      ]
+    },
+    {
+      "batch": 10,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/agents/growth-manager",
+          "section": "agents",
+          "key": "growth-manager",
+          "title": "Set up the New business manager: instructions, tools, apps",
+          "group": "growth",
+          "who": "card",
+          "via_today": "CAVION_EDIT_AGENT and CAVION_SET_AGENT_TOOLS (Allow once)",
+          "via_mcp": "configure_agent",
+          "where": "Space › Agents › manager › Settings",
+          "depends_on": [
+            "growth",
+            "gmail-hello",
+            "notion-studio"
+          ],
+          "payload": {
+            "key": "growth-manager",
+            "kind": "space_manager",
+            "space": "growth",
+            "name": "New business",
+            "instructions": "You look after new business. For each new project inquiry in the contact inbox, draft a reply following Inquiry replies (thank them, two lines on how we work, the booking link) and post a one-line summary in the chat. Ignore newsletters and tool mails.\n\nOn Fridays draft two LinkedIn posts from launches and case studies of the past two weeks, each with three alternative hooks, in the Brand voice. Ask the Proposal writer for proposals. Never send or post anything yourself.",
+            "tools_preset": "assistant",
+            "apps": [
+              "gmail-hello",
+              "notion-studio"
+            ],
+            "learning": {
+              "remember_notes": "on",
+              "learn_skills": true
+            },
+            "autonomous_sending": false
+          },
+          "batch": 10
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/agents/proposal-writer",
+          "section": "agents",
+          "key": "proposal-writer",
+          "title": "Create specialist Proposal writer",
+          "group": "growth",
+          "who": "card",
+          "via_today": "setup proposal step create_specialist",
+          "via_mcp": "create_specialist",
+          "where": "Space › Agents",
+          "depends_on": [
+            "growth",
+            "notion-studio"
+          ],
+          "proposal_step": {
+            "kind": "create_specialist",
+            "space": "growth",
+            "name": "Proposal writer",
+            "instructions": "You turn discovery-call notes into proposals. Follow the proposal skill and the Proposal structure: goals, scope, timeline, price, next steps. Prices come from Services and prices; split design and build; always offer the maintenance retainer. Write German unless asked; add an English scope section when the client has an English-speaking co-founder or asks for it. Deliver a Word document for review. Ask one question when budget or deadline is missing instead of guessing.",
+            "why": "Eleven proposals in three months with the same structure and the same follow-ups."
+          },
+          "payload": {
+            "key": "proposal-writer",
+            "kind": "specialist",
+            "space": "growth",
+            "name": "Proposal writer",
+            "instructions": "You turn discovery-call notes into proposals. Follow the proposal skill and the Proposal structure: goals, scope, timeline, price, next steps. Prices come from Services and prices; split design and build; always offer the maintenance retainer. Write German unless asked; add an English scope section when the client has an English-speaking co-founder or asks for it. Deliver a Word document for review. Ask one question when budget or deadline is missing instead of guessing.",
+            "tools_preset": "document_worker",
+            "tools": [
+              "knowledge_read",
+              "skills",
+              "edit_files",
+              "open_files",
+              "ask_questions"
+            ],
+            "apps": [
+              "notion-studio"
+            ],
+            "learning": {
+              "remember_notes": "on",
+              "learn_skills": false
+            },
+            "autonomous_sending": false
+          },
+          "batch": 10
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/app_permissions/gmail-hello",
+          "section": "app_permissions",
+          "key": "gmail-hello",
+          "title": "Gmail (contact inbox): Read allowed, Create and change ask, Send ask",
+          "group": "growth",
+          "who": "card",
+          "via_today": "CAVION_SET_APP_PERMISSION (Allow once)",
+          "via_mcp": "set_app_permission",
+          "where": "app › Manage",
+          "depends_on": [
+            "gmail-hello"
+          ],
+          "payload": {
+            "key": "gmail-hello",
+            "type": "composio",
+            "app": "gmail",
+            "label": "Gmail (contact inbox)",
+            "scope": "space",
+            "space": "growth",
+            "permissions": {
+              "read": "allowed",
+              "create_change": "ask",
+              "send_delete_share": "ask"
+            }
+          },
+          "batch": 10
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-proposal-structure",
+          "section": "knowledge",
+          "key": "kb-proposal-structure",
+          "title": "Knowledge: Templates/Proposal structure (Space knowledge)",
+          "group": "growth",
+          "who": "card",
+          "via_today": "ask the agent to save it",
+          "via_mcp": "write_context",
+          "where": "Space knowledge",
+          "depends_on": [
+            "growth"
+          ],
+          "payload": {
+            "key": "kb-proposal-structure",
+            "vault": "space",
+            "space": "growth",
+            "folder": "Templates",
+            "title": "Proposal structure",
+            "origin": "from_user_file",
+            "content_md": "# Proposal structure\n\n1. Goals — what the client wants to achieve\n2. Scope — pages, features, design and build\n3. Timeline — phases and launch date\n4. Price — day rate, design and build split, maintenance retainer\n5. Next steps — call, signature, kick-off"
+          },
+          "batch": 10
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-inquiry-replies",
+          "section": "knowledge",
+          "key": "kb-inquiry-replies",
+          "title": "Knowledge: Templates/Inquiry replies (Space knowledge)",
+          "group": "growth",
+          "who": "card",
+          "via_today": "ask the agent to save it",
+          "via_mcp": "write_context",
+          "where": "Space knowledge",
+          "depends_on": [
+            "growth"
+          ],
+          "payload": {
+            "key": "kb-inquiry-replies",
+            "vault": "space",
+            "space": "growth",
+            "folder": "Templates",
+            "title": "Inquiry replies",
+            "origin": "drafted",
+            "content_md": "# Inquiry replies\n\n- Thank them and repeat what they asked for in one line.\n- Two lines on how we work: discovery call, proposal, design, build, launch.\n- Booking link for a 30-minute call: <add your booking link>.\n- German unless they wrote in English. Sign as the studio."
+          },
+          "batch": 10
+        }
+      ]
+    },
+    {
+      "batch": 11,
+      "steps": [
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/knowledge/kb-linkedin-ideas",
+          "section": "knowledge",
+          "key": "kb-linkedin-ideas",
+          "title": "Knowledge: Marketing/LinkedIn ideas (Space knowledge)",
+          "group": "growth",
+          "who": "card",
+          "via_today": "ask the agent to save it",
+          "via_mcp": "write_context",
+          "where": "Space knowledge",
+          "depends_on": [
+            "growth"
+          ],
+          "payload": {
+            "key": "kb-linkedin-ideas",
+            "vault": "space",
+            "space": "growth",
+            "folder": "Marketing",
+            "title": "LinkedIn ideas",
+            "origin": "from_user_file",
+            "content_md": "# LinkedIn ideas\n\n- Launch stories: problem, what we built, one result\n- Before and after of a redesign\n- How we price websites"
+          },
+          "batch": 11
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/skills/skill-proposal",
+          "section": "skills",
+          "key": "skill-proposal",
+          "title": "Skill proposal-from-call-notes (saved as Knowledge until skill import exists)",
+          "group": "growth",
+          "who": "card",
+          "via_today": "save SKILL.md as a Knowledge doc and point the agent's instructions to it",
+          "via_mcp": "import_skill (planned)",
+          "where": "Knowledge",
+          "depends_on": [
+            "proposal-writer"
+          ],
+          "payload": {
+            "key": "skill-proposal",
+            "name": "proposal-from-call-notes",
+            "description": "Turn discovery-call notes into a studio proposal (goals, scope, timeline, price, next steps). Use for every new website or brand project inquiry after a call.",
+            "scope": "space",
+            "space": "growth",
+            "for_agents": [
+              "proposal-writer"
+            ],
+            "files": [
+              {
+                "path": "SKILL.md",
+                "content": "---\nname: proposal-from-call-notes\ndescription: Turn discovery-call notes into a studio proposal (goals, scope, timeline, price, next steps). Use for every new website or brand project inquiry after a call.\n---\n\n# Proposal from call notes\n\n1. Read the notes. If budget, deadline or page count is missing, ask one question.\n2. Goals: two or three sentences in the client's words.\n3. Scope: pages and features; split design and build.\n4. Timeline: phases with weeks; launch date.\n5. Price: days × day rate from Services and prices, design and build separately, then the maintenance retainer as an option.\n6. Next steps: call to discuss, signature, kick-off date.\n7. German by default; add an English scope section when asked.\n8. Deliver a Word document and a three-line summary in the chat.\n"
+              }
+            ],
+            "fallback": "knowledge"
+          },
+          "batch": 11
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/scheduled_tasks/linkedin-drafts",
+          "section": "scheduled_tasks",
+          "key": "linkedin-drafts",
+          "title": "Task Friday LinkedIn drafts · Fridays at 15:30 (starts paused)",
+          "group": "growth",
+          "who": "card",
+          "via_today": "setup proposal step schedule_task, made in the task's own chat; a person turns it on",
+          "via_mcp": "create_scheduled",
+          "where": "Work › Scheduled",
+          "depends_on": [
+            "growth-manager",
+            "notion-studio"
+          ],
+          "proposal_step": {
+            "kind": "schedule_task",
+            "title": "Friday LinkedIn drafts",
+            "instruction": "Look at launches and case studies from the past two weeks in Notion and in this Space. Draft two LinkedIn posts (at most 120 words each): the client's problem, what we built, one result. Give three alternative opening hooks for each. Use the Brand voice and LinkedIn ideas. Post them here; never post to LinkedIn.",
+            "when": "Fridays at 15:30",
+            "why": "Drafts ready for the Friday content block."
+          },
+          "payload": {
+            "key": "linkedin-drafts",
+            "title": "Friday LinkedIn drafts",
+            "agent": "growth-manager",
+            "conversation": {
+              "audience": "space_shared",
+              "space": "growth",
+              "title": "LinkedIn drafts"
+            },
+            "kind": "scheduled_task",
+            "instruction": "Look at launches and case studies from the past two weeks in Notion and in this Space. Draft two LinkedIn posts (at most 120 words each): the client's problem, what we built, one result. Give three alternative opening hooks for each. Use the Brand voice and LinkedIn ideas. Post them here; never post to LinkedIn.",
+            "timing": {
+              "kind": "weekly",
+              "timezone": "Europe/Berlin",
+              "weekdays": [
+                5
+              ],
+              "times": [
+                "15:30"
+              ],
+              "human": "Fridays at 15:30"
+            },
+            "preparation": "read_only",
+            "apps": [
+              {
+                "connection": "notion-studio",
+                "read": "allowed",
+                "create_change": "off",
+                "send_delete_share": "off"
+              }
+            ],
+            "knowledge": [
+              "kb-brand-voice",
+              "kb-linkedin-ideas"
+            ],
+            "notification": "meaningful"
+          },
+          "batch": 11
+        },
+        {
+          "ledger_key": "onb-2026-11-07-studio-nordlicht/checks/new-inquiries",
+          "section": "checks",
+          "key": "new-inquiries",
+          "title": "Check New website inquiries · every 15 min (starts off)",
+          "group": "growth",
+          "who": "card",
+          "via_today": "ask the agent in that chat to propose the check (CAVION_PROPOSE_CHECK); Cavion tests it once",
+          "via_mcp": "propose_check (planned)",
+          "where": "the chat",
+          "depends_on": [
+            "growth-manager",
+            "gmail-hello"
+          ],
+          "payload": {
+            "key": "new-inquiries",
+            "title": "New website inquiries",
+            "agent": "growth-manager",
+            "conversation": {
+              "audience": "space_shared",
+              "space": "growth",
+              "title": "Inquiries"
+            },
+            "app": "gmail-hello",
+            "reads": "new e-mails to the studio's contact inbox",
+            "instruction": "If the mail is a new project inquiry, draft a reply following Inquiry replies and post a one-line summary (what they want, budget if stated). Skip newsletters, invoices and tool notifications.",
+            "every_minutes": 15
+          },
+          "batch": 11
+        }
+      ]
+    }
+  ],
+  "paste_prompts": [
+    "Please set this up (part 1 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Set up the assistant: instructions, tools, apps\n   Name: Assistant\n   Apps: Gmail (founder), Google Calendar\n   Instructions:\n   You work for the founder of a three-person brand and web studio. Keep answers short. Write German to clients and English internally.\n   \n   Every Monday prepare the week: calls that need preparation, deadlines, open threads waiting on a reply, and three suggested priorities. During the week help with mail and the calendar: draft replies, find slots, summarise threads. Never send a mail or accept an invitation without asking first.\n   \n   Follow the Brand voice in Company knowledge for anything a client reads.\n2. Gmail (founder): Read allowed, Create and change ask, Send ask\n3. Google Calendar: Read allowed, Create and change ask, Send ask\n4. Memory for assistant: 3 user profile\n   - Founder and creative director of a three-person brand and web studio.\n   - Writes German to clients and English internally; prefers short answers.\n   - Plans the week on Monday at 9:00; client status mails go out on Friday afternoon.\n5. Task Monday brief · Mondays at 8:30 (starts paused)\n   When: Mondays at 8:30 (Europe/Berlin)\n   Apps: Google Calendar (read allowed), Gmail (founder) (read allowed)\n   Instruction: Read this week's calendar and the last week's unanswered mail. Write a short brief: calls that need preparation (with one line of context each), deadlines, threads waiting on a reply, and three suggested priorities for the week. Keep it under 200 words.",
+    "Please set this up (part 2 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Knowledge: Studio/Brand voice (Company knowledge)\n   # Brand voice\n   \n   - Warm, clear, concrete. Short sentences.\n   - No buzzwords: innovative, leading, solutions, synergy.\n   - German for clients unless they write in English; English internally.\n   - Say what we did and what it changed, with one number when there is one.\n   - Sign client mails as the studio.\n2. Knowledge: Studio/Services and prices (Company knowledge)\n   # Services and prices\n   \n   - Day rate: 850 EUR net.\n   - Typical website project: 6–10k EUR, split into design and build.\n   - Always offer a maintenance retainer after launch.\n   \n   Check with the founder before quoting anything outside these ranges.\n3. Knowledge: Processes/Client onboarding (Company knowledge)\n   # Client onboarding\n   \n   1. Kick-off call\n   2. Shared Notion page\n   3. Slack Connect channel\n   4. Collect logo, photos and texts\n   5. Time-tracking project",
+    "Please set this up (part 3 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Create Space Clients (Open)\n   Purpose: Client website projects from kick-off to launch: weekly status, tasks from calls, design and build hand-offs, launch QA and site health.\n   Agents from other Spaces: Can work with this Space\n2. Project Café website in Clients\n3. Project Bike shop website in Clients\n4. Project Physio practice website in Clients",
+    "Please set this up (part 4 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Project Yoga studio website in Clients\n2. Add designer to Clients\n3. Add developer to Clients",
+    "Please set this up (part 5 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Set up the Clients manager: instructions, tools, apps\n   Name: Clients\n   Apps: Notion (studio), Slack (studio), Figma\n   Instructions:\n   You run the studio's client projects. Each client has a Project in this Space.\n   \n   After a call, when notes are posted or added to Notion, create tasks in Notion with an owner (founder, designer or developer) and a due date, then post the list in the chat.\n   \n   On Fridays draft one status update per active project from the week's Notion tasks, call notes and Slack threads. Use the Weekly status update template and the Brand voice; German, at most 120 words; done, next, what we need from the client. Post drafts in the chat; never send them.\n   \n   Ask Launch QA for launch checks and site problems.\n2. Create specialist Launch QA\n   Name: Launch QA\n   Apps: none\n   Instructions:\n   You check client websites before launch and every Monday. Follow the launch QA skill and the Website launch checklist: speed scores above 90, German alt texts, broken links, meta titles and descriptions, favicon, 404 page, redirects from old URLs, cookie banner, Search Console.\n   \n   For launch checks post what needs fixing, most important first, and a short client summary as a draft. For the Monday health check of all live sites (links, SSL expiry, speed) stay quiet when everything is fine and post only problems.\n   \n   Use the browser to look at sites; never submit forms or change a site.\n3. Notion (studio): Read allowed, Create and change allowed, Send ask\n4. Slack (studio): Read allowed, Create and change ask, Send ask\n5. Figma: Read allowed, Create and change off, Send off\n6. Knowledge: Templates/Weekly status update (Space knowledge)\n   # Weekly status update\n   \n   Hallo {Name},\n   \n   kurzes Update zu {Projekt}:\n   - Erledigt:\n   - Als Nächstes:\n   - Wir brauchen von euch:\n   \n   Viele Grüße\n   Studio Nordlicht\n   \n   At most 120 words. Add the staging link when there is one.",
+    "Please set this up (part 6 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Knowledge: Processes/Website launch checklist (Space knowledge)\n   # Website launch checklist\n   \n   - Speed scores above 90\n   - Alt texts in German\n   - 404 page\n   - Favicon\n   - Meta titles and descriptions\n   - Redirects from old URLs\n   - Cookie banner\n   - Search Console set up\n2. Skill launch-qa (saved as Knowledge until skill import exists)\n   Save this as a Knowledge document named after the skill and follow it:\n   ---\n   name: launch-qa\n   description: Check a client website before launch against the studio's checklist and write the fix list and a client summary. Use before every launch and for site problems.\n   ---\n   \n   # Launch QA\n   \n   1. Open the staging or live address in the browser.\n   2. Run a speed test for mobile and desktop; note scores below 90.\n   3. Check every page for missing or English alt texts, broken links, missing meta titles and descriptions.\n   4. Check favicon, 404 page, cookie banner and redirects from the old site.\n   5. Check Search Console access.\n   6. Post the fixes, most important first, with the page for each.\n   7. Draft a five-line summary for the client in German.\n3. Memory for clients-manager: 3 agent notes\n   - The team: founder (sales, client contact), designer (Figma, icons), freelance developer (Webflow builds, forms).\n   - Sites are designed in Figma and built in Webflow.\n   - Each client has one Project in this Space; status drafts are per Project.\n4. Task Friday client status drafts · Fridays at 14:00 (starts paused)\n   When: Fridays at 14:00 (Europe/Berlin)\n   Apps: Notion (studio) (read allowed), Slack (studio) (read allowed)\n   Instruction: For each active client Project, read this week's Notion tasks and call notes and the project's Slack threads. Draft one status update per client with the Weekly status update template and the Brand voice: German, at most 120 words, done / next / what we need. Post all drafts here, one message per client. Do not send anything. If a project had no activity, say so in one line.\n5. Task Monday site health check · Mondays at 7:00 (starts paused)\n   When: Mondays at 7:00 (Europe/Berlin)\n   Apps: none\n   Instruction: Check every live client site listed in the Clients Space for broken links, SSL certificates expiring within 30 days, and mobile speed scores below 80. Post only problems, one line each with the site and what to fix. If everything is fine, end without a message.\n6. Check New call notes to tasks · every 30 min (starts off)\n   App: Notion (studio), every 30 minutes\n   Looks at: new pages in the call notes database\n   Instruction: For each new call note, create Notion tasks with owner and due date and post the list in the client's Project.",
+    "Please set this up (part 7 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Create Space Finance (Members only)\n   Purpose: Monthly invoice lines from time tracking, overdue invoices and reminders. Money matters stay with the founder.\n   Agents from other Spaces: Members only",
+    "Please set this up (part 8 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Set up the Finance manager: instructions, tools, apps\n   Name: Finance\n   Apps: Toggl Track, Gmail (billing inbox)\n   Instructions:\n   You prepare the studio's invoicing. On the first working day of the month read last month's hours from Toggl Track and make one invoice line per client project at the day rate in Services and prices. Flag entries without a project. Then list invoices unpaid for more than 14 days and draft a polite German reminder for each in the billing inbox. Post the lines as a table the founder can paste into the invoicing tool. You never send mails, book invoices or move money.\n2. Toggl Track: Read allowed, Create and change off, Send off\n3. Gmail (billing inbox): Read allowed, Create and change ask, Send ask\n4. Knowledge: Processes/Invoicing (Space knowledge)\n   # Invoicing\n   \n   - First working day of the month.\n   - Hours from the time-tracking export, one line per client project.\n   - Day rate from Services and prices.\n   - Reminders after 14 days, polite, in German.\n   - The founder books and sends invoices.\n5. Task Invoice lines and reminders · Weekdays at 9:00, acts only on the first working day (starts paused)\n   When: Weekdays at 9:00, acts only on the first working day (Europe/Berlin)\n   Apps: Toggl Track (read allowed), Gmail (billing inbox) (read allowed)\n   Instruction: Act only on the first working day of the month; on any other day end without a message. Then: read last month's hours from Toggl Track, group them per client project, and make invoice lines at the day rate from Services and prices. Flag entries without a project. List invoices unpaid for more than 14 days and draft a polite German reminder for each in the billing inbox. Post the invoice lines as a table and the list of reminder drafts here.",
+    "Please set this up (part 9 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Create Space New business (Open)\n   Purpose: Website inquiries, discovery calls, proposals, case studies and LinkedIn posts.\n   Agents from other Spaces: Can work with this Space\n2. Add designer to New business",
+    "Please set this up (part 10 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Set up the New business manager: instructions, tools, apps\n   Name: New business\n   Apps: Gmail (contact inbox), Notion (studio)\n   Instructions:\n   You look after new business. For each new project inquiry in the contact inbox, draft a reply following Inquiry replies (thank them, two lines on how we work, the booking link) and post a one-line summary in the chat. Ignore newsletters and tool mails.\n   \n   On Fridays draft two LinkedIn posts from launches and case studies of the past two weeks, each with three alternative hooks, in the Brand voice. Ask the Proposal writer for proposals. Never send or post anything yourself.\n2. Create specialist Proposal writer\n   Name: Proposal writer\n   Apps: Notion (studio)\n   Instructions:\n   You turn discovery-call notes into proposals. Follow the proposal skill and the Proposal structure: goals, scope, timeline, price, next steps. Prices come from Services and prices; split design and build; always offer the maintenance retainer. Write German unless asked; add an English scope section when the client has an English-speaking co-founder or asks for it. Deliver a Word document for review. Ask one question when budget or deadline is missing instead of guessing.\n3. Gmail (contact inbox): Read allowed, Create and change ask, Send ask\n4. Knowledge: Templates/Proposal structure (Space knowledge)\n   # Proposal structure\n   \n   1. Goals — what the client wants to achieve\n   2. Scope — pages, features, design and build\n   3. Timeline — phases and launch date\n   4. Price — day rate, design and build split, maintenance retainer\n   5. Next steps — call, signature, kick-off\n5. Knowledge: Templates/Inquiry replies (Space knowledge)\n   # Inquiry replies\n   \n   - Thank them and repeat what they asked for in one line.\n   - Two lines on how we work: discovery call, proposal, design, build, launch.\n   - Booking link for a 30-minute call: <add your booking link>.\n   - German unless they wrote in English. Sign as the studio.",
+    "Please set this up (part 11 of 11 of my Dayprint file onb-2026-11-07-studio-nordlicht). Propose it as one setup where you can, and ask me before each change:\n\n1. Knowledge: Marketing/LinkedIn ideas (Space knowledge)\n   # LinkedIn ideas\n   \n   - Launch stories: problem, what we built, one result\n   - Before and after of a redesign\n   - How we price websites\n2. Skill proposal-from-call-notes (saved as Knowledge until skill import exists)\n   Save this as a Knowledge document named after the skill and follow it:\n   ---\n   name: proposal-from-call-notes\n   description: Turn discovery-call notes into a studio proposal (goals, scope, timeline, price, next steps). Use for every new website or brand project inquiry after a call.\n   ---\n   \n   # Proposal from call notes\n   \n   1. Read the notes. If budget, deadline or page count is missing, ask one question.\n   2. Goals: two or three sentences in the client's words.\n   3. Scope: pages and features; split design and build.\n   4. Timeline: phases with weeks; launch date.\n   5. Price: days × day rate from Services and prices, design and build separately, then the maintenance retainer as an option.\n   6. Next steps: call to discuss, signature, kick-off date.\n   7. German by default; add an English scope section when asked.\n   8. Deliver a Word document and a three-line summary in the chat.\n3. Task Friday LinkedIn drafts · Fridays at 15:30 (starts paused)\n   When: Fridays at 15:30 (Europe/Berlin)\n   Apps: Notion (studio) (read allowed)\n   Instruction: Look at launches and case studies from the past two weeks in Notion and in this Space. Draft two LinkedIn posts (at most 120 words each): the client's problem, what we built, one result. Give three alternative opening hooks for each. Use the Brand voice and LinkedIn ideas. Post them here; never post to LinkedIn.\n4. Check New website inquiries · every 15 min (starts off)\n   App: Gmail (contact inbox), every 15 minutes\n   Looks at: new e-mails to the studio's contact inbox\n   Instruction: If the mail is a new project inquiry, draft a reply following Inquiry replies and post a one-line summary (what they want, budget if stated). Skip newsletters, invoices and tool notifications."
+  ]
+}

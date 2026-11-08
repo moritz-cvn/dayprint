@@ -1,0 +1,210 @@
+{
+  "schema": "dayprint.day/0.1",
+  "generator": "synthetic",
+  "generated_at": "2026-11-08T00:00:00+00:00",
+  "sources": {},
+  "repos_scanned": 0,
+  "days_observed": 21,
+  "typical": {
+    "start": "10:30",
+    "end": "01:30",
+    "active_hours": 11.0,
+    "late_nights_share": 0.6
+  },
+  "hours": [
+    {
+      "hour": 5,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    },
+    {
+      "hour": 6,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    },
+    {
+      "hour": 7,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    },
+    {
+      "hour": 8,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    },
+    {
+      "hour": 9,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    },
+    {
+      "hour": 10,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 11,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 12,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 13,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 14,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 15,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 16,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 17,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 18,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 19,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 20,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 21,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 22,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 23,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 0,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 1,
+      "active_share": 0.7,
+      "active_minutes": 40,
+      "prompts": 7,
+      "commits": 0.1
+    },
+    {
+      "hour": 2,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    },
+    {
+      "hour": 3,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    },
+    {
+      "hour": 4,
+      "active_share": 0.05,
+      "active_minutes": 3,
+      "prompts": 0.2,
+      "commits": 0.1
+    }
+  ],
+  "weekdays": {
+    "Mon": 10,
+    "Tue": 11,
+    "Wed": 11,
+    "Thu": 12,
+    "Fri": 10,
+    "Sat": 9,
+    "Sun": 7
+  },
+  "deep_blocks_per_day": 0.3,
+  "tempo": {
+    "messages_per_day": 130,
+    "messages_per_active_hour": 11,
+    "decision_share": 0.68,
+    "decisions_per_day": 88,
+    "reply_median_s": 60,
+    "reply_p25_s": 24,
+    "reply_p75_s": 150,
+    "agents_wait_hours_per_day": 5.5,
+    "answered_within_2_min": 0.7,
+    "blocking_share": 0.9
+  },
+  "apps": null,
+  "per_day": [],
+  "basis": "message times",
+  "display_days": 0
+}

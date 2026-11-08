@@ -1,0 +1,365 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Synthetic//Lena//EN
+BEGIN:VEVENT
+UID:36136e15-f200-c261-4d29-d1ab345512f7
+SUMMARY:Weekly planning
+DTSTART:20260803T080000Z
+DTEND:20260803T090000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+RRULE:FREQ=WEEKLY;BYDAY=MO
+END:VEVENT
+BEGIN:VEVENT
+UID:4169b9fc-c3a0-0c6f-2321-d1e1c47104c0
+SUMMARY:Team stand-up (Slack huddle)
+DTSTART:20260803T083000Z
+DTEND:20260803T084500Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+RRULE:FREQ=WEEKLY;BYDAY=MO,WE,FR
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:mira.dev@example.com
+END:VEVENT
+BEGIN:VEVENT
+UID:01fa964e-1eb7-4b56-53ff-d3a24a193501
+SUMMARY:Kaffeebar Ost – weekly check-in
+DTSTART:20260806T130000Z
+DTEND:20260806T133000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+RRULE:FREQ=WEEKLY;BYDAY=TH
+ATTENDEE;CN=Guest:mailto:anna.berg@kaffeebar-ost.de
+LOCATION:https://zoom.us/j/123456789?pwd=abc
+END:VEVENT
+BEGIN:VEVENT
+UID:2cfa55b0-6e3f-683a-bf3c-51407f54a511
+SUMMARY:Invoicing + reminders
+DTSTART:20260831T090000Z
+DTEND:20260831T110000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+RRULE:FREQ=MONTHLY;BYDAY=1MO
+END:VEVENT
+BEGIN:VEVENT
+UID:b423ccde-8857-5117-6155-46672112507c
+SUMMARY:Content time – LinkedIn
+DTSTART:20260807T150000Z
+DTEND:20260807T154500Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+RRULE:FREQ=WEEKLY;BYDAY=FR
+END:VEVENT
+BEGIN:VEVENT
+UID:d556b37d-8f08-81ee-8011-316b3ae88926
+SUMMARY:Client status mails
+DTSTART:20260807T140000Z
+DTEND:20260807T150000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+RRULE:FREQ=WEEKLY;BYDAY=FR
+END:VEVENT
+BEGIN:VEVENT
+UID:6aedfdc7-a3e0-5309-b5a1-b94967884209
+SUMMARY:Discovery call – Lokal Gin
+DTSTART:20260806T141800Z
+DTEND:20260806T150300Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@lokal-gin.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:1b19d8b8-d830-2081-6fcc-57dd168fae12
+SUMMARY:Discovery call – Kanzlei Brandt
+DTSTART:20260810T141100Z
+DTEND:20260810T145600Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@kanzlei-brandt.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:4f6e274b-deda-b027-6550-f74a1422373f
+SUMMARY:Elbe Yoga Loft – review call
+DTSTART:20260810T101600Z
+DTEND:20260810T110100Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:hello@elbeyogaloft.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:87d5b7be-1d30-d990-a21b-030782af085c
+SUMMARY:Fahrradwerk Altona – review call
+DTSTART:20260811T100200Z
+DTEND:20260811T104700Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:tom@fahrradwerk-altona.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:328067a1-4187-222b-257d-5e521a5165ca
+SUMMARY:Discovery call – Nordwind Segelschule
+DTSTART:20260813T100700Z
+DTEND:20260813T105200Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@nordwind-segelschule.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:c5d95f51-f387-e1bd-2d59-72c6134a5a2f
+SUMMARY:Fahrradwerk Altona – review call
+DTSTART:20260813T102000Z
+DTEND:20260813T110500Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:tom@fahrradwerk-altona.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:71348c2a-780b-3657-117b-355b70944bdb
+SUMMARY:Discovery call – Nordwind Segelschule
+DTSTART:20260820T130400Z
+DTEND:20260820T134900Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@nordwind-segelschule.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:d4ea120a-5e65-9654-0e90-58b609a0a0f6
+SUMMARY:Elbe Yoga Loft – review call
+DTSTART:20260824T101400Z
+DTEND:20260824T105900Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:hello@elbeyogaloft.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:7674456f-626d-719d-81cf-325298159d6c
+SUMMARY:Discovery call – Nordwind Segelschule
+DTSTART:20260825T091900Z
+DTEND:20260825T100400Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@nordwind-segelschule.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:269ed4c9-8059-9b93-79c2-d2e49ae1a991
+SUMMARY:Discovery call – Kanzlei Brandt
+DTSTART:20260827T101000Z
+DTEND:20260827T105500Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@kanzlei-brandt.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:fdb1429e-7010-ed13-b526-b22d3f6c21f7
+SUMMARY:Discovery call – Nordwind Segelschule
+DTSTART:20260901T100100Z
+DTEND:20260901T104600Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@nordwind-segelschule.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:569f3ab3-c643-5300-68a5-1c68632dbb5e
+SUMMARY:Praxis Weber Physio – review call
+DTSTART:20260902T100900Z
+DTEND:20260902T105400Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:info@praxis-weber.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:adaa44ca-8ed6-ad5e-1831-8aa354669d19
+SUMMARY:Praxis Weber Physio – review call
+DTSTART:20260903T100200Z
+DTEND:20260903T104700Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:info@praxis-weber.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:598ddaec-eaaf-e543-2434-a678a9e27ba9
+SUMMARY:Kaffeebar Ost – review call
+DTSTART:20260908T101800Z
+DTEND:20260908T110300Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:anna.berg@kaffeebar-ost.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:15b02530-f020-e992-b576-255e98549f22
+SUMMARY:Discovery call – Nordwind Segelschule
+DTSTART:20260909T140400Z
+DTEND:20260909T144900Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@nordwind-segelschule.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:23377bbc-fffe-77c8-39fe-b99c31274148
+SUMMARY:Discovery call – Hafen Physio
+DTSTART:20260918T131500Z
+DTEND:20260918T140000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@hafen-physio.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:d5ca69ab-8a2e-6a93-c558-0bb281f7f3fb
+SUMMARY:Praxis Weber Physio – review call
+DTSTART:20260918T100300Z
+DTEND:20260918T104800Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:info@praxis-weber.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:ad261ec5-5d42-b9e9-692e-07b60b2f6d5c
+SUMMARY:Discovery call – Hafen Physio
+DTSTART:20260924T101400Z
+DTEND:20260924T105900Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@hafen-physio.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:5e2ad32d-31ab-0b56-d5c9-fdc7e76adca9
+SUMMARY:Discovery call – Hafen Physio
+DTSTART:20260929T131500Z
+DTEND:20260929T140000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@hafen-physio.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:dfc620ce-7b07-fd31-a424-4f230d5ba7cd
+SUMMARY:Discovery call – Hafen Physio
+DTSTART:20261005T100800Z
+DTEND:20261005T105300Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@hafen-physio.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:836b15c7-e7c2-25da-7306-958845d5a68d
+SUMMARY:Kaffeebar Ost – review call
+DTSTART:20261007T100500Z
+DTEND:20261007T105000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:anna.berg@kaffeebar-ost.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:597e6845-e277-18c5-737d-1fb6d11376e0
+SUMMARY:Discovery call – Weinbar Elbblick
+DTSTART:20261008T090700Z
+DTEND:20261008T095200Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@weinbar-elbblick.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:b6f6dbf1-d6d4-41cc-195d-82f8ee4a9b5d
+SUMMARY:Discovery call – Hafen Physio
+DTSTART:20261013T091000Z
+DTEND:20261013T095500Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@hafen-physio.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:c24369e7-2387-eaf6-d4c3-a832b231c60b
+SUMMARY:Praxis Weber Physio – review call
+DTSTART:20261014T101500Z
+DTEND:20261014T110000Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:info@praxis-weber.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:8c7e6f42-2646-eaf9-d5c0-244d3735262d
+SUMMARY:Discovery call – Bäckerei Krume
+DTSTART:20261016T090800Z
+DTEND:20261016T095300Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@baeckerei-krume.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:cb3cf8ca-a392-5731-6b79-afcc3d0a5f0c
+SUMMARY:Kaffeebar Ost – review call
+DTSTART:20261020T100100Z
+DTEND:20261020T104600Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:anna.berg@kaffeebar-ost.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:83efa9f3-a1c7-cc8a-0435-1b64893ad232
+SUMMARY:Elbe Yoga Loft – review call
+DTSTART:20261021T101900Z
+DTEND:20261021T110400Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:hello@elbeyogaloft.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:aa143cd8-2ff3-cde4-6aa4-2c9f92170475
+SUMMARY:Discovery call – Bäckerei Krume
+DTSTART:20261023T130700Z
+DTEND:20261023T135200Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@baeckerei-krume.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:40ef3935-5f90-bed6-fb25-664d630aa767
+SUMMARY:Discovery call – Weinbar Elbblick
+DTSTART:20261029T092000Z
+DTEND:20261029T100500Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@weinbar-elbblick.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:bc3536df-94f7-9dba-c581-1d2d1a89b71e
+SUMMARY:Fahrradwerk Altona – review call
+DTSTART:20261030T102000Z
+DTEND:20261030T110500Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:tom@fahrradwerk-altona.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:2cd2a404-a48e-40f1-d042-1dfa56ab087a
+SUMMARY:Praxis Weber Physio – review call
+DTSTART:20261102T101700Z
+DTEND:20261102T110200Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:info@praxis-weber.de
+ATTENDEE;CN=Guest:mailto:jonas@studio-nordlicht.de
+LOCATION:https://zoom.us/j/987654321
+END:VEVENT
+BEGIN:VEVENT
+UID:0b36e356-339b-77a8-4b1f-0d7b0977c513
+SUMMARY:Discovery call – Hafen Physio
+DTSTART:20261105T091400Z
+DTEND:20261105T095900Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+ATTENDEE;CN=Guest:mailto:kontakt@hafen-physio.de
+LOCATION:https://meet.google.com/abc-defg-hij
+END:VEVENT
+BEGIN:VEVENT
+UID:d0be73ee-fd37-2539-65f2-02f983f02dc7
+SUMMARY:Zahnarzt
+DTSTART:20260820T070900Z
+DTEND:20260820T080900Z
+ORGANIZER;CN=Lena Hoffmann:mailto:lena@studio-nordlicht.de
+END:VEVENT
+END:VCALENDAR

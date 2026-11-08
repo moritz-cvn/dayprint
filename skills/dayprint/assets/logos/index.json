@@ -1,0 +1,225 @@
+{
+ "note": "Real product logos, copied from tasteskill's curated set. logos:* = gilbarbara/logos (CC0) at commit d6960edc1b73; si:* = simple-icons 16.30.0 (CC0). Every mark is its owner's trademark; nominative use only.",
+ "icons": {
+  "gmail": {
+   "name": "Gmail",
+   "source": "logos:google-gmail"
+  },
+  "google-calendar": {
+   "name": "Google Calendar",
+   "source": "logos:google-calendar"
+  },
+  "google-drive": {
+   "name": "Google Drive",
+   "source": "logos:google-drive"
+  },
+  "google-docs": {
+   "name": "Google Docs",
+   "source": "si:googledocs"
+  },
+  "google-sheets": {
+   "name": "Google Sheets",
+   "source": "si:googlesheets"
+  },
+  "google-meet": {
+   "name": "Google Meet",
+   "source": "logos:google-meet"
+  },
+  "onedrive": {
+   "name": "OneDrive",
+   "source": "logos:microsoft-onedrive"
+  },
+  "notion": {
+   "name": "Notion",
+   "source": "logos:notion-icon"
+  },
+  "slack": {
+   "name": "Slack",
+   "source": "logos:slack-icon"
+  },
+  "figma": {
+   "name": "Figma",
+   "source": "logos:figma"
+  },
+  "calendly": {
+   "name": "Calendly",
+   "source": "si:calendly"
+  },
+  "zoom": {
+   "name": "Zoom",
+   "source": "logos:zoom-icon"
+  },
+  "github": {
+   "name": "GitHub",
+   "source": "logos:github-icon"
+  },
+  "gitlab": {
+   "name": "GitLab",
+   "source": "logos:gitlab-icon"
+  },
+  "openai": {
+   "name": "OpenAI",
+   "source": "logos:openai-icon"
+  },
+  "anthropic": {
+   "name": "Anthropic",
+   "source": "logos:anthropic-icon"
+  },
+  "claude": {
+   "name": "Claude",
+   "source": "logos:claude-icon"
+  },
+  "claude-code": {
+   "name": "Claude Code",
+   "source": "logos:claude-code"
+  },
+  "codex": {
+   "name": "Codex",
+   "source": "logos:codex"
+  },
+  "hubspot": {
+   "name": "HubSpot",
+   "source": "logos:hubspot"
+  },
+  "salesforce": {
+   "name": "Salesforce",
+   "source": "logos:salesforce"
+  },
+  "webflow": {
+   "name": "Webflow",
+   "source": "logos:webflow"
+  },
+  "wordpress": {
+   "name": "WordPress",
+   "source": "logos:wordpress-icon"
+  },
+  "shopify": {
+   "name": "Shopify",
+   "source": "logos:shopify"
+  },
+  "linkedin": {
+   "name": "LinkedIn",
+   "source": "logos:linkedin-icon"
+  },
+  "instagram": {
+   "name": "Instagram",
+   "source": "logos:instagram-icon"
+  },
+  "visual-studio-code": {
+   "name": "VS Code",
+   "source": "logos:visual-studio-code"
+  },
+  "asana": {
+   "name": "Asana",
+   "source": "logos:asana-icon"
+  },
+  "linear": {
+   "name": "Linear",
+   "source": "logos:linear-icon"
+  },
+  "trello": {
+   "name": "Trello",
+   "source": "logos:trello"
+  },
+  "jira": {
+   "name": "Jira",
+   "source": "logos:jira"
+  },
+  "clickup": {
+   "name": "ClickUp",
+   "source": "logos:clickup-icon"
+  },
+  "airtable": {
+   "name": "Airtable",
+   "source": "logos:airtable"
+  },
+  "dropbox": {
+   "name": "Dropbox",
+   "source": "logos:dropbox"
+  },
+  "stripe": {
+   "name": "Stripe",
+   "source": "logos:stripe"
+  },
+  "mailchimp": {
+   "name": "Mailchimp",
+   "source": "logos:mailchimp-icon"
+  },
+  "whatsapp": {
+   "name": "WhatsApp",
+   "source": "logos:whatsapp-icon"
+  },
+  "telegram": {
+   "name": "Telegram",
+   "source": "logos:telegram"
+  },
+  "discord": {
+   "name": "Discord",
+   "source": "logos:discord-icon"
+  },
+  "miro": {
+   "name": "Miro",
+   "source": "logos:miro-icon"
+  },
+  "loom": {
+   "name": "Loom",
+   "source": "logos:loom-icon"
+  },
+  "intercom": {
+   "name": "Intercom",
+   "source": "logos:intercom-icon"
+  },
+  "zendesk": {
+   "name": "Zendesk",
+   "source": "logos:zendesk-icon"
+  },
+  "xero": {
+   "name": "Xero",
+   "source": "logos:xero"
+  },
+  "quickbooks": {
+   "name": "QuickBooks",
+   "source": "si:quickbooks"
+  },
+  "typeform": {
+   "name": "Typeform",
+   "source": "logos:typeform-icon"
+  },
+  "zapier": {
+   "name": "Zapier",
+   "source": "logos:zapier"
+  },
+  "n8n": {
+   "name": "n8n",
+   "source": "logos:n8n-icon"
+  },
+  "supabase": {
+   "name": "Supabase",
+   "source": "logos:supabase-icon"
+  },
+  "vercel": {
+   "name": "Vercel",
+   "source": "logos:vercel-icon"
+  },
+  "netlify": {
+   "name": "Netlify",
+   "source": "logos:netlify-icon"
+  },
+  "obsidian": {
+   "name": "Obsidian",
+   "source": "logos:obsidian-icon"
+  },
+  "evernote": {
+   "name": "Evernote",
+   "source": "si:evernote"
+  },
+  "todoist": {
+   "name": "Todoist",
+   "source": "logos:todoist-icon"
+  },
+  "monday": {
+   "name": "monday.com",
+   "source": "logos:monday-icon"
+  }
+ }
+}

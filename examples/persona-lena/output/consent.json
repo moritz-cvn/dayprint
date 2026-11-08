@@ -1,0 +1,30 @@
+{
+  "schema": "dayprint.consent/0.1",
+  "note": "Synthetic persona: every found source was allowed. Real runs ask per source.",
+  "since_days": null,
+  "sources": {
+    "claude-code-transcripts": true,
+    "claude-code-memory": true,
+    "claude-code-history": true,
+    "codex-sessions": true,
+    "codex-history": true,
+    "codex-memory": true,
+    "chatgpt-export": true,
+    "claude-export": true,
+    "shell-history": true,
+    "calendar-files": true,
+    "documents": true,
+    "installed-apps": true,
+    "git-activity": true
+  },
+  "mask_names": [
+    "Lena",
+    "Hoffmann",
+    "Jonas",
+    "Mira",
+    "Anna",
+    "Tom",
+    "Weber"
+  ],
+  "depth": "deep"
+}

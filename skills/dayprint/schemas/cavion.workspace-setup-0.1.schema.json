@@ -1,0 +1,340 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cavion.io/schemas/cavion.workspace-setup/0.1",
+  "title": "Cavion workspace setup",
+  "description": "A reviewable blueprint of a Cavion workspace. A Cavion MCP (or a person) applies it idempotently: every object is matched by (setup_id, section, key), so applying the same file twice changes nothing. The file never holds credentials, e-mail addresses or names of real people.",
+  "type": "object",
+  "required": ["schema", "setup_id", "revision", "generated_at", "generator", "language", "summary", "apply_policy", "workspace", "members", "spaces", "agents", "connections", "knowledge", "memory_seeds", "skills", "scheduled_tasks", "checks", "event_automations", "devices", "manual_steps", "provenance"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema": {"const": "cavion.workspace-setup/0.1"},
+    "setup_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{7,63}$", "description": "Stable id of this blueprint. Idempotency scope: the applier keeps a ledger of (setup_id, section, key) -> Cavion object id."},
+    "revision": {"type": "integer", "minimum": 1, "description": "Raise when the file is edited after a first apply. The applier compares revisions to show what changed."},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "generator": {"type": "string", "maxLength": 80},
+    "language": {"type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$", "description": "Language for agent instructions, Knowledge and task texts."},
+    "summary": {"type": "string", "minLength": 1, "maxLength": 1200},
+    "apply_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approval", "existing", "prune", "automations_start"],
+      "properties": {
+        "approval": {"enum": ["per_batch", "whole_file"], "description": "per_batch: the applier shows each batch (at most 6 steps, like a Cavion setup proposal) for Approve. whole_file: one approval covers every object with status approved."},
+        "existing": {"enum": ["ask", "keep", "update"], "description": "What to do when an object with the same name already exists and is not in the ledger."},
+        "prune": {"const": false, "description": "Applying never deletes anything. Removing objects is always a person's action in Cavion."},
+        "automations_start": {"const": "paused", "description": "Scheduled tasks and checks are created switched off. A person turns each one on."}
+      }
+    },
+    "workspace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "timezone", "run_with"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 80},
+        "timezone": {"type": "string", "pattern": "^[A-Za-z_]+(/[A-Za-z0-9_+\\-]+)*$"},
+        "run_with": {"enum": ["subscriptions", "api_keys", "undecided"], "description": "Manage › AI › Run this workspace with. A person sets it; keys are never in this file."},
+        "keys": {
+          "type": "array", "maxItems": 10,
+          "items": {"type": "object", "additionalProperties": false, "required": ["provider", "why"],
+                    "properties": {"provider": {"enum": ["openai", "anthropic"]},
+                                   "monthly_budget_usd": {"type": "number", "minimum": 0},
+                                   "why": {"$ref": "#/$defs/why"}}}
+        },
+        "talk": {"type": "object", "additionalProperties": false, "required": ["recommend"],
+                 "properties": {"recommend": {"type": "boolean"}, "why": {"$ref": "#/$defs/why"}}},
+        "allowed_websites": {"type": "array", "maxItems": 50, "items": {"type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$"}, "description": "Suggested entries for Manage › Websites (domains only)."}
+      }
+    },
+    "members": {
+      "type": "array", "minItems": 1, "maxItems": 200,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "role", "title", "invite"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "role": {"enum": ["owner", "admin", "member"]},
+          "title": {"type": "string", "maxLength": 80, "description": "Job title or role, never a real name."},
+          "responsibilities": {"type": "string", "maxLength": 400},
+          "invite": {"enum": ["self", "later", "not_needed"], "description": "self = the person running the skill. Invitations need a name and e-mail typed by a person in Manage › People."},
+          "status": {"$ref": "#/$defs/status"}
+        }
+      }
+    },
+    "spaces": {
+      "type": "array", "maxItems": 50,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "name", "purpose", "agent_access", "members", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "name": {"type": "string", "minLength": 1, "maxLength": 80},
+          "purpose": {"type": "string", "maxLength": 2000},
+          "colour": {"enum": ["red", "orange", "yellow", "green", "teal", "blue", "indigo", "purple", "pink", "brown"]},
+          "agent_access": {"enum": ["open", "members_only"], "description": "Space › Settings › Agents from other Spaces: open = Can work with this Space, members_only = Members only."},
+          "members": {"type": "array", "items": {"$ref": "#/$defs/key"}, "description": "Member keys. The first one is the Space owner."},
+          "projects": {"type": "array", "maxItems": 30,
+                       "items": {"type": "object", "additionalProperties": false, "required": ["key", "name"],
+                                 "properties": {"key": {"$ref": "#/$defs/key"}, "name": {"type": "string", "maxLength": 80}}}},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "agents": {
+      "type": "array", "maxItems": 200,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "kind", "name", "instructions", "apps", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "kind": {"enum": ["personal_assistant", "space_manager", "specialist"], "description": "Assistants (one per member) and Space managers (one per Space) exist automatically; for them the file only sets instructions, tools and apps. Specialists are created."},
+          "owner": {"$ref": "#/$defs/key", "description": "Member key; required for personal_assistant."},
+          "space": {"$ref": "#/$defs/key", "description": "Space key; required for space_manager and specialist."},
+          "name": {"type": "string", "minLength": 1, "maxLength": 80},
+          "instructions": {"type": "string", "minLength": 1, "maxLength": 4000},
+          "tools_preset": {"enum": ["assistant", "document_worker", "automation_worker"]},
+          "tools": {"type": "array", "maxItems": 30, "items": {"$ref": "#/$defs/tool"}, "uniqueItems": true},
+          "apps": {"type": "array", "maxItems": 50, "items": {"$ref": "#/$defs/key"}, "uniqueItems": true, "description": "Connection keys this agent may use. Empty = no apps."},
+          "other_spaces": {"type": "array", "items": {"$ref": "#/$defs/key"}, "description": "Specialists only: further Spaces it works in."},
+          "learning": {"type": "object", "additionalProperties": false,
+                       "properties": {"remember_notes": {"enum": ["off", "read_only", "on"]}, "learn_skills": {"type": "boolean"}}},
+          "autonomous_sending": {"const": false, "description": "Never switched on by a setup file. A person decides per specialist."},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "connections": {
+      "type": "array", "maxItems": 100,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "type", "app", "scope", "permissions", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "type": {"enum": ["composio", "mcp"]},
+          "app": {"type": "string", "pattern": "^[a-z0-9_-]{1,100}$", "description": "Composio toolkit slug (gmail, googlecalendar, notion …) or a short name for an MCP server."},
+          "label": {"type": "string", "maxLength": 80},
+          "mcp_url": {"type": "string", "pattern": "^https://[A-Za-z0-9.-]+(/[^\\s?#]*)?$", "description": "Public HTTPS address of an MCP server (type mcp only)."},
+          "scope": {"enum": ["personal", "space"], "description": "personal = My apps of the owner; space = a shared account in Space › Apps."},
+          "owner": {"$ref": "#/$defs/key"},
+          "space": {"$ref": "#/$defs/key"},
+          "also_in_spaces": {"type": "array", "items": {"$ref": "#/$defs/key"}, "description": "Space apps an admin adds to more Spaces (Manage › Apps)."},
+          "permissions": {
+            "type": "object", "additionalProperties": false,
+            "required": ["read", "create_change", "send_delete_share"],
+            "properties": {
+              "read": {"$ref": "#/$defs/permission"},
+              "create_change": {"$ref": "#/$defs/permission"},
+              "send_delete_share": {"enum": ["ask", "off"], "description": "Never Allowed from a setup file."}
+            }
+          },
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "knowledge": {
+      "type": "array", "maxItems": 200,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "vault", "folder", "title", "content_md", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "vault": {"enum": ["my", "space", "company"], "description": "My knowledge, Space knowledge (Space › Context) or Company knowledge (Team)."},
+          "owner": {"$ref": "#/$defs/key"},
+          "space": {"$ref": "#/$defs/key"},
+          "folder": {"type": "string", "maxLength": 120, "pattern": "^[^/].*[^/]$|^$"},
+          "title": {"type": "string", "minLength": 1, "maxLength": 120},
+          "content_md": {"type": "string", "minLength": 1, "maxLength": 20000},
+          "origin": {"enum": ["drafted", "from_user_file", "from_chat_history"]},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "memory_seeds": {
+      "type": "array", "maxItems": 100,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "agent", "learning_space", "document", "entries", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "agent": {"$ref": "#/$defs/key"},
+          "learning_space": {"enum": ["personal", "shared_space"]},
+          "space": {"$ref": "#/$defs/key"},
+          "document": {"enum": ["agent_notes", "user_profile"], "description": "cavion.memory/1 documents. Budgets: agent_notes 2,200 chars, user_profile 1,375 chars (all entries together)."},
+          "entries": {"type": "array", "minItems": 1, "maxItems": 30, "items": {"type": "string", "minLength": 1, "maxLength": 400}},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "skills": {
+      "type": "array", "maxItems": 100,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "name", "description", "scope", "for_agents", "files", "fallback", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "name": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$"},
+          "description": {"type": "string", "minLength": 1, "maxLength": 1024},
+          "scope": {"enum": ["personal", "space", "company"]},
+          "space": {"$ref": "#/$defs/key"},
+          "for_agents": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/key"}},
+          "files": {
+            "type": "array", "minItems": 1, "maxItems": 20,
+            "items": {"type": "object", "additionalProperties": false, "required": ["path", "content"],
+                      "properties": {"path": {"type": "string", "pattern": "^(SKILL\\.md|(references|templates|assets)/[A-Za-z0-9._-]+)$"},
+                                     "content": {"type": "string", "minLength": 1, "maxLength": 40000}}},
+            "description": "A cavion.skill/1 package: SKILL.md with name/description frontmatter, plus optional files."
+          },
+          "fallback": {"enum": ["knowledge", "none"], "description": "Skills are learned from chats in Cavion today. Until import exists, the applier saves SKILL.md as a Knowledge doc the agent is told to follow."},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "scheduled_tasks": {
+      "type": "array", "maxItems": 100,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "title", "agent", "conversation", "kind", "instruction", "timing", "preparation", "apps", "notification", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "title": {"type": "string", "minLength": 1, "maxLength": 120},
+          "agent": {"$ref": "#/$defs/key"},
+          "conversation": {"$ref": "#/$defs/conversation"},
+          "kind": {"enum": ["scheduled_task", "responsibility"]},
+          "instruction": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "timing": {"$ref": "#/$defs/timing"},
+          "preparation": {"enum": ["read_only", "cavion_deliverables"]},
+          "apps": {"type": "array", "maxItems": 50, "items": {"$ref": "#/$defs/task_app"}},
+          "knowledge": {"type": "array", "maxItems": 50, "items": {"$ref": "#/$defs/key"}},
+          "notification": {"enum": ["meaningful", "urgent"]},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "checks": {
+      "type": "array", "maxItems": 100,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "title", "agent", "conversation", "app", "reads", "instruction", "every_minutes", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "title": {"type": "string", "minLength": 1, "maxLength": 120},
+          "agent": {"$ref": "#/$defs/key"},
+          "conversation": {"$ref": "#/$defs/conversation"},
+          "app": {"$ref": "#/$defs/key", "description": "Connection key whose new items are checked."},
+          "reads": {"type": "string", "minLength": 1, "maxLength": 160, "description": "What is looked at, in plain words (\"new e-mails to the hello@ inbox\")."},
+          "instruction": {"type": "string", "minLength": 1, "maxLength": 2000},
+          "every_minutes": {"enum": [5, 10, 15, 30, 60]},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}, "confidence": {"$ref": "#/$defs/confidence"}
+        }
+      }
+    },
+    "event_automations": {
+      "type": "array", "maxItems": 50,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "title", "trigger", "agent", "instruction", "available", "fallback_check", "status", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "title": {"type": "string", "maxLength": 120},
+          "trigger": {"type": "object", "additionalProperties": false, "required": ["app", "event"],
+                      "properties": {"app": {"$ref": "#/$defs/key"}, "event": {"type": "string", "maxLength": 120}}},
+          "agent": {"$ref": "#/$defs/key"},
+          "instruction": {"type": "string", "maxLength": 2000},
+          "available": {"const": false, "description": "Instant triggers are not available in Cavion yet; the fallback check is applied instead."},
+          "fallback_check": {"$ref": "#/$defs/key"},
+          "status": {"$ref": "#/$defs/status"}, "why": {"$ref": "#/$defs/why"},
+          "evidence": {"$ref": "#/$defs/evidence"}
+        }
+      }
+    },
+    "devices": {
+      "type": "object", "additionalProperties": false, "required": ["mac_app", "cloud_computer"],
+      "properties": {
+        "mac_app": {"type": "object", "additionalProperties": false, "required": ["recommend", "why"],
+                    "properties": {"recommend": {"type": "boolean"}, "why": {"$ref": "#/$defs/why"}}},
+        "cloud_computer": {"type": "object", "additionalProperties": false, "required": ["recommend", "why"],
+                           "properties": {"recommend": {"type": "boolean"}, "always_on": {"type": "boolean"}, "why": {"$ref": "#/$defs/why"}}}
+      }
+    },
+    "manual_steps": {
+      "type": "array", "maxItems": 60,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "title", "who", "where", "why"],
+        "properties": {
+          "key": {"$ref": "#/$defs/key"},
+          "title": {"type": "string", "maxLength": 120},
+          "who": {"enum": ["owner", "admin", "member", "space_owner"]},
+          "where": {"type": "string", "maxLength": 120, "description": "Exact place in Cavion, e.g. \"Manage › AI\"."},
+          "why": {"$ref": "#/$defs/why"},
+          "unblocks": {"type": "array", "items": {"$ref": "#/$defs/key"}}
+        }
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["findings_file", "report_file", "sources_read", "uploaded"],
+      "properties": {
+        "findings_file": {"type": "string", "maxLength": 200},
+        "report_file": {"type": "string", "maxLength": 200},
+        "sources_read": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["id", "items"],
+                                                    "properties": {"id": {"type": "string"}, "items": {"type": "integer", "minimum": 0}}}},
+        "uploaded": {"const": false},
+        "redaction": {"type": "string", "maxLength": 400}
+      }
+    }
+  },
+  "$defs": {
+    "key": {"type": "string", "pattern": "^[a-z][a-z0-9-]{1,62}$"},
+    "why": {"type": "string", "minLength": 1, "maxLength": 300},
+    "status": {"enum": ["proposed", "approved", "skipped"], "description": "Review state. The applier only applies approved objects (or proposed ones when the person approves the whole file)."},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "evidence": {"type": "array", "items": {"type": "string", "pattern": "^(f|w)-[0-9]{2,3}$"}, "description": "Finding or workflow ids in findings.json."},
+    "permission": {"enum": ["allowed", "ask", "off"]},
+    "tool": {"enum": ["knowledge_read", "knowledge_update", "apps", "ask_agents", "create_specialists", "speak_in_space_chats", "search_conversations", "memory", "skills", "learn_skills", "checklist", "ask_questions", "scheduled_tasks", "open_files", "edit_files", "vision", "run_code", "skill_helpers", "web_search", "browse"]},
+    "conversation": {
+      "type": "object", "additionalProperties": false, "required": ["audience"],
+      "properties": {
+        "audience": {"enum": ["private", "space_shared"], "description": "Where results arrive. In Cavion a task belongs to the chat it was made in; the applier opens that chat first."},
+        "space": {"$ref": "#/$defs/key"},
+        "project": {"$ref": "#/$defs/key"},
+        "title": {"type": "string", "maxLength": 120}
+      }
+    },
+    "task_app": {
+      "type": "object", "additionalProperties": false, "required": ["connection", "read", "create_change", "send_delete_share"],
+      "properties": {
+        "connection": {"$ref": "#/$defs/key"},
+        "read": {"$ref": "#/$defs/permission"},
+        "create_change": {"$ref": "#/$defs/permission"},
+        "send_delete_share": {"enum": ["ask", "off"]}
+      }
+    },
+    "time": {"type": "string", "pattern": "^([01][0-9]|2[0-3]):[0-5][0-9]$"},
+    "timing": {
+      "oneOf": [
+        {"type": "object", "additionalProperties": false, "required": ["kind", "timezone", "date", "time"],
+         "properties": {"kind": {"const": "once"}, "timezone": {"type": "string"}, "date": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"}, "time": {"$ref": "#/$defs/time"}, "human": {"type": "string", "maxLength": 120}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "timezone", "weekdays", "times"],
+         "properties": {"kind": {"const": "weekly"}, "timezone": {"type": "string"},
+                        "weekdays": {"type": "array", "minItems": 1, "maxItems": 7, "uniqueItems": true, "items": {"type": "integer", "minimum": 1, "maximum": 7}, "description": "1 = Monday … 7 = Sunday"},
+                        "times": {"type": "array", "minItems": 1, "maxItems": 6, "uniqueItems": true, "items": {"$ref": "#/$defs/time"}, "description": "Sorted, at least 30 minutes apart."},
+                        "human": {"type": "string", "maxLength": 120}}},
+        {"type": "object", "additionalProperties": false, "required": ["kind", "timezone", "minutes", "working_hours"],
+         "properties": {"kind": {"const": "interval"}, "timezone": {"type": "string"}, "minutes": {"enum": [30, 60, 120, 240]},
+                        "working_hours": {"type": "object", "additionalProperties": false, "required": ["weekdays", "start", "end"],
+                                          "properties": {"weekdays": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 1, "maximum": 7}},
+                                                         "start": {"$ref": "#/$defs/time"}, "end": {"$ref": "#/$defs/time"}}},
+                        "human": {"type": "string", "maxLength": 120}}}
+      ]
+    }
+  }
+}

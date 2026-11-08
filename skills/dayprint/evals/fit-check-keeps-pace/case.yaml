@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: fit-check-keeps-pace
+expected_outcome: |
+  The fit check removes or reshapes the twice-a-day decision batching because it would make waiting agents wait longer, records it in dropped or as reshaped with an instant alternative, and the final findings validate.
+context:
+  scaffold_script: place-files.sh

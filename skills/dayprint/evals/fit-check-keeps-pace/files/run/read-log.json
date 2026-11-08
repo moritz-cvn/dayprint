@@ -1,0 +1,135 @@
+{
+  "schema": "dayprint.read-log/0.1",
+  "generator": "dayprint/0.1.0",
+  "generated_at": "2026-11-08T14:09:25+00:00",
+  "window_days": null,
+  "depth": "deep",
+  "uploaded": false,
+  "secret_files_opened": 0,
+  "masked_names": 7,
+  "sources": [
+    {
+      "id": "claude-code-transcripts",
+      "label": "Claude Code chats",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 9,
+      "items": 9
+    },
+    {
+      "id": "claude-code-memory",
+      "label": "Claude Code memory and instructions",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 4,
+      "items": 4
+    },
+    {
+      "id": "claude-code-history",
+      "label": "Claude Code prompt history",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 1,
+      "items": 21
+    },
+    {
+      "id": "codex-sessions",
+      "label": "Codex sessions",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 4,
+      "items": 4
+    },
+    {
+      "id": "codex-history",
+      "label": "Codex prompt history",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 1,
+      "items": 4
+    },
+    {
+      "id": "codex-memory",
+      "label": "Codex instructions and memories",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 1,
+      "items": 1
+    },
+    {
+      "id": "chatgpt-export",
+      "label": "ChatGPT export",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 1,
+      "items": 74,
+      "custom_gpt_conversations": 0
+    },
+    {
+      "id": "claude-export",
+      "label": "Claude.ai export",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 3,
+      "items": 23
+    },
+    {
+      "id": "shell-history",
+      "label": "Terminal history",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 1,
+      "items": 569
+    },
+    {
+      "id": "calendar-files",
+      "label": "Calendar exports (.ics)",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_read": 1,
+      "items": 39
+    },
+    {
+      "id": "documents",
+      "label": "Documents and notes",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "files_listed": 23,
+      "text_previews_read": 21,
+      "items": 23
+    },
+    {
+      "id": "installed-apps",
+      "label": "Installed apps",
+      "consented": true,
+      "status": "found",
+      "read": true,
+      "items": 11
+    },
+    {
+      "id": "git-activity",
+      "label": "Your commit times",
+      "consented": true,
+      "status": "not_found",
+      "read": false
+    },
+    {
+      "id": "screen-time",
+      "label": "Screen Time (app focus)",
+      "consented": false,
+      "status": "not_found",
+      "read": false
+    }
+  ]
+}

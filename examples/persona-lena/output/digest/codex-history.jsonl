@@ -1,0 +1,4 @@
+{"kind": "prompt", "source": "codex-history", "at": "2026-08-26T13:00:00+00:00", "project": null, "text": "write a script that renames exported Figma assets to kebab-case and sorts them into icons/ and images/"}
+{"kind": "prompt", "source": "codex-history", "at": "2026-09-29T13:00:00+00:00", "project": null, "text": "update invoice_hours.py so it groups by client and project and outputs a CSV for Lexoffice"}
+{"kind": "prompt", "source": "codex-history", "at": "2026-10-12T13:00:00+00:00", "project": null, "text": "make a script that checks all client sites for broken links and sends me a summary, I want to run it every Monday"}
+{"kind": "prompt", "source": "codex-history", "at": "2026-10-26T13:00:00+00:00", "project": null, "text": "check_links.py should also check SSL expiry and page speed for each client site"}

@@ -1,0 +1,634 @@
+{
+  "schema": "dayprint.stats/0.1",
+  "generator": "dayprint/0.1.0",
+  "generated_at": "2026-11-08T14:09:25+00:00",
+  "window_days": null,
+  "data_span": {
+    "first": "2026-08-03",
+    "last": "2026-11-06",
+    "months": 3.1
+  },
+  "prompts_total": 165,
+  "prompts_by_source": {
+    "claude-code": 21,
+    "codex": 4,
+    "chatgpt": 111,
+    "claude-ai": 29
+  },
+  "repeated_requests": [
+    {
+      "pattern": "based email notes status",
+      "count": 28,
+      "sources": {
+        "chatgpt": 28
+      },
+      "first": "2026-08-07",
+      "last": "2026-11-06",
+      "weekdays": {
+        "Fri": 28
+      },
+      "examples": [
+        "Write the weekly status update email for Fahrradwerk Altona based on these notes: done: copy round 2 in, mobile nav fixed. next: need openin",
+        "Write the weekly status update email for Praxis [name] Physio based on these notes: done: mobile nav fixed, new photos are in. next: final r",
+        "Write the weekly status update email for Fahrradwerk Altona based on these notes: done: contact form tested, hero animation approved. next: "
+      ]
+    },
+    {
+      "pattern": "add bit link placeholder",
+      "count": 14,
+      "sources": {
+        "chatgpt": 14
+      },
+      "first": "2026-08-07",
+      "last": "2026-11-06",
+      "weekdays": {
+        "Fri": 14
+      },
+      "examples": [
+        "Make it a bit shorter and add the staging link placeholder.",
+        "Make it a bit shorter and add the staging link placeholder.",
+        "Make it a bit shorter and add the staging link placeholder."
+      ]
+    },
+    {
+      "pattern": "contact form inquiry reply",
+      "count": 10,
+      "sources": {
+        "chatgpt": 10
+      },
+      "first": "2026-08-07",
+      "last": "2026-11-02",
+      "weekdays": {
+        "Mon": 3,
+        "Fri": 2,
+        "Sat": 2
+      },
+      "examples": [
+        "Reply to this inquiry from the website contact form: 'Do you do SEO?'. Offer two call slots next week and link my Calendly.",
+        "Reply to this inquiry from the website contact form: 'Looking for someone to build a Webflow site for our yoga studio'. Offer two call slots",
+        "Reply to this inquiry from the website contact form: 'Looking for someone to build a Webflow site for our yoga studio'. Offer two call slots"
+      ]
+    },
+    {
+      "pattern": "action call items notes",
+      "count": 10,
+      "sources": {
+        "chatgpt": 10
+      },
+      "first": "2026-08-09",
+      "last": "2026-11-03",
+      "weekdays": {
+        "Sun": 3,
+        "Tue": 2,
+        "Sat": 2
+      },
+      "examples": [
+        "Turn these call notes into action items for Notion with owner and due date: Elbe Yoga Loft call, [name] does the new icons, [name] fixes the",
+        "Turn these call notes into action items for Notion with owner and due date: Fahrradwerk Altona call, [name] does the new icons, [name] fixes",
+        "Turn these call notes into action items for Notion with owner and due date: Fahrradwerk Altona call, [name] does the new icons, [name] fixes"
+      ]
+    },
+    {
+      "pattern": "built draft latest launch",
+      "count": 9,
+      "sources": {
+        "chatgpt": 9
+      },
+      "first": "2026-08-03",
+      "last": "2026-10-26",
+      "weekdays": {
+        "Mon": 9
+      },
+      "examples": [
+        "Draft a LinkedIn post about our latest launch for Elbe Yoga Loft: what the problem was, what we built, one result. No hashtags spam, max 120",
+        "Draft a LinkedIn post about our latest launch for Fahrradwerk Altona: what the problem was, what we built, one result. No hashtags spam, max",
+        "Draft a LinkedIn post about our latest launch for Praxis [name] Physio: what the problem was, what we built, one result. No hashtags spam, m"
+      ]
+    },
+    {
+      "pattern": "alternative hooks two",
+      "count": 9,
+      "sources": {
+        "chatgpt": 9
+      },
+      "first": "2026-08-03",
+      "last": "2026-10-26",
+      "weekdays": {
+        "Mon": 9
+      },
+      "examples": [
+        "Give me two alternative hooks.",
+        "Give me two alternative hooks.",
+        "Give me two alternative hooks."
+      ]
+    },
+    {
+      "pattern": "brand copy rewrite voice",
+      "count": 9,
+      "sources": {
+        "claude-ai": 9
+      },
+      "first": "2026-08-14",
+      "last": "2026-11-03",
+      "weekdays": {
+        "Sat": 3,
+        "Fri": 2,
+        "Tue": 2
+      },
+      "examples": [
+        "Rewrite this website copy for Fahrradwerk Altona in our brand voice (warm, clear, no buzzwords): 'We are a leading provider of innovative so",
+        "Rewrite this website copy for Elbe Yoga Loft in our brand voice (warm, clear, no buzzwords): 'We are a leading provider of innovative soluti",
+        "Rewrite this website copy for Elbe Yoga Loft in our brand voice (warm, clear, no buzzwords): 'We are a leading provider of innovative soluti"
+      ]
+    },
+    {
+      "pattern": "description meta now shorter",
+      "count": 9,
+      "sources": {
+        "claude-ai": 9
+      },
+      "first": "2026-08-14",
+      "last": "2026-11-03",
+      "weekdays": {
+        "Sat": 3,
+        "Fri": 2,
+        "Tue": 2
+      },
+      "examples": [
+        "Now a shorter version for the meta description.",
+        "Now a shorter version for the meta description.",
+        "Now a shorter version for the meta description."
+      ]
+    },
+    {
+      "pattern": "call discovery notes proposal",
+      "count": 7,
+      "sources": {
+        "chatgpt": 7
+      },
+      "first": "2026-08-09",
+      "last": "2026-10-16",
+      "weekdays": {
+        "Sun": 2,
+        "Wed": 1,
+        "Tue": 1
+      },
+      "examples": [
+        "Turn these discovery call notes into a proposal (Angebot) using my usual structure: goals, scope, timeline, price, next steps. Notes: Weinba",
+        "Turn these discovery call notes into a proposal (Angebot) using my usual structure: goals, scope, timeline, price, next steps. Notes: Lokal ",
+        "Turn these discovery call notes into a proposal (Angebot) using my usual structure: goals, scope, timeline, price, next steps. Notes: Nordwi"
+      ]
+    },
+    {
+      "pattern": "day design rate split",
+      "count": 7,
+      "sources": {
+        "chatgpt": 7
+      },
+      "first": "2026-08-09",
+      "last": "2026-10-16",
+      "weekdays": {
+        "Sun": 2,
+        "Wed": 1,
+        "Tue": 1
+      },
+      "examples": [
+        "Use our standard day rate of 850 EUR and split it into design and build.",
+        "Use our standard day rate of 850 EUR and split it into design and build.",
+        "Use our standard day rate of 850 EUR and split it into design and build."
+      ]
+    },
+    {
+      "pattern": "founder scope section translate",
+      "count": 7,
+      "sources": {
+        "chatgpt": 7
+      },
+      "first": "2026-08-09",
+      "last": "2026-10-16",
+      "weekdays": {
+        "Sun": 2,
+        "Wed": 1,
+        "Tue": 1
+      },
+      "examples": [
+        "Translate the scope section to English for the co-founder.",
+        "Translate the scope section to English for the co-founder.",
+        "Translate the scope section to English for the co-founder."
+      ]
+    },
+    {
+      "pattern": "approach case challenge portfolio",
+      "count": 4,
+      "sources": {
+        "claude-ai": 4
+      },
+      "first": "2026-08-14",
+      "last": "2026-11-04",
+      "weekdays": {
+        "Fri": 1,
+        "Sun": 1,
+        "Sat": 1
+      },
+      "examples": [
+        "Write a case study for our portfolio about the Praxis [name] Physio website: challenge, approach, result. Use the facts from the project not",
+        "Write a case study for our portfolio about the Fahrradwerk Altona website: challenge, approach, result. Use the facts from the project notes",
+        "Write a case study for our portfolio about the Kaffeebar Ost website: challenge, approach, result. Use the facts from the project notes I pa"
+      ]
+    },
+    {
+      "pattern": "call draft notes proposal",
+      "count": 4,
+      "sources": {
+        "claude-ai": 4
+      },
+      "first": "2026-08-24",
+      "last": "2026-10-25",
+      "weekdays": {
+        "Mon": 2,
+        "Tue": 1,
+        "Sun": 1
+      },
+      "examples": [
+        "Draft a proposal from these call notes, same structure as always (goals, scope, timeline, price, next steps): new brand + website for a bake",
+        "Draft a proposal from these call notes, same structure as always (goals, scope, timeline, price, next steps): new brand + website for a bake",
+        "Draft a proposal from these call notes, same structure as always (goals, scope, timeline, price, next steps): new brand + website for a bake"
+      ]
+    },
+    {
+      "pattern": "checklist launch lighthouse run",
+      "count": 3,
+      "sources": {
+        "claude-code": 3
+      },
+      "first": "2026-09-30",
+      "last": "2026-10-28",
+      "weekdays": {
+        "Wed": 3
+      },
+      "examples": [
+        "Run the launch QA checklist on this site: lighthouse scores, missing alt texts, broken links, meta titles and descriptions, favicon, 404 pag",
+        "Run the launch QA checklist on this site: lighthouse scores, missing alt texts, broken links, meta titles and descriptions, favicon, 404 pag",
+        "Run the launch QA checklist on this site: lighthouse scores, missing alt texts, broken links, meta titles and descriptions, favicon, 404 pag"
+      ]
+    },
+    {
+      "pattern": "alt fix found missing",
+      "count": 3,
+      "sources": {
+        "claude-code": 3
+      },
+      "first": "2026-09-30",
+      "last": "2026-10-28",
+      "weekdays": {
+        "Wed": 3
+      },
+      "examples": [
+        "Fix the missing alt texts you found and write them in German.",
+        "Fix the missing alt texts you found and write them in German.",
+        "Fix the missing alt texts you found and write them in German."
+      ]
+    },
+    {
+      "pattern": "client send short summary",
+      "count": 3,
+      "sources": {
+        "claude-code": 3
+      },
+      "first": "2026-09-30",
+      "last": "2026-10-28",
+      "weekdays": {
+        "Wed": 3
+      },
+      "examples": [
+        "Make a short QA summary I can send to the client.",
+        "Make a short QA summary I can send to the client.",
+        "Make a short QA summary I can send to the client."
+      ]
+    },
+    {
+      "pattern": "build design export hero",
+      "count": 3,
+      "sources": {
+        "claude-code": 3
+      },
+      "first": "2026-08-19",
+      "last": "2026-09-16",
+      "weekdays": {
+        "Wed": 3
+      },
+      "examples": [
+        "Build the hero section from the Figma export in ./design, responsive, keep our spacing scale.",
+        "Build the hero section from the Figma export in ./design, responsive, keep our spacing scale.",
+        "Build the hero section from the Figma export in ./design, responsive, keep our spacing scale."
+      ]
+    },
+    {
+      "pattern": "check mobile now widths",
+      "count": 3,
+      "sources": {
+        "claude-code": 3
+      },
+      "first": "2026-08-19",
+      "last": "2026-09-16",
+      "weekdays": {
+        "Wed": 3
+      },
+      "examples": [
+        "Now check it on mobile widths.",
+        "Now check it on mobile widths.",
+        "Now check it on mobile widths."
+      ]
+    },
+    {
+      "pattern": "client days invoice overdue",
+      "count": 3,
+      "sources": {
+        "claude-ai": 3
+      },
+      "first": "2026-09-24",
+      "last": "2026-10-29",
+      "weekdays": {
+        "Thu": 2,
+        "Tue": 1
+      },
+      "examples": [
+        "Write a polite reminder to a client whose invoice is 14 days overdue. Mention invoice number [number], IBAN [iban].",
+        "Write a polite reminder to a client whose invoice is 14 days overdue. Mention invoice number [number], IBAN [iban].",
+        "Write a polite reminder to a client whose invoice is 14 days overdue. Mention invoice number [number], IBAN [iban]."
+      ]
+    }
+  ],
+  "keywords": {
+    "words": {
+      "next": 61,
+      "notes": 53,
+      "name": 42,
+      "website": 37,
+      "link": 36,
+      "call": 33,
+      "two": 32,
+      "german": 31,
+      "short": 31,
+      "update": 29,
+      "status": 28,
+      "weekly": 28,
+      "email": 28,
+      "friendly": 28,
+      "sign": 28,
+      "based": 28,
+      "blocker": 28,
+      "launch": 27,
+      "form": 27,
+      "booking": 25,
+      "contact": 24,
+      "staging": 24,
+      "photos": 24,
+      "client": 23,
+      "shorter": 23,
+      "yoga": 21,
+      "missing": 18,
+      "turn": 18,
+      "scope": 18,
+      "kaffeebar": 18,
+      "ost": 18,
+      "build": 17,
+      "invoice": 16,
+      "fahrradwerk": 16,
+      "altona": 16,
+      "copy": 16,
+      "draft": 15,
+      "hours": 14,
+      "elbe": 14,
+      "loft": 14,
+      "need": 14,
+      "placeholder": 14,
+      "bit": 14,
+      "add": 14,
+      "brand": 14,
+      "send": 13,
+      "mobile": 13,
+      "result": 13,
+      "meta": 12,
+      "design": 12,
+      "now": 12,
+      "reply": 12,
+      "calendly": 12,
+      "inquiry": 12,
+      "week": 12,
+      "slots": 12,
+      "offer": 12,
+      "opening": 12,
+      "praxis": 12,
+      "physio": 12
+    },
+    "phrases": {
+      "weekly status": 28,
+      "based notes": 28,
+      "friendly short": 28,
+      "german sign": 28,
+      "status update": 28,
+      "sign name": 28,
+      "short german": 28,
+      "update email": 28,
+      "staging link": 24,
+      "call notes": 21,
+      "kaffeebar ost": 18,
+      "contact form": 17,
+      "fahrradwerk altona": 16,
+      "photos next": 15,
+      "yoga loft": 14,
+      "elbe yoga": 14,
+      "link placeholder": 14,
+      "bit shorter": 14,
+      "shorter add": 14,
+      "add staging": 14,
+      "next week": 12,
+      "website contact": 12,
+      "slots next": 12,
+      "two call": 12,
+      "link calendly": 12,
+      "reply inquiry": 12,
+      "week link": 12,
+      "offer two": 12,
+      "inquiry website": 12,
+      "call slots": 12,
+      "need opening": 12,
+      "opening hours": 12,
+      "blocker photos": 12,
+      "missing friendly": 12,
+      "praxis name": 12,
+      "name physio": 12,
+      "photos missing": 12,
+      "action items": 11,
+      "goals scope": 11,
+      "scope timeline": 11,
+      "timeline price": 11,
+      "next steps": 11,
+      "price next": 11,
+      "client feedback": 11,
+      "blocker client": 11,
+      "late friendly": 11,
+      "feedback late": 11,
+      "link share": 10,
+      "mobile nav": 10,
+      "nav fixed": 10,
+      "transfer pending": 10,
+      "domain transfer": 10,
+      "icons name": 10,
+      "fixes booking": 10,
+      "ask photos": 10,
+      "booking form": 10,
+      "two weeks": 10,
+      "invoice ask": 10,
+      "notion owner": 10,
+      "next call": 10
+    }
+  },
+  "rhythm": {
+    "by_weekday": {
+      "Wed": 23,
+      "Thu": 11,
+      "Tue": 16,
+      "Mon": 30,
+      "Fri": 56,
+      "Sat": 13,
+      "Sun": 16
+    },
+    "by_hour_utc": {
+      "8": 12,
+      "9": 27,
+      "10": 19,
+      "11": 28,
+      "14": 50,
+      "15": 18,
+      "17": 3,
+      "19": 8
+    }
+  },
+  "agent_tools": {
+    "shell": 16,
+    "Read": 13,
+    "Write": 12,
+    "Edit": 10,
+    "mcp__figma__get_file": 8,
+    "Bash": 8,
+    "WebFetch": 6,
+    "mcp__gmail__create_draft": 4,
+    "mcp__notion__create_page": 2
+  },
+  "mcp_servers_used": {
+    "figma": 8,
+    "gmail": 4,
+    "notion": 2
+  },
+  "programs": {
+    "git": 288,
+    "cd": 70,
+    "npm": 70,
+    "code": 70,
+    "ffmpeg": 23,
+    "python3 check_links.py": 16,
+    "brew": 12,
+    "python3 invoice_hours.py": 9,
+    "open": 8,
+    "ssh": 8,
+    "export": 6,
+    "ls": 4,
+    "cat": 4,
+    "python3 rename_assets.py": 1
+  },
+  "projects": {
+    "studio-ops": 7,
+    "kaffeebar-website": 3,
+    "fahrradwerk-website": 2,
+    "yoga-loft-website": 1
+  },
+  "apps_mentioned": {
+    "Calendly": 12,
+    "Notion": 11,
+    "LinkedIn": 9,
+    "Webflow": 7,
+    "Figma": 4,
+    "Toggl Track": 3,
+    "Lexoffice": 3
+  },
+  "document_kinds": {
+    "meeting notes": 13,
+    "brand": 2,
+    "template": 2,
+    "proposal": 1,
+    "report": 1,
+    "checklist": 3,
+    "other": 2,
+    "onboarding": 1,
+    "invoice": 1
+  },
+  "calendar": {
+    "recurring": [
+      {
+        "title": "Weekly planning",
+        "repeats": "weekly",
+        "interval": 1,
+        "days": "MO",
+        "minutes": 60,
+        "hours_per_week": 1.0,
+        "attendees": 0,
+        "external_attendees": 0
+      },
+      {
+        "title": "Client status mails",
+        "repeats": "weekly",
+        "interval": 1,
+        "days": "FR",
+        "minutes": 60,
+        "hours_per_week": 1.0,
+        "attendees": 0,
+        "external_attendees": 0
+      },
+      {
+        "title": "Team stand-up (Slack huddle)",
+        "repeats": "weekly",
+        "interval": 1,
+        "days": "MO,WE,FR",
+        "minutes": 15,
+        "hours_per_week": 0.75,
+        "attendees": 2,
+        "external_attendees": 1
+      },
+      {
+        "title": "Content time – LinkedIn",
+        "repeats": "weekly",
+        "interval": 1,
+        "days": "FR",
+        "minutes": 45,
+        "hours_per_week": 0.75,
+        "attendees": 0,
+        "external_attendees": 0
+      },
+      {
+        "title": "Kaffeebar Ost – weekly check-in",
+        "repeats": "weekly",
+        "interval": 1,
+        "days": "TH",
+        "minutes": 30,
+        "hours_per_week": 0.5,
+        "attendees": 1,
+        "external_attendees": 1
+      },
+      {
+        "title": "Invoicing + reminders",
+        "repeats": "monthly",
+        "interval": 1,
+        "days": "1MO",
+        "minutes": 120,
+        "hours_per_week": 0.46,
+        "attendees": 0,
+        "external_attendees": 0
+      }
+    ],
+    "one_off_per_week": 2.6,
+    "external_meetings_per_week": 2.5,
+    "meeting_hours_per_week": 6.4
+  }
+}

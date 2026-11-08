@@ -1,0 +1,374 @@
+{
+  "schema": "dayprint.day/0.1",
+  "generator": "dayprint/0.1.0",
+  "generated_at": "2026-11-08T14:09:26+00:00",
+  "sources": {
+    "activity": {
+      "read": true,
+      "items": 179
+    },
+    "mac-activity": {
+      "read": false,
+      "items": 0
+    },
+    "git-activity": {
+      "read": true,
+      "items": 0
+    },
+    "screen-time": {
+      "read": false,
+      "items": 0,
+      "status": "not consented"
+    }
+  },
+  "repos_scanned": 0,
+  "days_observed": 65,
+  "typical": {
+    "start": "12:00",
+    "end": "15:09",
+    "active_hours": 0.2,
+    "late_nights_share": 0.0
+  },
+  "hours": [
+    {
+      "hour": 5,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 6,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 7,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 8,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 9,
+      "active_share": 0.02,
+      "active_minutes": 0.6,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 10,
+      "active_share": 0.06,
+      "active_minutes": 2.2,
+      "prompts": 0.3,
+      "commits": 0.0
+    },
+    {
+      "hour": 11,
+      "active_share": 0.17,
+      "active_minutes": 3.6,
+      "prompts": 0.7,
+      "commits": 0.0
+    },
+    {
+      "hour": 12,
+      "active_share": 0.0,
+      "active_minutes": 0.8,
+      "prompts": 0.2,
+      "commits": 0.0
+    },
+    {
+      "hour": 13,
+      "active_share": 0.0,
+      "active_minutes": 0.6,
+      "prompts": 0.1,
+      "commits": 0.0
+    },
+    {
+      "hour": 14,
+      "active_share": 0.0,
+      "active_minutes": 0.2,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 15,
+      "active_share": 0.03,
+      "active_minutes": 1.0,
+      "prompts": 0.2,
+      "commits": 0.0
+    },
+    {
+      "hour": 16,
+      "active_share": 0.17,
+      "active_minutes": 3.0,
+      "prompts": 0.8,
+      "commits": 0.0
+    },
+    {
+      "hour": 17,
+      "active_share": 0.0,
+      "active_minutes": 1.2,
+      "prompts": 0.3,
+      "commits": 0.0
+    },
+    {
+      "hour": 18,
+      "active_share": 0.0,
+      "active_minutes": 0.2,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 19,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 20,
+      "active_share": 0.0,
+      "active_minutes": 0.1,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 21,
+      "active_share": 0.0,
+      "active_minutes": 0.5,
+      "prompts": 0.1,
+      "commits": 0.0
+    },
+    {
+      "hour": 22,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 23,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 0,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 1,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 2,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 3,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    },
+    {
+      "hour": 4,
+      "active_share": 0.0,
+      "active_minutes": 0.0,
+      "prompts": 0.0,
+      "commits": 0.0
+    }
+  ],
+  "weekdays": {
+    "Mon": 0.2,
+    "Fri": 0.3,
+    "Sat": 0.1,
+    "Sun": 0.1,
+    "Wed": 0.3,
+    "Thu": 0.1,
+    "Tue": 0.2
+  },
+  "deep_blocks_per_day": 0.0,
+  "tempo": {
+    "messages_per_day": 2,
+    "messages_per_active_hour": 11.8,
+    "decision_share": 0.07,
+    "decisions_per_day": 0.0,
+    "reply_median_s": null,
+    "reply_p25_s": null,
+    "reply_p75_s": null,
+    "agents_wait_hours_per_day": 0.0,
+    "answered_within_2_min": null
+  },
+  "apps": null,
+  "per_day": [
+    {
+      "day": "2026-10-08",
+      "weekday": "Thu",
+      "active_hours": 0.1,
+      "messages": 1,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-09",
+      "weekday": "Fri",
+      "active_hours": 0.3,
+      "messages": 5,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-12",
+      "weekday": "Mon",
+      "active_hours": 0.1,
+      "messages": 1,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-15",
+      "weekday": "Thu",
+      "active_hours": 0.1,
+      "messages": 1,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-16",
+      "weekday": "Fri",
+      "active_hours": 0.5,
+      "messages": 8,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-18",
+      "weekday": "Sun",
+      "active_hours": 0.1,
+      "messages": 1,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-19",
+      "weekday": "Mon",
+      "active_hours": 0.1,
+      "messages": 1,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-20",
+      "weekday": "Tue",
+      "active_hours": 0.2,
+      "messages": 2,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-21",
+      "weekday": "Wed",
+      "active_hours": 0.4,
+      "messages": 3,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-23",
+      "weekday": "Fri",
+      "active_hours": 0.3,
+      "messages": 4,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-25",
+      "weekday": "Sun",
+      "active_hours": 0.3,
+      "messages": 4,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-26",
+      "weekday": "Mon",
+      "active_hours": 0.2,
+      "messages": 3,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-28",
+      "weekday": "Wed",
+      "active_hours": 0.4,
+      "messages": 3,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-29",
+      "weekday": "Thu",
+      "active_hours": 0.1,
+      "messages": 1,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-30",
+      "weekday": "Fri",
+      "active_hours": 0.4,
+      "messages": 5,
+      "commits": 0
+    },
+    {
+      "day": "2026-10-31",
+      "weekday": "Sat",
+      "active_hours": 0.1,
+      "messages": 2,
+      "commits": 0
+    },
+    {
+      "day": "2026-11-01",
+      "weekday": "Sun",
+      "active_hours": 0.1,
+      "messages": 2,
+      "commits": 0
+    },
+    {
+      "day": "2026-11-02",
+      "weekday": "Mon",
+      "active_hours": 0.6,
+      "messages": 3,
+      "commits": 0
+    },
+    {
+      "day": "2026-11-03",
+      "weekday": "Tue",
+      "active_hours": 0.2,
+      "messages": 3,
+      "commits": 0
+    },
+    {
+      "day": "2026-11-04",
+      "weekday": "Wed",
+      "active_hours": 0.1,
+      "messages": 1,
+      "commits": 0
+    },
+    {
+      "day": "2026-11-06",
+      "weekday": "Fri",
+      "active_hours": 0.3,
+      "messages": 4,
+      "commits": 0
+    }
+  ],
+  "basis": "message times"
+}

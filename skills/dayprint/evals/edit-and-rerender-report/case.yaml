@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: edit-and-rerender-report
+expected_outcome: |
+  The setup file and findings are edited consistently, still validate, the plan and the report are re-rendered, and the report shows the Money Space and no LinkedIn workflow.
+context:
+  scaffold_script: place-files.sh
